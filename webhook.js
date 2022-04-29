@@ -28,7 +28,7 @@ async function updateTypesFile(app) {
 
   // get the contents of `index.d.ts` so we can diff
   signale.await('Fetching repo contents...')
-  const fileContents = await github.repos.getContents(
+  const fileContents = await github.repos.getContent(
     Object.assign(base, { path: targetFile })
   )
   const currentFile = fileContents.data
