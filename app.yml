@@ -1,5 +1,5 @@
 hook_attributes:
-  url: 'https://secretive-lacy-cobra.glitch.me/'
+  url: 'https://secretive-lacy-cobra.glitch.me'
 
 default_permissions:
   contents: write
