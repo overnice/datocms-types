@@ -46,7 +46,7 @@ async function updateTypesFile(app) {
 
   // if so, write them to the file and commit
   signale.success('Types changed, committing new file')
-  return github.repos.createOrUpdateFile(
+  return github.repos.createOrUpdateFileContents(
     Object.assign(base, {
       path: targetFile,
       message: 'chore: update types from DatoCMS changes',
