@@ -1,14 +1,16 @@
 const update = require('./update')
 const signale = require('signale')
 
-module.exports = async app => {
-  // app.route('/dato').post('/', (_, res) => {
-  //   signale.await('DatoCMS changes detected...')
-  //   updateTypesFile(app).then(
-  //     () => res.json({ success: true }),
-  //     () => res.json({ error: 'Server error' })
-  //   )
-  // })
+module.exports = async (app, { getRouter }) => {
+  const router = getRouter('/datocms-types')
+
+  router.post('/', (_, res) => {
+    signale.await('DatoCMS changes detected...')
+    updateTypesFile(app).then(
+      () => res.json({ success: true }),
+      () => res.json({ error: 'Server error' })
+    )
+  })
 
   updateTypesFile(app)
 }
