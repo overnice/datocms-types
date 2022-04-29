@@ -1,0 +1,32 @@
+{
+  "name": "@overnice/datocms-types",
+  "description": "Overnice types from DatoCMS GraphQL API",
+  "version": "0.0.0",
+  "author": "Overnice",
+  "bugs": {
+    "url": "https://github.com/overnice/datocms-types/issues"
+  },
+  "devDependencies": {
+    "@graphql-codegen/core": "^2.5.1",
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-tools/load": "^7.5.10",
+    "@graphql-tools/url-loader": "^7.9.16",
+    "dotenv": "^16.0.0",
+    "fs-extra": "^10.1.0",
+    "graphql": "^15.8.0",
+    "prettier": "^2.6.2",
+    "probot": "^12.2.2",
+    "signale": "^1.4.0"
+  },
+  "homepage": "https://github.com/overnice/datocms-types#readme",
+  "license": "MPL-2.0",
+  "main": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overnice/datocms-types.git"
+  },
+  "scripts": {
+    "start": "probot run ./webhook.js",
+    "update": "node run-update.js"
+  }
+}

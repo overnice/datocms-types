@@ -1,0 +1,6 @@
+hook_attributes:
+  url: 'https://dato-types-updater.herokuapp.com'
+
+default_permissions:
+  contents: write
+  metadata: read
