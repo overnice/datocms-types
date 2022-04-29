@@ -2,7 +2,7 @@
 
 This repo serves one purpose: to always contain, at `index.d.ts`, an up to date file with typings for all of our DatoCMS models.
 
-### Usage
+## Usage
 
 Install this package with `yarn add -D overnice/datcms-type`, then add its location to the `typeRoots` config in your `tsconfig.json` file, as such:
 
@@ -23,7 +23,7 @@ import { ButtonRecord } from '@overnice/datcms-type'
 
 > **NOTE**: The installation command is `overnice/datcms-type` without an `@` on purpose, as this package is intended to be installed directly from github. When requiring it internally however, use `@overnice/datcms-type` as this is the npm package name.
 
-### Updating
+## Updating
 
 Each time DatoCMS changes are made, a script will trigger to cause this repo to update its types. If you made a change in DatoCMS and would like for it to be reflected in your local project, just run `yarn` again and it will update to the latest version. The key here is that the installation references the github repo, so its not an npm module nor does it use semver.
 
