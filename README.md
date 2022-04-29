@@ -4,13 +4,13 @@ This repo serves one purpose: to always contain, at `index.d.ts`, an up to date 
 
 ## Usage
 
-Install this package with `yarn add -D overnice/datcms-type`, then add its location to the `typeRoots` config in your `tsconfig.json` file, as such:
+Install this package with `yarn add -D overnice/datocms-types`, then add its location to the `typeRoots` config in your `tsconfig.json` file, as such:
 
 ```json
 {
   "compilerOptions": {
     "otherOptions": "xxx",
-    "typeRoots": ["node_modules/@types", "node_modules/@overnice/datcms-type"]
+    "typeRoots": ["node_modules/@types", "node_modules/@overnice/datocms-types"]
   }
 }
 ```
@@ -18,10 +18,10 @@ Install this package with `yarn add -D overnice/datcms-type`, then add its locat
 Now you should be able to require typings directly from this package, as such:
 
 ```jsx
-import { ButtonRecord } from '@overnice/datcms-type'
+import { ButtonRecord } from '@overnice/datocms-types'
 ```
 
-> **NOTE**: The installation command is `overnice/datcms-type` without an `@` on purpose, as this package is intended to be installed directly from github. When requiring it internally however, use `@overnice/datcms-type` as this is the npm package name.
+> **NOTE**: The installation command is `overnice/datocms-types` without an `@` on purpose, as this package is intended to be installed directly from github. When requiring it internally however, use `@overnice/datocms-types` as this is the npm package name.
 
 ## Updating
 
