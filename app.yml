@@ -1,5 +1,5 @@
 hook_attributes:
-  url: 'https://dato-types-updater.herokuapp.com'
+  url: 'https://secretive-lacy-cobra.glitch.me/'
 
 default_permissions:
   contents: write
