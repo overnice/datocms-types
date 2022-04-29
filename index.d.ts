@@ -1939,6 +1939,7 @@ export type JobModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  test?: InputMaybe<StringFilter>
   tags?: InputMaybe<SeoFilter>
   contactLine?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
@@ -1973,6 +1974,8 @@ export enum JobModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  TestAsc = 'test_ASC',
+  TestDesc = 'test_DESC',
   ContactLineAsc = 'contactLine_ASC',
   ContactLineDesc = 'contactLine_DESC',
   ContactEmailAsc = 'contactEmail_ASC',
@@ -2013,6 +2016,7 @@ export type JobRecord = {
   slug?: Maybe<Scalars['String']>
   startDate?: Maybe<Scalars['Date']>
   tags?: Maybe<SeoField>
+  test?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
