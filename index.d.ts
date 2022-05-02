@@ -50,6 +50,7 @@ export type AboutPageRecord = {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   tags?: Maybe<SeoField>
+  timeTest?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
