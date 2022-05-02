@@ -25,8 +25,8 @@ import { ButtonRecord } from '@overnice/datocms-types'
 
 ## Updating
 
-Each time DatoCMS changes are made, a script will trigger to cause this repo to update its types. If you made a change in DatoCMS and would like for it to be reflected in your local project, just run `yarn` again and it will update to the latest version. The key here is that the installation references the github repo, so its not an npm module nor does it use semver.
+Every time there's a change in any of the DatoCMS models, a webhook will trigger this app and update the `index.d.ts` file if necessary.
 
-The update script is a probot GitHub app, found inside the `webhook.js` file. To start the app, run `yarn start` from the root. Grab a copy of the `.env` file from a teammate, and make sure you have access to the app in Heroku. It's set up such that dato pings the app when there is a new publish event, the app generates types from dato, compares to existing types, and if they are different, commits them to the `index.d.ts` file.
+The script is a probot GitHub app, found inside the `webhook.js` file. To start the app, run `yarn start` from the root. Grab a copy of the `.env` file from a teammate, and make sure you have access to the app in [glitch.com](https://glitch.com). The app is set up in such a way that DatoCMS pings the app (via a webhook) when there is a change to any of the models (create, update or delete actions), the app generates types from DatoCMS' GraphQL API, compares the result to the existing types, and if they are different, commits them to the `index.d.ts` file.
 
 The initial author was Jeff Escalante, here's the [reference repo](https://github.com/hashicorp/dato-types).
