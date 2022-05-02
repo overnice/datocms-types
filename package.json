@@ -6,6 +6,11 @@
   "bugs": {
     "url": "https://github.com/overnice/datocms-types/issues"
   },
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x",
+    "yarn": "please use npm"
+  },
   "devDependencies": {
     "@graphql-codegen/core": "^2.5.1",
     "@graphql-codegen/typescript": "^2.4.8",
