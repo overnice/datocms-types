@@ -1,5 +1,5 @@
 hook_attributes:
-  url: 'https://overnice.glitch.me'
+  url: 'https://overnice-glitch-bot.glitch.me'
 
 default_permissions:
   contents: write
