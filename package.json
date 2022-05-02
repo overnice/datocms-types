@@ -1,6 +1,6 @@
 {
   "name": "@overnice/datocms-types",
-  "description": "Overnice types from DatoCMS GraphQL API",
+  "description": "Overnice's bot that generates types from its DatoCMS GraphQL API",
   "version": "0.0.0",
   "author": "Overnice",
   "bugs": {
