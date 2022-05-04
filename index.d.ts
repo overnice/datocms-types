@@ -50,7 +50,6 @@ export type AboutPageRecord = {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   tags?: Maybe<SeoField>
-  test?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
@@ -474,20 +473,6 @@ export type FileFieldTitleArgs = {
 
 export type FileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
-}
-
-/** Specifies how to filter Single-file/image fields */
-export type FileFilter = {
-  /** Search for records with an exact match. The specified value must be an Upload ID */
-  eq?: InputMaybe<Scalars['UploadId']>
-  /** Exclude records with an exact match. The specified value must be an Upload ID */
-  neq?: InputMaybe<Scalars['UploadId']>
-  /** Filter records that have one of the specified uploads */
-  in?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>
-  /** Filter records that do not have one of the specified uploads */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 /** Record of type Full Width Image (full_width_image) */
@@ -1996,74 +1981,6 @@ export enum ImgixParamsTxtFit {
   Max = 'max',
 }
 
-export type ImprintPageModelContentField = {
-  __typename?: 'ImprintPageModelContentField'
-  blocks: Array<RichTextRecord>
-  links: Array<Scalars['String']>
-  value: Scalars['JsonField']
-}
-
-export type ImprintPageModelContentFieldMultiLocaleField = {
-  __typename?: 'ImprintPageModelContentFieldMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value?: Maybe<ImprintPageModelContentField>
-}
-
-/** Record of type Imprint Page (imprint_page) */
-export type ImprintPageRecord = {
-  __typename?: 'ImprintPageRecord'
-  _allContentLocales?: Maybe<
-    Array<Maybe<ImprintPageModelContentFieldMultiLocaleField>>
-  >
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  content?: Maybe<ImprintPageModelContentField>
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  tags?: Maybe<SeoField>
-  title?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Imprint Page (imprint_page) */
-export type ImprintPageRecord_AllContentLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Imprint Page (imprint_page) */
-export type ImprintPageRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Imprint Page (imprint_page) */
-export type ImprintPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Imprint Page (imprint_page) */
-export type ImprintPageRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Imprint Page (imprint_page) */
-export type ImprintPageRecordTitleArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
 /** Specifies how to filter by usage */
 export type InUseFilter = {
   /** Search uploads that are currently used by some record or not */
@@ -2102,6 +2019,12 @@ export type InteractiveImageTileRecord = {
 /** Record of type Interactive Image Tile (interactive_image_tile) */
 export type InteractiveImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+export type InteractiveImageTileRecordListListNonNullMultiLocaleField = {
+  __typename?: 'InteractiveImageTileRecordListListNonNullMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value: Array<InteractiveImageTileRecord>
 }
 
 /** Specifies how to filter by ID */
@@ -2443,148 +2366,6 @@ export type PageRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-export type PersonModelFilter = {
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  createdAt?: InputMaybe<CreatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  updatedAt?: InputMaybe<UpdatedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  name?: InputMaybe<StringFilter>
-  isTeamMember?: InputMaybe<BooleanFilter>
-  image?: InputMaybe<FileFilter>
-  OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
-}
-
-export enum PersonModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  IsTeamMemberAsc = 'isTeamMember_ASC',
-  IsTeamMemberDesc = 'isTeamMember_DESC',
-}
-
-/** Record of type Person (person) */
-export type PersonRecord = {
-  __typename?: 'PersonRecord'
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  image?: Maybe<FileField>
-  isTeamMember?: Maybe<Scalars['BooleanType']>
-  name?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Person (person) */
-export type PersonRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-export type PrivacyPolicyPageModelContentField = {
-  __typename?: 'PrivacyPolicyPageModelContentField'
-  blocks: Array<RichTextRecord>
-  links: Array<Scalars['String']>
-  value: Scalars['JsonField']
-}
-
-export type PrivacyPolicyPageModelContentFieldMultiLocaleField = {
-  __typename?: 'PrivacyPolicyPageModelContentFieldMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value?: Maybe<PrivacyPolicyPageModelContentField>
-}
-
-/** Record of type Privacy Policy Page (privacy_policy_page) */
-export type PrivacyPolicyPageRecord = {
-  __typename?: 'PrivacyPolicyPageRecord'
-  _allContentLocales?: Maybe<
-    Array<Maybe<PrivacyPolicyPageModelContentFieldMultiLocaleField>>
-  >
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  content?: Maybe<PrivacyPolicyPageModelContentField>
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  tags?: Maybe<SeoField>
-  title?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Privacy Policy Page (privacy_policy_page) */
-export type PrivacyPolicyPageRecord_AllContentLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Privacy Policy Page (privacy_policy_page) */
-export type PrivacyPolicyPageRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Privacy Policy Page (privacy_policy_page) */
-export type PrivacyPolicyPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Privacy Policy Page (privacy_policy_page) */
-export type PrivacyPolicyPageRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Privacy Policy Page (privacy_policy_page) */
-export type PrivacyPolicyPageRecordTitleArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
 /** Specifies how to filter by publication datetime */
 export type PublishedAtFilter = {
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
@@ -2613,7 +2394,7 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allPeopleMeta: CollectionMetadata
+  _allTeamMembersMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta?: Maybe<CollectionMetadata>
   /** Returns the single instance record */
@@ -2627,27 +2408,23 @@ export type Query = {
   /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
-  allPeople: Array<PersonRecord>
+  allTeamMembers: Array<TeamMemberRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
   /** Returns a specific record */
   caseStudy?: Maybe<CaseStudyRecord>
   /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>
-  /** Returns the single instance record */
-  imprintPage?: Maybe<ImprintPageRecord>
   /** Returns a specific record */
   job?: Maybe<JobRecord>
   /** Returns the single instance record */
   jobsPage?: Maybe<JobsPageRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
-  /** Returns a specific record */
-  person?: Maybe<PersonRecord>
-  /** Returns the single instance record */
-  privacyPolicyPage?: Maybe<PrivacyPolicyPageRecord>
   /** Returns the single instance record */
   servicesClientsPage?: Maybe<ServicesClientsPageRecord>
+  /** Returns a specific record */
+  teamMember?: Maybe<TeamMemberRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
 }
@@ -2674,10 +2451,10 @@ export type Query_AllPagesMetaArgs = {
 }
 
 /** The query root for this schema */
-export type Query_AllPeopleMetaArgs = {
+export type Query_AllTeamMembersMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<PersonModelFilter>
+  filter?: InputMaybe<TeamMemberModelFilter>
 }
 
 /** The query root for this schema */
@@ -2729,13 +2506,13 @@ export type QueryAllPagesArgs = {
 }
 
 /** The query root for this schema */
-export type QueryAllPeopleArgs = {
+export type QueryAllTeamMembersArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   skip?: InputMaybe<Scalars['IntType']>
   first?: InputMaybe<Scalars['IntType']>
-  filter?: InputMaybe<PersonModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
+  filter?: InputMaybe<TeamMemberModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<TeamMemberModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2763,12 +2540,6 @@ export type QueryHomepageArgs = {
 }
 
 /** The query root for this schema */
-export type QueryImprintPageArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** The query root for this schema */
 export type QueryJobArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2791,23 +2562,17 @@ export type QueryPageArgs = {
 }
 
 /** The query root for this schema */
-export type QueryPersonArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<PersonModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryPrivacyPolicyPageArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** The query root for this schema */
 export type QueryServicesClientsPageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
+export type QueryTeamMemberArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<TeamMemberModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<TeamMemberModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3076,6 +2841,115 @@ export type Tag = {
   tag: Scalars['String']
 }
 
+export type TeamMemberModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  name?: InputMaybe<StringFilter>
+  OR?: InputMaybe<Array<InputMaybe<TeamMemberModelFilter>>>
+}
+
+export enum TeamMemberModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+}
+
+/** Record of type Team member (team_member) */
+export type TeamMemberRecord = {
+  __typename?: 'TeamMemberRecord'
+  _allTileLocales?: Maybe<
+    Array<Maybe<InteractiveImageTileRecordListListNonNullMultiLocaleField>>
+  >
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  name?: Maybe<Scalars['String']>
+  tile: Array<InteractiveImageTileRecord>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Team member (team_member) */
+export type TeamMemberRecord_AllTileLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Team member (team_member) */
+export type TeamMemberRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Team member (team_member) */
+export type TeamMemberRecordTileArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Team Member Tile (team_member_tile) */
+export type TeamMemberTileRecord = {
+  __typename?: 'TeamMemberTileRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  teamMember?: Maybe<TeamMemberRecord>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Team Member Tile (team_member_tile) */
+export type TeamMemberTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter text fields */
 export type TextFilter = {
   /** Filter records based on a regular expression */
@@ -3096,6 +2970,7 @@ export type TileGridModelTilesField =
   | InteractiveImageTileRecord
   | QuoteTileRecord
   | SidenoteTileRecord
+  | TeamMemberTileRecord
 
 /** Record of type Tile Grid (tile_grid) */
 export type TileGridRecord = {
