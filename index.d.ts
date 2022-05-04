@@ -153,6 +153,7 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  projectName?: InputMaybe<StringFilter>
   secondHighlightColor?: InputMaybe<ColorFilter>
   client?: InputMaybe<StringFilter>
   date?: InputMaybe<DateFilter>
@@ -161,7 +162,6 @@ export type CaseStudyModelFilter = {
   textColor?: InputMaybe<ColorFilter>
   highlightColor?: InputMaybe<ColorFilter>
   content?: InputMaybe<StructuredTextFilter>
-  name?: InputMaybe<StringFilter>
   title?: InputMaybe<StringFilter>
   tags?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
@@ -191,12 +191,12 @@ export enum CaseStudyModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  ProjectNameAsc = 'projectName_ASC',
+  ProjectNameDesc = 'projectName_DESC',
   ClientAsc = 'client_ASC',
   ClientDesc = 'client_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
 }
@@ -207,7 +207,7 @@ export type CaseStudyRecord = {
   _allContentLocales?: Maybe<
     Array<Maybe<CaseStudyModelContentFieldMultiLocaleField>>
   >
-  _allNameLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
+  _allProjectNameLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -227,7 +227,7 @@ export type CaseStudyRecord = {
   date?: Maybe<Scalars['Date']>
   highlightColor?: Maybe<ColorField>
   id: Scalars['ItemId']
-  name?: Maybe<Scalars['String']>
+  projectName?: Maybe<Scalars['String']>
   secondHighlightColor?: Maybe<ColorField>
   slug?: Maybe<Scalars['String']>
   sublineTags?: Maybe<Scalars['JsonField']>
@@ -245,7 +245,7 @@ export type CaseStudyRecord_AllContentLocalesArgs = {
 }
 
 /** Record of type Case study (case_study) */
-export type CaseStudyRecord_AllNameLocalesArgs = {
+export type CaseStudyRecord_AllProjectNameLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
@@ -268,7 +268,7 @@ export type CaseStudyRecordContentArgs = {
 }
 
 /** Record of type Case study (case_study) */
-export type CaseStudyRecordNameArgs = {
+export type CaseStudyRecordProjectNameArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
@@ -2322,6 +2322,25 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>
 }
 
+export type PageModelContentBlocksField =
+  | CallToActionRecord
+  | FullWidthImageRecord
+  | RichTextRecord
+  | TileGridRecord
+
+export type PageModelContentField = {
+  __typename?: 'PageModelContentField'
+  blocks: Array<PageModelContentBlocksField>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
+export type PageModelContentFieldMultiLocaleField = {
+  __typename?: 'PageModelContentFieldMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value?: Maybe<PageModelContentField>
+}
+
 export type PageModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -2334,6 +2353,10 @@ export type PageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  slug?: InputMaybe<SlugFilter>
+  title?: InputMaybe<StringFilter>
+  tags?: InputMaybe<SeoFilter>
   OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
 }
 
@@ -2360,11 +2383,17 @@ export enum PageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Page (page) */
 export type PageRecord = {
   __typename?: 'PageRecord'
+  _allContentLocales?: Maybe<
+    Array<Maybe<PageModelContentFieldMultiLocaleField>>
+  >
+  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -2376,14 +2405,42 @@ export type PageRecord = {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  content?: Maybe<PageModelContentField>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  slug?: Maybe<Scalars['String']>
+  tags?: Maybe<SeoField>
+  title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Page (page) */
+export type PageRecord_AllContentLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Page (page) */
+export type PageRecord_AllTitleLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Page (page) */
 export type PageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Page (page) */
+export type PageRecordContentArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Page (page) */
+export type PageRecordTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 export type PersonModelFilter = {
