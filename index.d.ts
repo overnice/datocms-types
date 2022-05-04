@@ -279,6 +279,31 @@ export type CaseStudyRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
+/** Record of type Case Study Tile (case_study_tile) */
+export type CaseStudyTileRecord = {
+  __typename?: 'CaseStudyTileRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  caseStudy?: Maybe<CaseStudyRecord>
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Case Study Tile (case_study_tile) */
+export type CaseStudyTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type CollectionMetadata = {
   __typename?: 'CollectionMetadata'
   count: Scalars['IntType']
@@ -3007,6 +3032,7 @@ export type TextFilter = {
 }
 
 export type TileGridModelTilesField =
+  | CaseStudyTileRecord
   | EmptyTileRecord
   | HighlightTileRecord
   | ImageTileRecord
