@@ -121,6 +121,164 @@ export type CallToActionRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type CaseStudyModelContentBlocksField =
+  | BlockLinkRecord
+  | CallToActionRecord
+  | FullWidthImageRecord
+  | RichTextRecord
+  | TileGridRecord
+
+export type CaseStudyModelContentField = {
+  __typename?: 'CaseStudyModelContentField'
+  blocks: Array<CaseStudyModelContentBlocksField>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
+export type CaseStudyModelContentFieldMultiLocaleField = {
+  __typename?: 'CaseStudyModelContentFieldMultiLocaleField'
+  locale?: Maybe<SiteLocale>
+  value?: Maybe<CaseStudyModelContentField>
+}
+
+export type CaseStudyModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  secondHighlightColor?: InputMaybe<ColorFilter>
+  client?: InputMaybe<StringFilter>
+  date?: InputMaybe<DateFilter>
+  sublineTags?: InputMaybe<JsonFilter>
+  backgroundColor?: InputMaybe<ColorFilter>
+  textColor?: InputMaybe<ColorFilter>
+  highlightColor?: InputMaybe<ColorFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  name?: InputMaybe<StringFilter>
+  title?: InputMaybe<StringFilter>
+  tags?: InputMaybe<SeoFilter>
+  slug?: InputMaybe<SlugFilter>
+  OR?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
+}
+
+export enum CaseStudyModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  ClientAsc = 'client_ASC',
+  ClientDesc = 'client_DESC',
+  DateAsc = 'date_ASC',
+  DateDesc = 'date_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecord = {
+  __typename?: 'CaseStudyRecord'
+  _allContentLocales?: Maybe<
+    Array<Maybe<CaseStudyModelContentFieldMultiLocaleField>>
+  >
+  _allNameLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
+  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  backgroundColor?: Maybe<ColorField>
+  client?: Maybe<Scalars['String']>
+  content?: Maybe<CaseStudyModelContentField>
+  createdAt: Scalars['DateTime']
+  date?: Maybe<Scalars['Date']>
+  highlightColor?: Maybe<ColorField>
+  id: Scalars['ItemId']
+  name?: Maybe<Scalars['String']>
+  secondHighlightColor?: Maybe<ColorField>
+  slug?: Maybe<Scalars['String']>
+  sublineTags?: Maybe<Scalars['JsonField']>
+  tags?: Maybe<SeoField>
+  textColor?: Maybe<ColorField>
+  tile: Array<InteractiveImageTileRecord>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecord_AllContentLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecord_AllNameLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecord_AllTitleLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecordContentArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecordNameArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Case study (case_study) */
+export type CaseStudyRecordTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
 export type CollectionMetadata = {
   __typename?: 'CollectionMetadata'
   count: Scalars['IntType']
@@ -386,7 +544,7 @@ export type HomepageModelContentFieldMultiLocaleField = {
   value?: Maybe<HomepageModelContentField>
 }
 
-/** Record of type Home Page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord = {
   __typename?: 'HomepageRecord'
   _allContentLocales?: Maybe<
@@ -412,30 +570,30 @@ export type HomepageRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Home Page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord_AllContentLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Home Page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord_AllTitleLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Home Page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Home Page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecordContentArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Home Page (homepage) */
+/** Record of type Homepage (homepage) */
 export type HomepageRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2139,6 +2297,70 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>
 }
 
+export type PageModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
+}
+
+export enum PageModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+}
+
+/** Record of type Page (page) */
+export type PageRecord = {
+  __typename?: 'PageRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Page (page) */
+export type PageRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type PersonModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -2281,164 +2503,6 @@ export type PrivacyPolicyPageRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-export type ProjectCaseModelContentBlocksField =
-  | BlockLinkRecord
-  | CallToActionRecord
-  | FullWidthImageRecord
-  | RichTextRecord
-  | TileGridRecord
-
-export type ProjectCaseModelContentField = {
-  __typename?: 'ProjectCaseModelContentField'
-  blocks: Array<ProjectCaseModelContentBlocksField>
-  links: Array<Scalars['String']>
-  value: Scalars['JsonField']
-}
-
-export type ProjectCaseModelContentFieldMultiLocaleField = {
-  __typename?: 'ProjectCaseModelContentFieldMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value?: Maybe<ProjectCaseModelContentField>
-}
-
-export type ProjectCaseModelFilter = {
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  createdAt?: InputMaybe<CreatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  updatedAt?: InputMaybe<UpdatedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  secondHighlightColor?: InputMaybe<ColorFilter>
-  client?: InputMaybe<StringFilter>
-  date?: InputMaybe<DateFilter>
-  sublineTags?: InputMaybe<JsonFilter>
-  backgroundColor?: InputMaybe<ColorFilter>
-  textColor?: InputMaybe<ColorFilter>
-  highlightColor?: InputMaybe<ColorFilter>
-  content?: InputMaybe<StructuredTextFilter>
-  name?: InputMaybe<StringFilter>
-  title?: InputMaybe<StringFilter>
-  tags?: InputMaybe<SeoFilter>
-  slug?: InputMaybe<SlugFilter>
-  OR?: InputMaybe<Array<InputMaybe<ProjectCaseModelFilter>>>
-}
-
-export enum ProjectCaseModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  ClientAsc = 'client_ASC',
-  ClientDesc = 'client_DESC',
-  DateAsc = 'date_ASC',
-  DateDesc = 'date_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecord = {
-  __typename?: 'ProjectCaseRecord'
-  _allContentLocales?: Maybe<
-    Array<Maybe<ProjectCaseModelContentFieldMultiLocaleField>>
-  >
-  _allNameLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  backgroundColor?: Maybe<ColorField>
-  client?: Maybe<Scalars['String']>
-  content?: Maybe<ProjectCaseModelContentField>
-  createdAt: Scalars['DateTime']
-  date?: Maybe<Scalars['Date']>
-  highlightColor?: Maybe<ColorField>
-  id: Scalars['ItemId']
-  name?: Maybe<Scalars['String']>
-  secondHighlightColor?: Maybe<ColorField>
-  slug?: Maybe<Scalars['String']>
-  sublineTags?: Maybe<Scalars['JsonField']>
-  tags?: Maybe<SeoField>
-  textColor?: Maybe<ColorField>
-  tile: Array<InteractiveImageTileRecord>
-  title?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecord_AllContentLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecord_AllNameLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecordNameArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Project case (project_case) */
-export type ProjectCaseRecordTitleArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
 /** Specifies how to filter by publication datetime */
 export type PublishedAtFilter = {
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
@@ -2461,11 +2525,13 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query'
   /** Returns meta information regarding a record collection */
+  _allCaseStudiesMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allPeopleMeta: CollectionMetadata
+  _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allProjectCasesMeta: CollectionMetadata
+  _allPeopleMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta?: Maybe<CollectionMetadata>
   /** Returns the single instance record */
@@ -2473,13 +2539,17 @@ export type Query = {
   /** Returns the single instance record */
   aboutPage?: Maybe<AboutPageRecord>
   /** Returns a collection of records */
+  allCaseStudies: Array<CaseStudyRecord>
+  /** Returns a collection of records */
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
-  allPeople: Array<PersonRecord>
+  allPages: Array<PageRecord>
   /** Returns a collection of records */
-  allProjectCases: Array<ProjectCaseRecord>
+  allPeople: Array<PersonRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
+  /** Returns a specific record */
+  caseStudy?: Maybe<CaseStudyRecord>
   /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>
   /** Returns the single instance record */
@@ -2489,15 +2559,22 @@ export type Query = {
   /** Returns the single instance record */
   jobsPage?: Maybe<JobsPageRecord>
   /** Returns a specific record */
+  page?: Maybe<PageRecord>
+  /** Returns a specific record */
   person?: Maybe<PersonRecord>
   /** Returns the single instance record */
   privacyPolicyPage?: Maybe<PrivacyPolicyPageRecord>
-  /** Returns a specific record */
-  projectCase?: Maybe<ProjectCaseRecord>
   /** Returns the single instance record */
   servicesClientsPage?: Maybe<ServicesClientsPageRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
+}
+
+/** The query root for this schema */
+export type Query_AllCaseStudiesMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<CaseStudyModelFilter>
 }
 
 /** The query root for this schema */
@@ -2508,17 +2585,17 @@ export type Query_AllJobsMetaArgs = {
 }
 
 /** The query root for this schema */
+export type Query_AllPagesMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PageModelFilter>
+}
+
+/** The query root for this schema */
 export type Query_AllPeopleMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PersonModelFilter>
-}
-
-/** The query root for this schema */
-export type Query_AllProjectCasesMetaArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<ProjectCaseModelFilter>
 }
 
 /** The query root for this schema */
@@ -2540,6 +2617,16 @@ export type QueryAboutPageArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllCaseStudiesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<CaseStudyModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<CaseStudyModelOrderBy>>>
+}
+
+/** The query root for this schema */
 export type QueryAllJobsArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2547,6 +2634,16 @@ export type QueryAllJobsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllPagesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<PageModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2560,16 +2657,6 @@ export type QueryAllPeopleArgs = {
 }
 
 /** The query root for this schema */
-export type QueryAllProjectCasesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  skip?: InputMaybe<Scalars['IntType']>
-  first?: InputMaybe<Scalars['IntType']>
-  filter?: InputMaybe<ProjectCaseModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<ProjectCaseModelOrderBy>>>
-}
-
-/** The query root for this schema */
 export type QueryAllUploadsArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2577,6 +2664,14 @@ export type QueryAllUploadsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<UploadFilter>
   orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryCaseStudyArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<CaseStudyModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<CaseStudyModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2606,6 +2701,14 @@ export type QueryJobsPageArgs = {
 }
 
 /** The query root for this schema */
+export type QueryPageArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PageModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
+}
+
+/** The query root for this schema */
 export type QueryPersonArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2617,14 +2720,6 @@ export type QueryPersonArgs = {
 export type QueryPrivacyPolicyPageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** The query root for this schema */
-export type QueryProjectCaseArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<ProjectCaseModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<ProjectCaseModelOrderBy>>>
 }
 
 /** The query root for this schema */
