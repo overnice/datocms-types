@@ -50,6 +50,7 @@ export type AboutPageRecord = {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   tags?: Maybe<SeoField>
+  test?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
@@ -91,6 +92,33 @@ export type BlockLinkRecord_SeoMetaTagsArgs = {
 export type BooleanFilter = {
   /** Search for records with an exact match */
   eq?: InputMaybe<Scalars['BooleanType']>
+}
+
+/** Record of type Call to Action (call_to_action) */
+export type CallToActionRecord = {
+  __typename?: 'CallToActionRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  href?: Maybe<Scalars['String']>
+  id: Scalars['ItemId']
+  linkLabel?: Maybe<Scalars['String']>
+  text?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Call to Action (call_to_action) */
+export type CallToActionRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 export type CollectionMetadata = {
@@ -144,33 +172,6 @@ export type CreatedAtFilter = {
   neq?: InputMaybe<Scalars['DateTime']>
   /** Filter records with the specified field defined (i.e. with any value) or not */
   exists?: InputMaybe<Scalars['BooleanType']>
-}
-
-/** Record of type CTA (cta) */
-export type CtaRecord = {
-  __typename?: 'CtaRecord'
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  text?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-  url?: Maybe<Scalars['String']>
-  urlText?: Maybe<Scalars['String']>
-}
-
-/** Record of type CTA (cta) */
-export type CtaRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
 }
 
 /** Specifies how to filter Date fields */
@@ -292,6 +293,20 @@ export type FileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+/** Specifies how to filter Single-file/image fields */
+export type FileFilter = {
+  /** Search for records with an exact match. The specified value must be an Upload ID */
+  eq?: InputMaybe<Scalars['UploadId']>
+  /** Exclude records with an exact match. The specified value must be an Upload ID */
+  neq?: InputMaybe<Scalars['UploadId']>
+  /** Filter records that have one of the specified uploads */
+  in?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>
+  /** Filter records that do not have one of the specified uploads */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
+}
+
 /** Record of type Full Width Image (full_width_image) */
 export type FullWidthImageRecord = {
   __typename?: 'FullWidthImageRecord'
@@ -354,7 +369,7 @@ export type HighlightTileRecord_SeoMetaTagsArgs = {
 }
 
 export type HomepageModelContentBlocksField =
-  | CtaRecord
+  | CallToActionRecord
   | FullWidthImageRecord
   | TileGridRecord
 
@@ -1889,7 +1904,6 @@ export type InteractiveImageTileRecord = {
   ariaLabel?: Maybe<Scalars['String']>
   colSpan?: Maybe<Scalars['IntType']>
   createdAt: Scalars['DateTime']
-  description?: Maybe<Scalars['String']>
   href?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   image?: Maybe<FileField>
@@ -1899,8 +1913,6 @@ export type InteractiveImageTileRecord = {
   labelTextColor?: Maybe<ColorField>
   needsBorder?: Maybe<Scalars['BooleanType']>
   rowSpan?: Maybe<Scalars['IntType']>
-  textColor?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
@@ -2127,6 +2139,80 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>
 }
 
+export type PersonModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  name?: InputMaybe<StringFilter>
+  isTeamMember?: InputMaybe<BooleanFilter>
+  image?: InputMaybe<FileFilter>
+  OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
+}
+
+export enum PersonModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  IsTeamMemberAsc = 'isTeamMember_ASC',
+  IsTeamMemberDesc = 'isTeamMember_DESC',
+}
+
+/** Record of type Person (person) */
+export type PersonRecord = {
+  __typename?: 'PersonRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  image?: Maybe<FileField>
+  isTeamMember?: Maybe<Scalars['BooleanType']>
+  name?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Person (person) */
+export type PersonRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type PrivacyPolicyPageModelContentField = {
   __typename?: 'PrivacyPolicyPageModelContentField'
   blocks: Array<RichTextRecord>
@@ -2197,7 +2283,7 @@ export type PrivacyPolicyPageRecordTitleArgs = {
 
 export type ProjectCaseModelContentBlocksField =
   | BlockLinkRecord
-  | CtaRecord
+  | CallToActionRecord
   | FullWidthImageRecord
   | RichTextRecord
   | TileGridRecord
@@ -2275,7 +2361,7 @@ export enum ProjectCaseModelOrderBy {
   TitleDesc = 'title_DESC',
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecord = {
   __typename?: 'ProjectCaseRecord'
   _allContentLocales?: Maybe<
@@ -2312,42 +2398,42 @@ export type ProjectCaseRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecord_AllContentLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecord_AllNameLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecord_AllTitleLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecordContentArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecordNameArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case Study (project_case) */
+/** Record of type Project case (project_case) */
 export type ProjectCaseRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2377,6 +2463,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allPeopleMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allProjectCasesMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta?: Maybe<CollectionMetadata>
@@ -2386,6 +2474,8 @@ export type Query = {
   aboutPage?: Maybe<AboutPageRecord>
   /** Returns a collection of records */
   allJobs: Array<JobRecord>
+  /** Returns a collection of records */
+  allPeople: Array<PersonRecord>
   /** Returns a collection of records */
   allProjectCases: Array<ProjectCaseRecord>
   /** Returns a collection of assets */
@@ -2398,6 +2488,8 @@ export type Query = {
   job?: Maybe<JobRecord>
   /** Returns the single instance record */
   jobsPage?: Maybe<JobsPageRecord>
+  /** Returns a specific record */
+  person?: Maybe<PersonRecord>
   /** Returns the single instance record */
   privacyPolicyPage?: Maybe<PrivacyPolicyPageRecord>
   /** Returns a specific record */
@@ -2413,6 +2505,13 @@ export type Query_AllJobsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<JobModelFilter>
+}
+
+/** The query root for this schema */
+export type Query_AllPeopleMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PersonModelFilter>
 }
 
 /** The query root for this schema */
@@ -2448,6 +2547,16 @@ export type QueryAllJobsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllPeopleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<PersonModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2494,6 +2603,14 @@ export type QueryJobArgs = {
 export type QueryJobsPageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
+export type QueryPersonArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PersonModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
 }
 
 /** The query root for this schema */
