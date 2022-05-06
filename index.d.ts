@@ -125,10 +125,10 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  client?: InputMaybe<LinkFilter>
   sublineTags?: InputMaybe<LinksFilter>
   projectName?: InputMaybe<StringFilter>
   secondHighlightColor?: InputMaybe<ColorFilter>
-  client?: InputMaybe<StringFilter>
   date?: InputMaybe<DateFilter>
   backgroundColor?: InputMaybe<ColorFilter>
   textColor?: InputMaybe<ColorFilter>
@@ -165,8 +165,6 @@ export enum CaseStudyModelOrderBy {
   IsValidDesc = '_isValid_DESC',
   ProjectNameAsc = 'projectName_ASC',
   ProjectNameDesc = 'projectName_DESC',
-  ClientAsc = 'client_ASC',
-  ClientDesc = 'client_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
   TitleAsc = 'title_ASC',
@@ -188,7 +186,7 @@ export type CaseStudyRecord = {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   backgroundColor?: Maybe<ColorField>
-  client?: Maybe<Scalars['String']>
+  client?: Maybe<ClientRecord>
   content?: Maybe<CaseStudyModelContentField>
   createdAt: Scalars['DateTime']
   date?: Maybe<Scalars['Date']>
@@ -2276,6 +2274,20 @@ export type JobRecordTagsArgs = {
 export type JobRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Specifies how to filter Single-link fields */
+export type LinkFilter = {
+  /** Search for records with an exact match. The specified value must be a Record ID */
+  eq?: InputMaybe<Scalars['ItemId']>
+  /** Exclude records with an exact match. The specified value must be a Record ID */
+  neq?: InputMaybe<Scalars['ItemId']>
+  /** Filter records linked to one of the specified records */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records not linked to one of the specified records */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 /** Specifies how to filter Multiple-links fields */
