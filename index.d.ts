@@ -2305,7 +2305,7 @@ export type JsonFilter = {
 
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
 
-/** Record of type Logo tile grid (logo_tile_grid) */
+/** Record of type Logo Tile Grid (logo_tile_grid) */
 export type LogoTileGridRecord = {
   __typename?: 'LogoTileGridRecord'
   _createdAt: Scalars['DateTime']
@@ -2325,7 +2325,7 @@ export type LogoTileGridRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Logo tile grid (logo_tile_grid) */
+/** Record of type Logo Tile Grid (logo_tile_grid) */
 export type LogoTileGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -2734,7 +2734,7 @@ export type QueryUploadArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>
 }
 
-/** Record of type Quote tile (quote_tile) */
+/** Record of type Quote Tile (quote_tile) */
 export type QuoteTileRecord = {
   __typename?: 'QuoteTileRecord'
   _createdAt: Scalars['DateTime']
@@ -2757,7 +2757,7 @@ export type QuoteTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Quote tile (quote_tile) */
+/** Record of type Quote Tile (quote_tile) */
 export type QuoteTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -2796,7 +2796,7 @@ export type ResponsiveImage = {
   width: Scalars['IntType']
 }
 
-/** Record of type Rich text (rich_text) */
+/** Record of type Rich Text (rich_text) */
 export type RichTextRecord = {
   __typename?: 'RichTextRecord'
   _createdAt: Scalars['DateTime']
@@ -2817,12 +2817,12 @@ export type RichTextRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Rich text (rich_text) */
+/** Record of type Rich Text (rich_text) */
 export type RichTextRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Rich text (rich_text) */
+/** Record of type Rich Text (rich_text) */
 export type RichTextRecordTextArgs = {
   markdown?: InputMaybe<Scalars['Boolean']>
 }
