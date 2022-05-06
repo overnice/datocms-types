@@ -2216,20 +2216,6 @@ export type JsonFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
-/** Specifies how to filter Multiple-links fields */
-export type LinksFilter = {
-  /** Search for records with an exact match. The specified values must be Record IDs */
-  eq?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
-  /** Filter records linked to all of the specified records. The specified values must be Record IDs */
-  allIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
-  /** Filter records linked to at least one of the specified records. The specified values must be Record IDs */
-  anyIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
-  /** Filter records not linked to any of the specified records. The specified values must be Record IDs */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']>
-}
-
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
 
 /** Record of type Logo Tile Grid (logo_tile_grid) */
@@ -2286,60 +2272,6 @@ export enum MuxThumbnailFormatType {
   Jpg = 'jpg',
   Png = 'png',
   Gif = 'gif',
-}
-
-export type NavigationModelFilter = {
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  createdAt?: InputMaybe<CreatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  updatedAt?: InputMaybe<UpdatedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  legalPages?: InputMaybe<LinksFilter>
-  footnote?: InputMaybe<StringFilter>
-  shopHref?: InputMaybe<StringFilter>
-  ctaLinkHref?: InputMaybe<StringFilter>
-  ctaLinkLabel?: InputMaybe<StringFilter>
-  mainPages?: InputMaybe<LinksFilter>
-  OR?: InputMaybe<Array<InputMaybe<NavigationModelFilter>>>
-}
-
-export enum NavigationModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  FootnoteAsc = 'footnote_ASC',
-  FootnoteDesc = 'footnote_DESC',
-  ShopHrefAsc = 'shopHref_ASC',
-  ShopHrefDesc = 'shopHref_DESC',
-  CtaLinkHrefAsc = 'ctaLinkHref_ASC',
-  CtaLinkHrefDesc = 'ctaLinkHref_DESC',
-  CtaLinkLabelAsc = 'ctaLinkLabel_ASC',
-  CtaLinkLabelDesc = 'ctaLinkLabel_DESC',
 }
 
 /** Record of type Navigation (navigation) */
@@ -2502,8 +2434,6 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allNavigationsMeta: CollectionMetadata
-  /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allTeamMembersMeta: CollectionMetadata
@@ -2518,8 +2448,6 @@ export type Query = {
   /** Returns a collection of records */
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
-  allNavigations: Array<NavigationRecord>
-  /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
   allTeamMembers: Array<TeamMemberRecord>
@@ -2533,7 +2461,7 @@ export type Query = {
   homepage?: Maybe<HomepageRecord>
   /** Returns a specific record */
   job?: Maybe<JobRecord>
-  /** Returns a specific record */
+  /** Returns the single instance record */
   navigation?: Maybe<NavigationRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
@@ -2562,13 +2490,6 @@ export type Query_AllJobsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<JobModelFilter>
-}
-
-/** The query root for this schema */
-export type Query_AllNavigationsMetaArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<NavigationModelFilter>
 }
 
 /** The query root for this schema */
@@ -2625,16 +2546,6 @@ export type QueryAllJobsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryAllNavigationsArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  skip?: InputMaybe<Scalars['IntType']>
-  first?: InputMaybe<Scalars['IntType']>
-  filter?: InputMaybe<NavigationModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<NavigationModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2701,8 +2612,6 @@ export type QueryJobArgs = {
 export type QueryNavigationArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<NavigationModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<NavigationModelOrderBy>>>
 }
 
 /** The query root for this schema */
