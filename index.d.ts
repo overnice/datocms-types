@@ -33,7 +33,7 @@ export type Scalars = {
   UploadId: any
 }
 
-/** Record of type Block link (block_link) */
+/** Record of type Block Link (block_link) */
 export type BlockLinkRecord = {
   __typename?: 'BlockLinkRecord'
   _createdAt: Scalars['DateTime']
@@ -57,7 +57,7 @@ export type BlockLinkRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Block link (block_link) */
+/** Record of type Block Link (block_link) */
 export type BlockLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -257,7 +257,7 @@ export type CaseStudyRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case study tile (case_study_tile) */
+/** Record of type Case Study Rile (case_study_tile) */
 export type CaseStudyTileRecord = {
   __typename?: 'CaseStudyTileRecord'
   _createdAt: Scalars['DateTime']
@@ -277,7 +277,7 @@ export type CaseStudyTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Case study tile (case_study_tile) */
+/** Record of type Case Study Rile (case_study_tile) */
 export type CaseStudyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
