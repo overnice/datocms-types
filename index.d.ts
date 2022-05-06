@@ -2082,7 +2082,7 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']>
 }
 
-/** Record of type Interactive Image Tile (interactive_image_tile) */
+/** Record of type Interactive image zile (interactive_image_tile) */
 export type InteractiveImageTileRecord = {
   __typename?: 'InteractiveImageTileRecord'
   _createdAt: Scalars['DateTime']
@@ -2111,7 +2111,7 @@ export type InteractiveImageTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Interactive Image Tile (interactive_image_tile) */
+/** Record of type Interactive image zile (interactive_image_tile) */
 export type InteractiveImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
