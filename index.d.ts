@@ -93,6 +93,10 @@ export type BooleanFilter = {
   eq?: InputMaybe<Scalars['BooleanType']>
 }
 
+export type CallToActionModelLinkToTeamMemberEmailClientWebsiteUrlField =
+  | ClientRecord
+  | TeamMemberRecord
+
 /** Record of type Call to Action (call_to_action) */
 export type CallToActionRecord = {
   __typename?: 'CallToActionRecord'
@@ -112,6 +116,7 @@ export type CallToActionRecord = {
   id: Scalars['ItemId']
   isExternalLink?: Maybe<Scalars['BooleanType']>
   linkLabel?: Maybe<Scalars['String']>
+  linkToTeamMemberEmailClientWebsiteUrl?: Maybe<CallToActionModelLinkToTeamMemberEmailClientWebsiteUrlField>
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
