@@ -2303,6 +2303,20 @@ export type JsonFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
+/** Specifies how to filter Multiple-links fields */
+export type LinksFilter = {
+  /** Search for records with an exact match. The specified values must be Record IDs */
+  eq?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records linked to all of the specified records. The specified values must be Record IDs */
+  allIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records linked to at least one of the specified records. The specified values must be Record IDs */
+  anyIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records not linked to any of the specified records. The specified values must be Record IDs */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
+}
+
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
 
 /** Record of type Logo Tile Grid (logo_tile_grid) */
@@ -2373,6 +2387,7 @@ export type NavigationModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  mainLinks?: InputMaybe<LinksFilter>
   OR?: InputMaybe<Array<InputMaybe<NavigationModelFilter>>>
 }
 
@@ -2417,6 +2432,7 @@ export type NavigationRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  mainLinks: Array<PageRecord>
   updatedAt: Scalars['DateTime']
 }
 
