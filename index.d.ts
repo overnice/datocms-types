@@ -2479,7 +2479,6 @@ export type PageRecord = {
   pageName?: Maybe<Scalars['String']>
   slug?: Maybe<Scalars['String']>
   tags?: Maybe<SeoField>
-  test: Array<Scalars['String']>
   title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
