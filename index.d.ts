@@ -605,7 +605,7 @@ export type GlobalSeoField = {
   twitterAccount?: Maybe<Scalars['String']>
 }
 
-/** Record of type Highlight Tile (highlight_tile) */
+/** Record of type Highlight tile (highlight_tile) */
 export type HighlightTileRecord = {
   __typename?: 'HighlightTileRecord'
   _createdAt: Scalars['DateTime']
@@ -626,7 +626,7 @@ export type HighlightTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Highlight Tile (highlight_tile) */
+/** Record of type Highlight tile (highlight_tile) */
 export type HighlightTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
