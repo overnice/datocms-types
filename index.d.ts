@@ -315,6 +315,7 @@ export type ClientModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
 }
 
@@ -341,6 +342,8 @@ export enum ClientModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
 }
 
 /** Record of type Client (client) */
@@ -359,6 +362,7 @@ export type ClientRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  name?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
