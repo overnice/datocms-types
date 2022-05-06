@@ -2305,7 +2305,7 @@ export type JsonFilter = {
 
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
 
-/** Record of type Logo Tile Grid (logo_tile_grid) */
+/** Record of type Logo tile grid (logo_tile_grid) */
 export type LogoTileGridRecord = {
   __typename?: 'LogoTileGridRecord'
   _createdAt: Scalars['DateTime']
@@ -2325,7 +2325,7 @@ export type LogoTileGridRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Logo Tile Grid (logo_tile_grid) */
+/** Record of type Logo tile grid (logo_tile_grid) */
 export type LogoTileGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
