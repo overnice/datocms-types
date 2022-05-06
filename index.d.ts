@@ -33,31 +33,6 @@ export type Scalars = {
   UploadId: any
 }
 
-/** Record of type About Page (about_page) */
-export type AboutPageRecord = {
-  __typename?: 'AboutPageRecord'
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  tags?: Maybe<SeoField>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type About Page (about_page) */
-export type AboutPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
 /** Record of type Block Link (block_link) */
 export type BlockLinkRecord = {
   __typename?: 'BlockLinkRecord'
@@ -2592,8 +2567,6 @@ export type Query = {
   _allUploadsMeta?: Maybe<CollectionMetadata>
   /** Returns the single instance record */
   _site: Site
-  /** Returns the single instance record */
-  aboutPage?: Maybe<AboutPageRecord>
   /** Returns a collection of records */
   allCaseStudies: Array<CaseStudyRecord>
   /** Returns a collection of records */
@@ -2616,8 +2589,6 @@ export type Query = {
   job?: Maybe<JobRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
-  /** Returns the single instance record */
-  servicesClientsPage?: Maybe<ServicesClientsPageRecord>
   /** Returns a specific record */
   teamMember?: Maybe<TeamMemberRecord>
   /** Returns a specific asset */
@@ -2667,12 +2638,6 @@ export type Query_AllUploadsMetaArgs = {
 
 /** The query root for this schema */
 export type Query_SiteArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** The query root for this schema */
-export type QueryAboutPageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
@@ -2773,12 +2738,6 @@ export type QueryPageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PageModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryServicesClientsPageArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
@@ -2908,31 +2867,6 @@ export type SeoFieldMultiLocaleField = {
 export type SeoFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not */
   exists?: InputMaybe<Scalars['BooleanType']>
-}
-
-/** Record of type Services & Clients Page (services_clients_page) */
-export type ServicesClientsPageRecord = {
-  __typename?: 'ServicesClientsPageRecord'
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  tags?: Maybe<SeoField>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Services & Clients Page (services_clients_page) */
-export type ServicesClientsPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Sidenote Tile (sidenote_tile) */
