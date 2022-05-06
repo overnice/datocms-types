@@ -2290,6 +2290,7 @@ export type NavigationRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   ctaText?: Maybe<Scalars['String']>
+  footerLinkLabel?: Maybe<Scalars['String']>
   footnote?: Maybe<Scalars['String']>
   headerLinkHref?: Maybe<Scalars['String']>
   headerLinkLabel?: Maybe<Scalars['String']>
