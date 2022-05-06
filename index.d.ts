@@ -2417,6 +2417,7 @@ export type PageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  pageName?: InputMaybe<StringFilter>
   content?: InputMaybe<StructuredTextFilter>
   slug?: InputMaybe<SlugFilter>
   title?: InputMaybe<StringFilter>
@@ -2447,6 +2448,8 @@ export enum PageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  PageNameAsc = 'pageName_ASC',
+  PageNameDesc = 'pageName_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
 }
@@ -2457,6 +2460,7 @@ export type PageRecord = {
   _allContentLocales?: Maybe<
     Array<Maybe<PageModelContentFieldMultiLocaleField>>
   >
+  _allPageNameLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2472,6 +2476,7 @@ export type PageRecord = {
   content?: Maybe<PageModelContentField>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  pageName?: Maybe<Scalars['String']>
   slug?: Maybe<Scalars['String']>
   tags?: Maybe<SeoField>
   title?: Maybe<Scalars['String']>
@@ -2480,6 +2485,12 @@ export type PageRecord = {
 
 /** Record of type Page (page) */
 export type PageRecord_AllContentLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Page (page) */
+export type PageRecord_AllPageNameLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
@@ -2497,6 +2508,12 @@ export type PageRecord_SeoMetaTagsArgs = {
 
 /** Record of type Page (page) */
 export type PageRecordContentArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Page (page) */
+export type PageRecordPageNameArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
