@@ -2300,6 +2300,7 @@ export type NavigationModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  ctaLinkLabel?: InputMaybe<StringFilter>
   legalPages?: InputMaybe<LinksFilter>
   mainPages?: InputMaybe<LinksFilter>
   OR?: InputMaybe<Array<InputMaybe<NavigationModelFilter>>>
@@ -2328,6 +2329,8 @@ export enum NavigationModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  CtaLinkLabelAsc = 'ctaLinkLabel_ASC',
+  CtaLinkLabelDesc = 'ctaLinkLabel_DESC',
 }
 
 /** Record of type Navigation (navigation) */
@@ -2345,6 +2348,7 @@ export type NavigationRecord = {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
+  ctaLinkLabel?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
