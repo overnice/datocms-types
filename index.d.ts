@@ -2361,6 +2361,70 @@ export enum MuxThumbnailFormatType {
   Gif = 'gif',
 }
 
+export type NavigationModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  OR?: InputMaybe<Array<InputMaybe<NavigationModelFilter>>>
+}
+
+export enum NavigationModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+}
+
+/** Record of type Navigation (navigation) */
+export type NavigationRecord = {
+  __typename?: 'NavigationRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Navigation (navigation) */
+export type NavigationRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter by image orientation */
 export type OrientationFilter = {
   /** Search uploads with the specified orientation */
@@ -2538,6 +2602,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allNavigationsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allTeamMembersMeta: CollectionMetadata
@@ -2552,6 +2618,8 @@ export type Query = {
   /** Returns a collection of records */
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
+  allNavigations: Array<NavigationRecord>
+  /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
   allTeamMembers: Array<TeamMemberRecord>
@@ -2565,6 +2633,8 @@ export type Query = {
   homepage?: Maybe<HomepageRecord>
   /** Returns a specific record */
   job?: Maybe<JobRecord>
+  /** Returns a specific record */
+  navigation?: Maybe<NavigationRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
   /** Returns a specific record */
@@ -2592,6 +2662,13 @@ export type Query_AllJobsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<JobModelFilter>
+}
+
+/** The query root for this schema */
+export type Query_AllNavigationsMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<NavigationModelFilter>
 }
 
 /** The query root for this schema */
@@ -2648,6 +2725,16 @@ export type QueryAllJobsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllNavigationsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<NavigationModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<NavigationModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2708,6 +2795,14 @@ export type QueryJobArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryNavigationArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<NavigationModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<NavigationModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3014,7 +3109,7 @@ export enum TeamMemberModelOrderBy {
   NameDesc = 'name_DESC',
 }
 
-/** Record of type Team member (team_member) */
+/** Record of type Team Member (team_member) */
 export type TeamMemberRecord = {
   __typename?: 'TeamMemberRecord'
   _allTileLocales?: Maybe<
@@ -3039,18 +3134,18 @@ export type TeamMemberRecord = {
   workEmail?: Maybe<Scalars['String']>
 }
 
-/** Record of type Team member (team_member) */
+/** Record of type Team Member (team_member) */
 export type TeamMemberRecord_AllTileLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Team member (team_member) */
+/** Record of type Team Member (team_member) */
 export type TeamMemberRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Team member (team_member) */
+/** Record of type Team Member (team_member) */
 export type TeamMemberRecordTileArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
