@@ -125,6 +125,7 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  sublineTags?: InputMaybe<LinksFilter>
   projectName?: InputMaybe<StringFilter>
   secondHighlightColor?: InputMaybe<ColorFilter>
   client?: InputMaybe<StringFilter>
@@ -196,6 +197,7 @@ export type CaseStudyRecord = {
   projectName?: Maybe<Scalars['String']>
   secondHighlightColor?: Maybe<ColorField>
   slug?: Maybe<Scalars['String']>
+  sublineTags: Array<CaseStudyTagRecord>
   tags?: Maybe<SeoField>
   textColor?: Maybe<ColorField>
   tile: Array<InteractiveImageTileRecord>
@@ -2274,6 +2276,20 @@ export type JobRecordTagsArgs = {
 export type JobRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Specifies how to filter Multiple-links fields */
+export type LinksFilter = {
+  /** Search for records with an exact match. The specified values must be Record IDs */
+  eq?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records linked to all of the specified records. The specified values must be Record IDs */
+  allIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records linked to at least one of the specified records. The specified values must be Record IDs */
+  anyIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records not linked to any of the specified records. The specified values must be Record IDs */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
