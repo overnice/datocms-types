@@ -2289,8 +2289,8 @@ export type NavigationRecord = {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
-  ctaLinkHref?: Maybe<Scalars['String']>
   footnote?: Maybe<Scalars['String']>
+  headerLinkHref?: Maybe<Scalars['String']>
   headerLinkLabel?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   legalPages: Array<PageRecord>
