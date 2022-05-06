@@ -2447,8 +2447,6 @@ export type PageRecord = {
   _allContentLocales?: Maybe<
     Array<Maybe<PageModelContentFieldMultiLocaleField>>
   >
-  _allPageNameLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -2477,36 +2475,12 @@ export type PageRecord_AllContentLocalesArgs = {
 }
 
 /** Record of type Page (page) */
-export type PageRecord_AllPageNameLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
-export type PageRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
 export type PageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Page (page) */
 export type PageRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
-export type PageRecordPageNameArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
-export type PageRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
