@@ -315,6 +315,7 @@ export type ClientModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  websiteUrl?: InputMaybe<StringFilter>
   excerpt?: InputMaybe<StringFilter>
   logo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
@@ -344,6 +345,8 @@ export enum ClientModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  WebsiteUrlAsc = 'websiteUrl_ASC',
+  WebsiteUrlDesc = 'websiteUrl_DESC',
   ExcerptAsc = 'excerpt_ASC',
   ExcerptDesc = 'excerpt_DESC',
   NameAsc = 'name_ASC',
@@ -370,6 +373,7 @@ export type ClientRecord = {
   logo?: Maybe<FileField>
   name?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
+  websiteUrl?: Maybe<Scalars['String']>
 }
 
 /** Record of type Client (client) */
