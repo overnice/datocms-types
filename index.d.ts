@@ -210,6 +210,74 @@ export type CaseStudyRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type CaseStudyTagModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  tag?: InputMaybe<StringFilter>
+  OR?: InputMaybe<Array<InputMaybe<CaseStudyTagModelFilter>>>
+}
+
+export enum CaseStudyTagModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  TagAsc = 'tag_ASC',
+  TagDesc = 'tag_DESC',
+}
+
+/** Record of type Case Study Tag (case_study_tag) */
+export type CaseStudyTagRecord = {
+  __typename?: 'CaseStudyTagRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  tag?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Case Study Tag (case_study_tag) */
+export type CaseStudyTagRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Record of type Case Study Tile (case_study_tile) */
 export type CaseStudyTileRecord = {
   __typename?: 'CaseStudyTileRecord'
@@ -2433,6 +2501,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allCaseStudiesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allCaseStudyTagsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allClientsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
@@ -2447,6 +2517,8 @@ export type Query = {
   /** Returns a collection of records */
   allCaseStudies: Array<CaseStudyRecord>
   /** Returns a collection of records */
+  allCaseStudyTags: Array<CaseStudyTagRecord>
+  /** Returns a collection of records */
   allClients: Array<ClientRecord>
   /** Returns a collection of records */
   allJobs: Array<JobRecord>
@@ -2458,6 +2530,8 @@ export type Query = {
   allUploads: Array<FileField>
   /** Returns a specific record */
   caseStudy?: Maybe<CaseStudyRecord>
+  /** Returns a specific record */
+  caseStudyTag?: Maybe<CaseStudyTagRecord>
   /** Returns a specific record */
   client?: Maybe<ClientRecord>
   /** Returns the single instance record */
@@ -2479,6 +2553,13 @@ export type Query_AllCaseStudiesMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<CaseStudyModelFilter>
+}
+
+/** The query root for this schema */
+export type Query_AllCaseStudyTagsMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<CaseStudyTagModelFilter>
 }
 
 /** The query root for this schema */
@@ -2529,6 +2610,16 @@ export type QueryAllCaseStudiesArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<CaseStudyModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<CaseStudyModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllCaseStudyTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<CaseStudyTagModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<CaseStudyTagModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2587,6 +2678,14 @@ export type QueryCaseStudyArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<CaseStudyModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<CaseStudyModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryCaseStudyTagArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<CaseStudyTagModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<CaseStudyTagModelOrderBy>>>
 }
 
 /** The query root for this schema */
