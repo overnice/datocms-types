@@ -2300,7 +2300,7 @@ export type NavigationModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  shopUrl?: InputMaybe<StringFilter>
+  shopHref?: InputMaybe<StringFilter>
   ctaLinkHref?: InputMaybe<StringFilter>
   ctaLinkLabel?: InputMaybe<StringFilter>
   legalPages?: InputMaybe<LinksFilter>
@@ -2331,8 +2331,8 @@ export enum NavigationModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  ShopUrlAsc = 'shopUrl_ASC',
-  ShopUrlDesc = 'shopUrl_DESC',
+  ShopHrefAsc = 'shopHref_ASC',
+  ShopHrefDesc = 'shopHref_DESC',
   CtaLinkHrefAsc = 'ctaLinkHref_ASC',
   CtaLinkHrefDesc = 'ctaLinkHref_DESC',
   CtaLinkLabelAsc = 'ctaLinkLabel_ASC',
@@ -2359,7 +2359,7 @@ export type NavigationRecord = {
   id: Scalars['ItemId']
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
-  shopUrl?: Maybe<Scalars['String']>
+  shopHref?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
