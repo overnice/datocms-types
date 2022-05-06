@@ -2853,6 +2853,7 @@ export type TeamMemberModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  workEmail?: InputMaybe<StringFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<TeamMemberModelFilter>>>
 }
@@ -2880,6 +2881,8 @@ export enum TeamMemberModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  WorkEmailAsc = 'workEmail_ASC',
+  WorkEmailDesc = 'workEmail_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
 }
@@ -2906,6 +2909,7 @@ export type TeamMemberRecord = {
   name?: Maybe<Scalars['String']>
   tile: Array<InteractiveImageTileRecord>
   updatedAt: Scalars['DateTime']
+  workEmail?: Maybe<Scalars['String']>
 }
 
 /** Record of type Team member (team_member) */
