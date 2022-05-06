@@ -129,7 +129,6 @@ export type CaseStudyModelFilter = {
   secondHighlightColor?: InputMaybe<ColorFilter>
   client?: InputMaybe<StringFilter>
   date?: InputMaybe<DateFilter>
-  sublineTags?: InputMaybe<JsonFilter>
   backgroundColor?: InputMaybe<ColorFilter>
   textColor?: InputMaybe<ColorFilter>
   highlightColor?: InputMaybe<ColorFilter>
@@ -197,7 +196,6 @@ export type CaseStudyRecord = {
   projectName?: Maybe<Scalars['String']>
   secondHighlightColor?: Maybe<ColorField>
   slug?: Maybe<Scalars['String']>
-  sublineTags?: Maybe<Scalars['JsonField']>
   tags?: Maybe<SeoField>
   textColor?: Maybe<ColorField>
   tile: Array<InteractiveImageTileRecord>
@@ -2276,12 +2274,6 @@ export type JobRecordTagsArgs = {
 export type JobRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Specifies how to filter JSON fields */
-export type JsonFilter = {
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
