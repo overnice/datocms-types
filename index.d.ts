@@ -2180,7 +2180,6 @@ export type JobModelFilter = {
   contactLine?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
   contactEmail?: InputMaybe<StringFilter>
-  content?: InputMaybe<TextFilter>
   startDate?: InputMaybe<DateFilter>
   excerpt?: InputMaybe<StringFilter>
   title?: InputMaybe<StringFilter>
@@ -2226,7 +2225,6 @@ export enum JobModelOrderBy {
 export type JobRecord = {
   __typename?: 'JobRecord'
   _allContactLineLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _allContentLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _allExcerptLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _allTagsLocales?: Maybe<Array<Maybe<SeoFieldMultiLocaleField>>>
   _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
@@ -2243,7 +2241,6 @@ export type JobRecord = {
   _updatedAt: Scalars['DateTime']
   contactEmail?: Maybe<Scalars['String']>
   contactLine?: Maybe<Scalars['String']>
-  content?: Maybe<Scalars['String']>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
@@ -2258,12 +2255,6 @@ export type JobRecord = {
 export type JobRecord_AllContactLineLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Job (job) */
-export type JobRecord_AllContentLocalesArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']>
-  locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Job (job) */
@@ -2293,12 +2284,6 @@ export type JobRecord_SeoMetaTagsArgs = {
 export type JobRecordContactLineArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Job (job) */
-export type JobRecordContentArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']>
-  locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Job (job) */
@@ -3101,18 +3086,6 @@ export type TeamMemberTileRecord = {
 /** Record of type Team Member Tile (team_member_tile) */
 export type TeamMemberTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Specifies how to filter text fields */
-export type TextFilter = {
-  /** Filter records based on a regular expression */
-  matches?: InputMaybe<StringMatchesFilter>
-  /** Exclude records based on a regular expression */
-  notMatches?: InputMaybe<StringMatchesFilter>
-  /** Filter records with the specified field set as blank (null or empty string) */
-  isBlank?: InputMaybe<Scalars['BooleanType']>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
-  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 export type TileGridModelTilesField =
