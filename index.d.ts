@@ -2165,6 +2165,30 @@ export enum ItemStatus {
   Published = 'published',
 }
 
+/** Record of type Job Listing (job_listing) */
+export type JobListingRecord = {
+  __typename?: 'JobListingRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Job Listing (job_listing) */
+export type JobListingRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type JobModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -2421,6 +2445,7 @@ export type PageModelContentBlocksField =
   | CallToActionRecord
   | ClientGridRecord
   | FullWidthImageRecord
+  | JobListingRecord
   | LogoTileGridRecord
   | RichTextRecord
   | TileGridRecord
