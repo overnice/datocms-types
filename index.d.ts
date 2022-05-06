@@ -2319,6 +2319,58 @@ export type JsonFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
+export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
+
+/** Record of type Logo Tile Grid (logo_tile_grid) */
+export type LogoTileGridRecord = {
+  __typename?: 'LogoTileGridRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  tiles: Array<LogoTileGridModelTilesField>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Logo Tile Grid (logo_tile_grid) */
+export type LogoTileGridRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Logo Tile (logo_tile) */
+export type LogoTileRecord = {
+  __typename?: 'LogoTileRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  logo?: Maybe<FileField>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Logo Tile (logo_tile) */
+export type LogoTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export enum MuxThumbnailFormatType {
   Jpg = 'jpg',
   Png = 'png',
@@ -2336,6 +2388,7 @@ export type OrientationFilter = {
 export type PageModelContentBlocksField =
   | CallToActionRecord
   | FullWidthImageRecord
+  | LogoTileGridRecord
   | RichTextRecord
   | TileGridRecord
 
