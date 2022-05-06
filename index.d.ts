@@ -596,18 +596,9 @@ export type HomepageModelContentField = {
   value: Scalars['JsonField']
 }
 
-export type HomepageModelContentFieldMultiLocaleField = {
-  __typename?: 'HomepageModelContentFieldMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value?: Maybe<HomepageModelContentField>
-}
-
 /** Record of type Homepage (homepage) */
 export type HomepageRecord = {
   __typename?: 'HomepageRecord'
-  _allContentLocales?: Maybe<
-    Array<Maybe<HomepageModelContentFieldMultiLocaleField>>
-  >
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -628,20 +619,8 @@ export type HomepageRecord = {
 }
 
 /** Record of type Homepage (homepage) */
-export type HomepageRecord_AllContentLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Homepage (homepage) */
 export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Homepage (homepage) */
-export type HomepageRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Image Tile (image_tile) */
