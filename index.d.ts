@@ -570,7 +570,7 @@ export type FileFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
-/** Record of type Full Width Image (full_width_image) */
+/** Record of type Full width image (full_width_image) */
 export type FullWidthImageRecord = {
   __typename?: 'FullWidthImageRecord'
   _createdAt: Scalars['DateTime']
@@ -591,7 +591,7 @@ export type FullWidthImageRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Full Width Image (full_width_image) */
+/** Record of type Full width image (full_width_image) */
 export type FullWidthImageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
