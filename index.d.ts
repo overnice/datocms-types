@@ -2387,7 +2387,7 @@ export type NavigationModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  mainLinks?: InputMaybe<LinksFilter>
+  mainPages?: InputMaybe<LinksFilter>
   OR?: InputMaybe<Array<InputMaybe<NavigationModelFilter>>>
 }
 
@@ -2432,7 +2432,7 @@ export type NavigationRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
-  mainLinks: Array<PageRecord>
+  mainPages: Array<PageRecord>
   updatedAt: Scalars['DateTime']
 }
 
