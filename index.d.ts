@@ -2883,6 +2883,7 @@ export type RichTextRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  orangeLists?: Maybe<Scalars['BooleanType']>
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
