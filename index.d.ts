@@ -33,7 +33,7 @@ export type Scalars = {
   UploadId: any
 }
 
-/** Record of type Block Link (block_link) */
+/** Record of type Block link (block_link) */
 export type BlockLinkRecord = {
   __typename?: 'BlockLinkRecord'
   _createdAt: Scalars['DateTime']
@@ -57,7 +57,7 @@ export type BlockLinkRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Block Link (block_link) */
+/** Record of type Block link (block_link) */
 export type BlockLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
