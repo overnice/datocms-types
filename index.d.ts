@@ -113,12 +113,6 @@ export type CaseStudyModelContentField = {
   value: Scalars['JsonField']
 }
 
-export type CaseStudyModelContentFieldMultiLocaleField = {
-  __typename?: 'CaseStudyModelContentFieldMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value?: Maybe<CaseStudyModelContentField>
-}
-
 export type CaseStudyModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -182,10 +176,6 @@ export enum CaseStudyModelOrderBy {
 /** Record of type Case Study (case_study) */
 export type CaseStudyRecord = {
   __typename?: 'CaseStudyRecord'
-  _allContentLocales?: Maybe<
-    Array<Maybe<CaseStudyModelContentFieldMultiLocaleField>>
-  >
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -216,32 +206,8 @@ export type CaseStudyRecord = {
 }
 
 /** Record of type Case Study (case_study) */
-export type CaseStudyRecord_AllContentLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Case Study (case_study) */
-export type CaseStudyRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Case Study (case_study) */
 export type CaseStudyRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Case Study (case_study) */
-export type CaseStudyRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Case Study (case_study) */
-export type CaseStudyRecordTitleArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Case Study Tile (case_study_tile) */
