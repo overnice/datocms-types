@@ -2330,7 +2330,7 @@ export type LogoTileGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Logo Tile (logo_tile) */
+/** Record of type Logo tile (logo_tile) */
 export type LogoTileRecord = {
   __typename?: 'LogoTileRecord'
   _createdAt: Scalars['DateTime']
@@ -2350,7 +2350,7 @@ export type LogoTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Logo Tile (logo_tile) */
+/** Record of type Logo tile (logo_tile) */
 export type LogoTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
