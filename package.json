@@ -6,7 +6,7 @@
   "bugs": {
     "url": "https://github.com/overnice/datocms-types/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "@graphql-codegen/core": "^2.5.1",
     "@graphql-codegen/typescript": "^2.4.8",
     "@graphql-tools/load": "^7.5.10",
