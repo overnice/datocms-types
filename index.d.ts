@@ -704,7 +704,7 @@ export type HomepageRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Image Tile (image_tile) */
+/** Record of type Image tile (image_tile) */
 export type ImageTileRecord = {
   __typename?: 'ImageTileRecord'
   _createdAt: Scalars['DateTime']
@@ -727,7 +727,7 @@ export type ImageTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Image Tile (image_tile) */
+/** Record of type Image tile (image_tile) */
 export type ImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
