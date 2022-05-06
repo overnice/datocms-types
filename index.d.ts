@@ -2344,31 +2344,6 @@ export type JobRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Jobs Page (jobs_page) */
-export type JobsPageRecord = {
-  __typename?: 'JobsPageRecord'
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  tags?: Maybe<SeoField>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Jobs Page (jobs_page) */
-export type JobsPageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
 /** Specifies how to filter JSON fields */
 export type JsonFilter = {
   /** Filter records with the specified field defined (i.e. with any value) or not */
@@ -2639,8 +2614,6 @@ export type Query = {
   homepage?: Maybe<HomepageRecord>
   /** Returns a specific record */
   job?: Maybe<JobRecord>
-  /** Returns the single instance record */
-  jobsPage?: Maybe<JobsPageRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
   /** Returns the single instance record */
@@ -2792,12 +2765,6 @@ export type QueryJobArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryJobsPageArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
