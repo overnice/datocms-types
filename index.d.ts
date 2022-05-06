@@ -2300,11 +2300,11 @@ export type NavigationModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  legalPages?: InputMaybe<LinksFilter>
   footnote?: InputMaybe<StringFilter>
   shopHref?: InputMaybe<StringFilter>
   ctaLinkHref?: InputMaybe<StringFilter>
   ctaLinkLabel?: InputMaybe<StringFilter>
-  legalPages?: InputMaybe<LinksFilter>
   mainPages?: InputMaybe<LinksFilter>
   OR?: InputMaybe<Array<InputMaybe<NavigationModelFilter>>>
 }
