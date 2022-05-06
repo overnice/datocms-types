@@ -2035,12 +2035,6 @@ export type InteractiveImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-export type InteractiveImageTileRecordListListNonNullMultiLocaleField = {
-  __typename?: 'InteractiveImageTileRecordListListNonNullMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value: Array<InteractiveImageTileRecord>
-}
-
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
@@ -2386,12 +2380,6 @@ export type PageModelContentField = {
   value: Scalars['JsonField']
 }
 
-export type PageModelContentFieldMultiLocaleField = {
-  __typename?: 'PageModelContentFieldMultiLocaleField'
-  locale?: Maybe<SiteLocale>
-  value?: Maybe<PageModelContentField>
-}
-
 export type PageModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -2444,9 +2432,6 @@ export enum PageModelOrderBy {
 /** Record of type Page (page) */
 export type PageRecord = {
   __typename?: 'PageRecord'
-  _allContentLocales?: Maybe<
-    Array<Maybe<PageModelContentFieldMultiLocaleField>>
-  >
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -2469,20 +2454,8 @@ export type PageRecord = {
 }
 
 /** Record of type Page (page) */
-export type PageRecord_AllContentLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Page (page) */
 export type PageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Page (page) */
-export type PageRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Specifies how to filter by publication datetime */
@@ -3023,9 +2996,6 @@ export enum TeamMemberModelOrderBy {
 /** Record of type Team Member (team_member) */
 export type TeamMemberRecord = {
   __typename?: 'TeamMemberRecord'
-  _allTileLocales?: Maybe<
-    Array<Maybe<InteractiveImageTileRecordListListNonNullMultiLocaleField>>
-  >
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -3046,20 +3016,8 @@ export type TeamMemberRecord = {
 }
 
 /** Record of type Team Member (team_member) */
-export type TeamMemberRecord_AllTileLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Team Member (team_member) */
 export type TeamMemberRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Team Member (team_member) */
-export type TeamMemberRecordTileArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Team Member Tile (team_member_tile) */
