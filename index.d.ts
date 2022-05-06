@@ -307,6 +307,30 @@ export type CaseStudyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Record of type Client Grid (client_grid) */
+export type ClientGridRecord = {
+  __typename?: 'ClientGridRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Client Grid (client_grid) */
+export type ClientGridRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type ClientModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -2395,6 +2419,7 @@ export type OrientationFilter = {
 
 export type PageModelContentBlocksField =
   | CallToActionRecord
+  | ClientGridRecord
   | FullWidthImageRecord
   | LogoTileGridRecord
   | RichTextRecord
