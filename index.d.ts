@@ -315,6 +315,7 @@ export type ClientModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  logo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
 }
@@ -362,6 +363,7 @@ export type ClientRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  logo?: Maybe<FileField>
   name?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
@@ -541,6 +543,20 @@ export type FileFieldTitleArgs = {
 
 export type FileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
+}
+
+/** Specifies how to filter Single-file/image fields */
+export type FileFilter = {
+  /** Search for records with an exact match. The specified value must be an Upload ID */
+  eq?: InputMaybe<Scalars['UploadId']>
+  /** Exclude records with an exact match. The specified value must be an Upload ID */
+  neq?: InputMaybe<Scalars['UploadId']>
+  /** Filter records that have one of the specified uploads */
+  in?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>
+  /** Filter records that do not have one of the specified uploads */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 /** Record of type Full Width Image (full_width_image) */
