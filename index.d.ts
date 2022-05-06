@@ -2425,8 +2425,8 @@ export type PageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  pageName?: InputMaybe<StringFilter>
   content?: InputMaybe<StructuredTextFilter>
+  pageName?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
   title?: InputMaybe<StringFilter>
   tags?: InputMaybe<SeoFilter>
