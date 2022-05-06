@@ -2188,11 +2188,11 @@ export type JobModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  contactEmail?: InputMaybe<StringFilter>
+  contactLine?: InputMaybe<StringFilter>
   content?: InputMaybe<StructuredTextFilter>
   tags?: InputMaybe<SeoFilter>
-  contactLine?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
-  contactEmail?: InputMaybe<StringFilter>
   startDate?: InputMaybe<DateFilter>
   excerpt?: InputMaybe<StringFilter>
   title?: InputMaybe<StringFilter>
@@ -2222,10 +2222,10 @@ export enum JobModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  ContactLineAsc = 'contactLine_ASC',
-  ContactLineDesc = 'contactLine_DESC',
   ContactEmailAsc = 'contactEmail_ASC',
   ContactEmailDesc = 'contactEmail_DESC',
+  ContactLineAsc = 'contactLine_ASC',
+  ContactLineDesc = 'contactLine_DESC',
   StartDateAsc = 'startDate_ASC',
   StartDateDesc = 'startDate_DESC',
   ExcerptAsc = 'excerpt_ASC',
