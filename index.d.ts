@@ -2164,6 +2164,13 @@ export type JobListingRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type JobModelContentField = {
+  __typename?: 'JobModelContentField'
+  blocks: Array<Scalars['String']>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
 export type JobModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -2176,6 +2183,7 @@ export type JobModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  content?: InputMaybe<StructuredTextFilter>
   tags?: InputMaybe<SeoFilter>
   contactLine?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
@@ -2241,6 +2249,7 @@ export type JobRecord = {
   _updatedAt: Scalars['DateTime']
   contactEmail?: Maybe<Scalars['String']>
   contactLine?: Maybe<Scalars['String']>
+  content?: Maybe<JobModelContentField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
