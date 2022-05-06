@@ -2290,8 +2290,8 @@ export type NavigationRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   ctaLinkHref?: Maybe<Scalars['String']>
-  ctaLinkLabel?: Maybe<Scalars['String']>
   footnote?: Maybe<Scalars['String']>
+  headerLinkLabel?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
