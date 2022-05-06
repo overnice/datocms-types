@@ -2140,7 +2140,7 @@ export enum ItemStatus {
   Published = 'published',
 }
 
-/** Record of type Job Listing (job_listing) */
+/** Record of type Job listing (job_listing) */
 export type JobListingRecord = {
   __typename?: 'JobListingRecord'
   _createdAt: Scalars['DateTime']
@@ -2159,7 +2159,7 @@ export type JobListingRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Job Listing (job_listing) */
+/** Record of type Job listing (job_listing) */
 export type JobListingRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
