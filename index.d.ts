@@ -608,7 +608,6 @@ export type HomepageRecord = {
   _allContentLocales?: Maybe<
     Array<Maybe<HomepageModelContentFieldMultiLocaleField>>
   >
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -635,24 +634,12 @@ export type HomepageRecord_AllContentLocalesArgs = {
 }
 
 /** Record of type Homepage (homepage) */
-export type HomepageRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Homepage (homepage) */
 export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
 /** Record of type Homepage (homepage) */
 export type HomepageRecordContentArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Homepage (homepage) */
-export type HomepageRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
