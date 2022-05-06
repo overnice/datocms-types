@@ -257,7 +257,7 @@ export type CaseStudyRecordTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case Study Tile (case_study_tile) */
+/** Record of type Case study tile (case_study_tile) */
 export type CaseStudyTileRecord = {
   __typename?: 'CaseStudyTileRecord'
   _createdAt: Scalars['DateTime']
@@ -277,12 +277,12 @@ export type CaseStudyTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Case Study Tile (case_study_tile) */
+/** Record of type Case study tile (case_study_tile) */
 export type CaseStudyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Client Grid (client_grid) */
+/** Record of type Client grid (client_grid) */
 export type ClientGridRecord = {
   __typename?: 'ClientGridRecord'
   _createdAt: Scalars['DateTime']
@@ -301,7 +301,7 @@ export type ClientGridRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Client Grid (client_grid) */
+/** Record of type Client grid (client_grid) */
 export type ClientGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -455,7 +455,7 @@ export type DateFilter = {
   neq?: InputMaybe<Scalars['Date']>
 }
 
-/** Record of type Empty Tile (empty_tile) */
+/** Record of type Empty tile (empty_tile) */
 export type EmptyTileRecord = {
   __typename?: 'EmptyTileRecord'
   _createdAt: Scalars['DateTime']
@@ -476,7 +476,7 @@ export type EmptyTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Empty Tile (empty_tile) */
+/** Record of type Empty tile (empty_tile) */
 export type EmptyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
