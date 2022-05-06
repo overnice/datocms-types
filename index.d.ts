@@ -2164,9 +2164,14 @@ export type JobListingRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type JobModelContentBlocksField =
+  | CallToActionRecord
+  | RichTextRecord
+  | TileGridRecord
+
 export type JobModelContentField = {
   __typename?: 'JobModelContentField'
-  blocks: Array<Scalars['String']>
+  blocks: Array<JobModelContentBlocksField>
   links: Array<Scalars['String']>
   value: Scalars['JsonField']
 }
