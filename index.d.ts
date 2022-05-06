@@ -2189,7 +2189,6 @@ export type JobModelFilter = {
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
   contactEmail?: InputMaybe<StringFilter>
-  contactLine?: InputMaybe<StringFilter>
   content?: InputMaybe<StructuredTextFilter>
   tags?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
@@ -2224,8 +2223,6 @@ export enum JobModelOrderBy {
   IsValidDesc = '_isValid_DESC',
   ContactEmailAsc = 'contactEmail_ASC',
   ContactEmailDesc = 'contactEmail_DESC',
-  ContactLineAsc = 'contactLine_ASC',
-  ContactLineDesc = 'contactLine_DESC',
   StartDateAsc = 'startDate_ASC',
   StartDateDesc = 'startDate_DESC',
   ExcerptAsc = 'excerpt_ASC',
@@ -2237,7 +2234,6 @@ export enum JobModelOrderBy {
 /** Record of type Job (job) */
 export type JobRecord = {
   __typename?: 'JobRecord'
-  _allContactLineLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _allExcerptLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
   _allTagsLocales?: Maybe<Array<Maybe<SeoFieldMultiLocaleField>>>
   _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
@@ -2253,7 +2249,6 @@ export type JobRecord = {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   contactEmail?: Maybe<Scalars['String']>
-  contactLine?: Maybe<Scalars['String']>
   content?: Maybe<JobModelContentField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
@@ -2263,12 +2258,6 @@ export type JobRecord = {
   tags?: Maybe<SeoField>
   title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Job (job) */
-export type JobRecord_AllContactLineLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Job (job) */
@@ -2292,12 +2281,6 @@ export type JobRecord_AllTitleLocalesArgs = {
 /** Record of type Job (job) */
 export type JobRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Job (job) */
-export type JobRecordContactLineArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Job (job) */
