@@ -179,7 +179,7 @@ export enum CaseStudyModelOrderBy {
   TitleDesc = 'title_DESC',
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecord = {
   __typename?: 'CaseStudyRecord'
   _allContentLocales?: Maybe<
@@ -216,42 +216,42 @@ export type CaseStudyRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecord_AllContentLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecord_AllProjectNameLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecord_AllTitleLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecordContentArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecordProjectNameArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
-/** Record of type Case study (case_study) */
+/** Record of type Case Study (case_study) */
 export type CaseStudyRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
