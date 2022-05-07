@@ -2388,7 +2388,7 @@ export type NavigationRecord = {
   id: Scalars['ItemId']
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
-  shopHref?: Maybe<Scalars['String']>
+  shopUrl?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
