@@ -3189,6 +3189,7 @@ export type TeamMemberRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  link: Array<SimpleLinkRecord>
   name?: Maybe<Scalars['String']>
   tile: Array<InteractiveImageTileRecord>
   updatedAt: Scalars['DateTime']
