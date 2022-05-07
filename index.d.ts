@@ -2382,6 +2382,7 @@ export type NavigationRecord = {
   footerLinkHref?: Maybe<Scalars['String']>
   footerLinkLabel?: Maybe<Scalars['String']>
   footnote?: Maybe<Scalars['String']>
+  headerLink: Array<SimpleLinkRecord>
   headerLinkAriaLabel?: Maybe<Scalars['String']>
   headerLinkHref?: Maybe<Scalars['String']>
   headerLinkText?: Maybe<Scalars['String']>
