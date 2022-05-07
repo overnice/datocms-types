@@ -2146,6 +2146,7 @@ export type JobListingRecord_SeoMetaTagsArgs = {
 
 export type JobModelContentBlocksField =
   | CallToActionRecord
+  | FullWidthImageRecord
   | RichTextRecord
   | TileGridRecord
 
