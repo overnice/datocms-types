@@ -2497,6 +2497,70 @@ export type PageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type PersonModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
+}
+
+export enum PersonModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+}
+
+/** Record of type Person (person) */
+export type PersonRecord = {
+  __typename?: 'PersonRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Person (person) */
+export type PersonRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter by publication datetime */
 export type PublishedAtFilter = {
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
@@ -2529,6 +2593,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allPeopleMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allTeamMembersMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta?: Maybe<CollectionMetadata>
@@ -2544,6 +2610,8 @@ export type Query = {
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
+  /** Returns a collection of records */
+  allPeople: Array<PersonRecord>
   /** Returns a collection of records */
   allTeamMembers: Array<TeamMemberRecord>
   /** Returns a collection of assets */
@@ -2562,6 +2630,8 @@ export type Query = {
   navigation?: Maybe<NavigationRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
+  /** Returns a specific record */
+  person?: Maybe<PersonRecord>
   /** Returns a specific record */
   teamMember?: Maybe<TeamMemberRecord>
   /** Returns a specific asset */
@@ -2601,6 +2671,13 @@ export type Query_AllPagesMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PageModelFilter>
+}
+
+/** The query root for this schema */
+export type Query_AllPeopleMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PersonModelFilter>
 }
 
 /** The query root for this schema */
@@ -2673,6 +2750,16 @@ export type QueryAllPagesArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllPeopleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<PersonModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
+}
+
+/** The query root for this schema */
 export type QueryAllTeamMembersArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2742,6 +2829,14 @@ export type QueryPageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PageModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryPersonArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PersonModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PersonModelOrderBy>>>
 }
 
 /** The query root for this schema */
