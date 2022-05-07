@@ -389,6 +389,7 @@ export type ClientRecord = {
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
+  link: Array<SimpleLinkRecord>
   logo?: Maybe<FileField>
   name?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
