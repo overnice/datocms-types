@@ -2880,8 +2880,6 @@ export type QuoteTileRecord = {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   author?: Maybe<PersonRecord>
-  authorName?: Maybe<Scalars['String']>
-  authorRole?: Maybe<Scalars['String']>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   quote?: Maybe<Scalars['String']>
