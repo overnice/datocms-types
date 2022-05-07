@@ -2082,7 +2082,6 @@ export type InteractiveImageTileRecord = {
   ariaLabel?: Maybe<Scalars['String']>
   colSpan?: Maybe<Scalars['IntType']>
   createdAt: Scalars['DateTime']
-  href?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   image?: Maybe<FileField>
   isLink?: Maybe<Scalars['BooleanType']>
