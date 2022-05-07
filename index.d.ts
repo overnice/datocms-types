@@ -53,7 +53,6 @@ export type BlockLinkRecord = {
   href?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   image?: Maybe<FileField>
-  linkLabel?: Maybe<Scalars['String']>
   linkTe: Array<SimpleLinkRecord>
   updatedAt: Scalars['DateTime']
 }
