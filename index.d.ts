@@ -84,8 +84,8 @@ export type CallToActionRecord = {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  alternativeLink: Array<SimpleLinkRecord>
   createdAt: Scalars['DateTime']
-  externalLink: Array<SimpleLinkRecord>
   id: Scalars['ItemId']
   isExternalLink?: Maybe<Scalars['BooleanType']>
   link?: Maybe<CallToActionModelLinkField>
