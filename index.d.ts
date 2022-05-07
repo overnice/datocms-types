@@ -2079,7 +2079,6 @@ export type InteractiveImageTileRecord = {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
-  ariaLabel?: Maybe<Scalars['String']>
   colSpan?: Maybe<Scalars['IntType']>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
