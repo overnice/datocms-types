@@ -33,6 +33,8 @@ export type Scalars = {
   UploadId: any
 }
 
+export type BlockLinkModelLinkField = CaseStudyTileRecord | SimpleLinkRecord
+
 /** Record of type Block Link (block_link) */
 export type BlockLinkRecord = {
   __typename?: 'BlockLinkRecord'
@@ -51,7 +53,7 @@ export type BlockLinkRecord = {
   headline?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   image?: Maybe<FileField>
-  link: Array<SimpleLinkRecord>
+  link: Array<BlockLinkModelLinkField>
   updatedAt: Scalars['DateTime']
 }
 
