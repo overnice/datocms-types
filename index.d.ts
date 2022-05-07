@@ -653,6 +653,7 @@ export type HighlightTileRecord_SeoMetaTagsArgs = {
 export type HomepageModelContentBlocksField =
   | CallToActionRecord
   | FullWidthImageRecord
+  | RichTextRecord
   | TileGridRecord
 
 export type HomepageModelContentField = {
