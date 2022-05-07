@@ -2223,6 +2223,7 @@ export type JobRecord = {
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
+  link: Array<SimpleLinkRecord>
   slug?: Maybe<Scalars['String']>
   startDate?: Maybe<Scalars['Date']>
   tags?: Maybe<SeoField>
