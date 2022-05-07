@@ -3024,7 +3024,7 @@ export type SimpleLinkRecord = {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   internalLink?: Maybe<SimpleLinkModelInternalLinkField>
-  isThisAnInternalLink?: Maybe<Scalars['BooleanType']>
+  isExternalLink?: Maybe<Scalars['BooleanType']>
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
   url?: Maybe<Scalars['String']>
