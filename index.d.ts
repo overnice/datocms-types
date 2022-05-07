@@ -84,7 +84,6 @@ export type CallToActionRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   externalLink: Array<SimpleLinkRecord>
-  href?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   isExternalLink?: Maybe<Scalars['BooleanType']>
   link?: Maybe<CallToActionModelLinkField>
