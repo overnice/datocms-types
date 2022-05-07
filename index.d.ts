@@ -47,13 +47,11 @@ export type BlockLinkRecord = {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
-  ariaLabel?: Maybe<Scalars['String']>
   createdAt: Scalars['DateTime']
   headline?: Maybe<Scalars['String']>
-  href?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   image?: Maybe<FileField>
-  linkTe: Array<SimpleLinkRecord>
+  link: Array<SimpleLinkRecord>
   updatedAt: Scalars['DateTime']
 }
 
