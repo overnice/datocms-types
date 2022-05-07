@@ -2089,6 +2089,7 @@ export type InteractiveImageTileRecord = {
   label?: Maybe<Scalars['String']>
   labelBackgroundColor?: Maybe<ColorField>
   labelTextColor?: Maybe<ColorField>
+  link: Array<SimpleLinkRecord>
   needsBorder?: Maybe<Scalars['BooleanType']>
   rowSpan?: Maybe<Scalars['IntType']>
   updatedAt: Scalars['DateTime']
