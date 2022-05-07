@@ -3000,6 +3000,12 @@ export type SidenoteTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type SimpleLinkModelInternalLinkField =
+  | CaseStudyRecord
+  | HomepageRecord
+  | JobRecord
+  | PageRecord
+
 /** Record of type Simple link (simple_link) */
 export type SimpleLinkRecord = {
   __typename?: 'SimpleLinkRecord'
@@ -3017,6 +3023,7 @@ export type SimpleLinkRecord = {
   ariaLabel?: Maybe<Scalars['String']>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  internalLink?: Maybe<SimpleLinkModelInternalLinkField>
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
   url?: Maybe<Scalars['String']>
