@@ -2509,6 +2509,7 @@ export type PersonModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
 }
 
@@ -2535,6 +2536,8 @@ export enum PersonModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
 }
 
 /** Record of type Person (person) */
@@ -2553,6 +2556,7 @@ export type PersonRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  name?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
