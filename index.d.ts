@@ -2381,7 +2381,6 @@ export type NavigationRecord = {
   ctaText?: Maybe<Scalars['String']>
   footerCtaLink: Array<SimpleLinkRecord>
   footerLinkHref?: Maybe<Scalars['String']>
-  footerLinkLabel?: Maybe<Scalars['String']>
   footnote?: Maybe<Scalars['String']>
   headerCtaLink: Array<SimpleLinkRecord>
   id: Scalars['ItemId']
