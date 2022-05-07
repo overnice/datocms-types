@@ -2385,7 +2385,7 @@ export type NavigationRecord = {
   footnote?: Maybe<Scalars['String']>
   headerLinkAriaLabel?: Maybe<Scalars['String']>
   headerLinkHref?: Maybe<Scalars['String']>
-  headerLinkLabel?: Maybe<Scalars['String']>
+  headerLinkText?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
