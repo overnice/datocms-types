@@ -54,6 +54,7 @@ export type BlockLinkRecord = {
   id: Scalars['ItemId']
   image?: Maybe<FileField>
   linkLabel?: Maybe<Scalars['String']>
+  linkTe: Array<SimpleLinkRecord>
   updatedAt: Scalars['DateTime']
 }
 
@@ -3001,6 +3002,33 @@ export type SidenoteTileRecord = {
 
 /** Record of type Sidenote Tile (sidenote_tile) */
 export type SidenoteTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Simple link (simple_link) */
+export type SimpleLinkRecord = {
+  __typename?: 'SimpleLinkRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  ariaLabel?: Maybe<Scalars['String']>
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  text?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+  url?: Maybe<Scalars['String']>
+}
+
+/** Record of type Simple link (simple_link) */
+export type SimpleLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
