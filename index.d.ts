@@ -124,8 +124,8 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  client?: InputMaybe<LinkFilter>
   sublineTags?: InputMaybe<LinksFilter>
+  client?: InputMaybe<LinkFilter>
   projectName?: InputMaybe<StringFilter>
   secondHighlightColor?: InputMaybe<ColorFilter>
   date?: InputMaybe<DateFilter>
