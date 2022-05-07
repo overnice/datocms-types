@@ -2509,6 +2509,7 @@ export type PersonModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  photo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
 }
@@ -2557,6 +2558,7 @@ export type PersonRecord = {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   name?: Maybe<Scalars['String']>
+  photo?: Maybe<FileField>
   updatedAt: Scalars['DateTime']
 }
 
