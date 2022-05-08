@@ -2129,6 +2129,7 @@ export type JobListingRecord = {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  linkLabel?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
