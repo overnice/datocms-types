@@ -30,7 +30,7 @@ import { ButtonRecord } from '@overnice/datocms-types'
 
 ### Known issue with tsconfig and typeRoots
 
-If you see a `cannot find type definition file for 'node_modules` error in your `tsconfig` file:
+If you see a `cannot find type definition file for 'node_modules'` error in your `tsconfig` file:
 
 ```bash
 # Install node types
