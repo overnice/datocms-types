@@ -448,6 +448,7 @@ export type CookieNoticeRecord = {
   _updatedAt: Scalars['DateTime']
   accept?: Maybe<Scalars['String']>
   createdAt: Scalars['DateTime']
+  decline?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   updatedAt: Scalars['DateTime']
 }
