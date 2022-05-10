@@ -432,6 +432,30 @@ export type ColorFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
+/** Record of type Cookie Notice (cookie_notice) */
+export type CookieNoticeRecord = {
+  __typename?: 'CookieNoticeRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Cookie Notice (cookie_notice) */
+export type CookieNoticeRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter by creation datetime */
 export type CreatedAtFilter = {
   /** Filter records with a value that's strictly greater than the one specified. Seconds and milliseconds are truncated from the argument. */
@@ -2627,6 +2651,8 @@ export type Query = {
   /** Returns a specific record */
   client?: Maybe<ClientRecord>
   /** Returns the single instance record */
+  cookieNotice?: Maybe<CookieNoticeRecord>
+  /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>
   /** Returns a specific record */
   job?: Maybe<JobRecord>
@@ -2805,6 +2831,12 @@ export type QueryClientArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<ClientModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<ClientModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryCookieNoticeArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
