@@ -446,6 +446,7 @@ export type CookieNoticeRecord = {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  accept?: Maybe<Scalars['String']>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   updatedAt: Scalars['DateTime']
