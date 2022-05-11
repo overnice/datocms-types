@@ -122,6 +122,7 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  test?: InputMaybe<StringFilter>
   sublineTags?: InputMaybe<LinksFilter>
   client?: InputMaybe<LinkFilter>
   projectName?: InputMaybe<StringFilter>
@@ -160,6 +161,8 @@ export enum CaseStudyModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  TestAsc = 'test_ASC',
+  TestDesc = 'test_DESC',
   ProjectNameAsc = 'projectName_ASC',
   ProjectNameDesc = 'projectName_DESC',
   DateAsc = 'date_ASC',
@@ -194,6 +197,7 @@ export type CaseStudyRecord = {
   slug?: Maybe<Scalars['String']>
   sublineTags: Array<CaseStudyTagRecord>
   tags?: Maybe<SeoField>
+  test?: Maybe<Scalars['String']>
   textColor?: Maybe<ColorField>
   tile: Array<InteractiveImageTileRecord>
   title?: Maybe<Scalars['String']>
