@@ -419,11 +419,11 @@ export enum ColorBucketType {
 
 export type ColorField = {
   __typename?: 'ColorField'
-  alpha?: Maybe<Scalars['IntType']>
-  blue?: Maybe<Scalars['IntType']>
-  green?: Maybe<Scalars['IntType']>
-  hex?: Maybe<Scalars['String']>
-  red?: Maybe<Scalars['IntType']>
+  alpha: Scalars['IntType']
+  blue: Scalars['IntType']
+  green: Scalars['IntType']
+  hex: Scalars['String']
+  red: Scalars['IntType']
 }
 
 /** Specifies how to filter Color fields */
@@ -537,10 +537,10 @@ export type FileField = {
   basename: Scalars['String']
   blurUpThumb?: Maybe<Scalars['String']>
   blurhash?: Maybe<Scalars['String']>
-  colors: Array<Maybe<ColorField>>
+  colors: Array<ColorField>
   copyright?: Maybe<Scalars['String']>
-  customData?: Maybe<Scalars['CustomData']>
-  exifInfo?: Maybe<Scalars['CustomData']>
+  customData: Scalars['CustomData']
+  exifInfo: Scalars['CustomData']
   filename: Scalars['String']
   focalPoint?: Maybe<FocalPoint>
   format: Scalars['String']
@@ -551,8 +551,8 @@ export type FileField = {
   notes?: Maybe<Scalars['String']>
   responsiveImage?: Maybe<ResponsiveImage>
   size: Scalars['IntType']
-  smartTags: Array<Maybe<Scalars['String']>>
-  tags: Array<Maybe<Scalars['String']>>
+  smartTags: Array<Scalars['String']>
+  tags: Array<Scalars['String']>
   title?: Maybe<Scalars['String']>
   url: Scalars['String']
   video?: Maybe<UploadVideoField>
@@ -3559,13 +3559,13 @@ export type UploadTagsFilter = {
   /** Filter uploads linked to the specified tag */
   contains?: InputMaybe<Scalars['String']>
   /** Filter uploads linked to all of the specified tags */
-  allIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
+  allIn?: InputMaybe<Array<Scalars['String']>>
   /** Filter uploads linked to at least one of the specified tags */
-  anyIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
+  anyIn?: InputMaybe<Array<Scalars['String']>>
   /** Filter uploads not linked to any of the specified tags */
-  notIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
+  notIn?: InputMaybe<Array<Scalars['String']>>
   /** Search for uploads with an exact match */
-  eq?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
+  eq?: InputMaybe<Array<Scalars['String']>>
 }
 
 /** Specifies how to filter by default title */
