@@ -3273,6 +3273,7 @@ export type TeamMemberModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  department?: InputMaybe<LinkFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<TeamMemberModelFilter>>>
 }
@@ -3319,6 +3320,7 @@ export type TeamMemberRecord = {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
+  department?: Maybe<DepartmentRecord>
   id: Scalars['ItemId']
   link: Array<SimpleLinkRecord>
   name?: Maybe<Scalars['String']>
