@@ -496,6 +496,74 @@ export type DateFilter = {
   neq?: InputMaybe<Scalars['Date']>
 }
 
+export type DepartmentModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  name?: InputMaybe<StringFilter>
+  OR?: InputMaybe<Array<InputMaybe<DepartmentModelFilter>>>
+}
+
+export enum DepartmentModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+}
+
+/** Record of type Department (department) */
+export type DepartmentRecord = {
+  __typename?: 'DepartmentRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  name?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Department (department) */
+export type DepartmentRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Record of type Empty Tile (empty_tile) */
 export type EmptyTileRecord = {
   __typename?: 'EmptyTileRecord'
@@ -2621,6 +2689,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allClientsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allDepartmentsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
@@ -2639,6 +2709,8 @@ export type Query = {
   /** Returns a collection of records */
   allClients: Array<ClientRecord>
   /** Returns a collection of records */
+  allDepartments: Array<DepartmentRecord>
+  /** Returns a collection of records */
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
@@ -2656,6 +2728,8 @@ export type Query = {
   client?: Maybe<ClientRecord>
   /** Returns the single instance record */
   cookieNotice?: Maybe<CookieNoticeRecord>
+  /** Returns a specific record */
+  department?: Maybe<DepartmentRecord>
   /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>
   /** Returns a specific record */
@@ -2691,6 +2765,13 @@ export type Query_AllClientsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<ClientModelFilter>
+}
+
+/** The query root for this schema */
+export type Query_AllDepartmentsMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<DepartmentModelFilter>
 }
 
 /** The query root for this schema */
@@ -2761,6 +2842,16 @@ export type QueryAllClientsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<ClientModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<ClientModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllDepartmentsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<DepartmentModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<DepartmentModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -2841,6 +2932,14 @@ export type QueryClientArgs = {
 export type QueryCookieNoticeArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
+export type QueryDepartmentArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<DepartmentModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<DepartmentModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3657,6 +3756,6 @@ export enum VideoMp4Res {
 
 export type FocalPoint = {
   __typename?: 'focalPoint'
-  x?: Maybe<Scalars['FloatType']>
-  y?: Maybe<Scalars['FloatType']>
+  x: Scalars['FloatType']
+  y: Scalars['FloatType']
 }
