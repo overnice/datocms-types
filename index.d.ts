@@ -590,13 +590,6 @@ export type EmptyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-export type ErrorPageModelContentField = {
-  __typename?: 'ErrorPageModelContentField'
-  blocks: Array<RichTextRecord>
-  links: Array<Scalars['String']>
-  value: Scalars['JsonField']
-}
-
 export type ErrorPageModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -609,7 +602,6 @@ export type ErrorPageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  content?: InputMaybe<StructuredTextFilter>
   buttonText?: InputMaybe<StringFilter>
   title?: InputMaybe<StringFilter>
   errorType?: InputMaybe<StringFilter>
@@ -662,7 +654,7 @@ export type ErrorPageRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   buttonText?: Maybe<Scalars['String']>
-  content?: Maybe<ErrorPageModelContentField>
+  content: Array<RichTextRecord>
   createdAt: Scalars['DateTime']
   errorType?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
