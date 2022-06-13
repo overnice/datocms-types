@@ -602,6 +602,7 @@ export type ErrorPageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  buttonText?: InputMaybe<StringFilter>
   title?: InputMaybe<StringFilter>
   errorType?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ErrorPageModelFilter>>>
@@ -630,6 +631,8 @@ export enum ErrorPageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
   ErrorTypeAsc = 'errorType_ASC',
@@ -650,6 +653,7 @@ export type ErrorPageRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  buttonText?: Maybe<Scalars['String']>
   content: Array<RichTextRecord>
   createdAt: Scalars['DateTime']
   errorType?: Maybe<Scalars['String']>
