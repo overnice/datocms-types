@@ -650,6 +650,7 @@ export type ErrorPageRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  content: Array<RichTextRecord>
   createdAt: Scalars['DateTime']
   errorType?: Maybe<Scalars['String']>
   headline?: Maybe<Scalars['String']>
