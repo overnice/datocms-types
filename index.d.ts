@@ -602,6 +602,7 @@ export type ErrorPageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  headline?: InputMaybe<StringFilter>
   errorType?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ErrorPageModelFilter>>>
 }
@@ -629,6 +630,8 @@ export enum ErrorPageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  HeadlineAsc = 'headline_ASC',
+  HeadlineDesc = 'headline_DESC',
   ErrorTypeAsc = 'errorType_ASC',
   ErrorTypeDesc = 'errorType_DESC',
 }
@@ -649,6 +652,7 @@ export type ErrorPageRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   errorType?: Maybe<Scalars['String']>
+  headline?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   updatedAt: Scalars['DateTime']
 }
