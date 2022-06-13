@@ -33,8 +33,8 @@ export type Scalars = {
   UploadId: any
 }
 
-/** Record of type Block Link (block_link) */
-export type BlockLinkRecord = {
+/** Block of type Block Link (block_link) */
+export type BlockLinkRecord = RecordInterface & {
   __typename?: 'BlockLinkRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -55,7 +55,7 @@ export type BlockLinkRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Block Link (block_link) */
+/** Block of type Block Link (block_link) */
 export type BlockLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -68,8 +68,8 @@ export type BooleanFilter = {
 
 export type CallToActionModelLinkField = ClientRecord | TeamMemberRecord
 
-/** Record of type Call to Action (call_to_action) */
-export type CallToActionRecord = {
+/** Block of type Call to Action (call_to_action) */
+export type CallToActionRecord = RecordInterface & {
   __typename?: 'CallToActionRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -91,7 +91,7 @@ export type CallToActionRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Call to Action (call_to_action) */
+/** Block of type Call to Action (call_to_action) */
 export type CallToActionRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -169,7 +169,7 @@ export enum CaseStudyModelOrderBy {
 }
 
 /** Record of type Case Study (case_study) */
-export type CaseStudyRecord = {
+export type CaseStudyRecord = RecordInterface & {
   __typename?: 'CaseStudyRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -249,7 +249,7 @@ export enum CaseStudyTagModelOrderBy {
 }
 
 /** Record of type Case Study Tag (case_study_tag) */
-export type CaseStudyTagRecord = {
+export type CaseStudyTagRecord = RecordInterface & {
   __typename?: 'CaseStudyTagRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -273,8 +273,8 @@ export type CaseStudyTagRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Case Study Tile (case_study_tile) */
-export type CaseStudyTileRecord = {
+/** Block of type Case Study Tile (case_study_tile) */
+export type CaseStudyTileRecord = RecordInterface & {
   __typename?: 'CaseStudyTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -293,13 +293,13 @@ export type CaseStudyTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Case Study Tile (case_study_tile) */
+/** Block of type Case Study Tile (case_study_tile) */
 export type CaseStudyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Client Grid (client_grid) */
-export type ClientGridRecord = {
+/** Block of type Client Grid (client_grid) */
+export type ClientGridRecord = RecordInterface & {
   __typename?: 'ClientGridRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -317,7 +317,7 @@ export type ClientGridRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Client Grid (client_grid) */
+/** Block of type Client Grid (client_grid) */
 export type ClientGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -370,7 +370,7 @@ export enum ClientModelOrderBy {
 }
 
 /** Record of type Client (client) */
-export type ClientRecord = {
+export type ClientRecord = RecordInterface & {
   __typename?: 'ClientRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -433,7 +433,7 @@ export type ColorFilter = {
 }
 
 /** Record of type Cookie Notice (cookie_notice) */
-export type CookieNoticeRecord = {
+export type CookieNoticeRecord = RecordInterface & {
   __typename?: 'CookieNoticeRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -540,7 +540,7 @@ export enum DepartmentModelOrderBy {
 }
 
 /** Record of type Department (department) */
-export type DepartmentRecord = {
+export type DepartmentRecord = RecordInterface & {
   __typename?: 'DepartmentRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -564,8 +564,8 @@ export type DepartmentRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Empty Tile (empty_tile) */
-export type EmptyTileRecord = {
+/** Block of type Empty Tile (empty_tile) */
+export type EmptyTileRecord = RecordInterface & {
   __typename?: 'EmptyTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -585,8 +585,32 @@ export type EmptyTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Empty Tile (empty_tile) */
+/** Block of type Empty Tile (empty_tile) */
 export type EmptyTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Error Pages (error_page) */
+export type ErrorPageRecord = RecordInterface & {
+  __typename?: 'ErrorPageRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Error Pages (error_page) */
+export type ErrorPageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -596,7 +620,7 @@ export enum FaviconType {
   MsApplication = 'msApplication',
 }
 
-export type FileField = {
+export type FileField = FileFieldInterface & {
   __typename?: 'FileField'
   _createdAt: Scalars['DateTime']
   _updatedAt: Scalars['DateTime']
@@ -665,6 +689,74 @@ export type FileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>
 }
 
+export type FileFieldInterface = {
+  _createdAt: Scalars['DateTime']
+  _updatedAt: Scalars['DateTime']
+  alt?: Maybe<Scalars['String']>
+  author?: Maybe<Scalars['String']>
+  basename: Scalars['String']
+  blurUpThumb?: Maybe<Scalars['String']>
+  blurhash?: Maybe<Scalars['String']>
+  colors: Array<ColorField>
+  copyright?: Maybe<Scalars['String']>
+  customData: Scalars['CustomData']
+  exifInfo: Scalars['CustomData']
+  filename: Scalars['String']
+  focalPoint?: Maybe<FocalPoint>
+  format: Scalars['String']
+  height?: Maybe<Scalars['IntType']>
+  id: Scalars['UploadId']
+  md5: Scalars['String']
+  mimeType: Scalars['String']
+  notes?: Maybe<Scalars['String']>
+  responsiveImage?: Maybe<ResponsiveImage>
+  size: Scalars['IntType']
+  smartTags: Array<Scalars['String']>
+  tags: Array<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  url: Scalars['String']
+  video?: Maybe<UploadVideoField>
+  width?: Maybe<Scalars['IntType']>
+}
+
+export type FileFieldInterfaceAltArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+export type FileFieldInterfaceBlurUpThumbArgs = {
+  punch?: InputMaybe<Scalars['Float']>
+  size?: InputMaybe<Scalars['Int']>
+  quality?: InputMaybe<Scalars['Int']>
+  imgixParams?: InputMaybe<ImgixParams>
+}
+
+export type FileFieldInterfaceCustomDataArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+export type FileFieldInterfaceFocalPointArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+export type FileFieldInterfaceResponsiveImageArgs = {
+  imgixParams?: InputMaybe<ImgixParams>
+  sizes?: InputMaybe<Scalars['String']>
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+export type FileFieldInterfaceTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+export type FileFieldInterfaceUrlArgs = {
+  imgixParams?: InputMaybe<ImgixParams>
+}
+
 /** Specifies how to filter Single-file/image fields */
 export type FileFilter = {
   /** Search for records with an exact match. The specified value must be an Upload ID */
@@ -679,8 +771,8 @@ export type FileFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
-/** Record of type Full Width Image (full_width_image) */
-export type FullWidthImageRecord = {
+/** Block of type Full Width Image (full_width_image) */
+export type FullWidthImageRecord = RecordInterface & {
   __typename?: 'FullWidthImageRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -700,7 +792,7 @@ export type FullWidthImageRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Full Width Image (full_width_image) */
+/** Block of type Full Width Image (full_width_image) */
 export type FullWidthImageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -714,8 +806,8 @@ export type GlobalSeoField = {
   twitterAccount?: Maybe<Scalars['String']>
 }
 
-/** Record of type Highlight Tile (highlight_tile) */
-export type HighlightTileRecord = {
+/** Block of type Highlight Tile (highlight_tile) */
+export type HighlightTileRecord = RecordInterface & {
   __typename?: 'HighlightTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -735,7 +827,7 @@ export type HighlightTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Highlight Tile (highlight_tile) */
+/** Block of type Highlight Tile (highlight_tile) */
 export type HighlightTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -754,7 +846,7 @@ export type HomepageModelContentField = {
 }
 
 /** Record of type Homepage (homepage) */
-export type HomepageRecord = {
+export type HomepageRecord = RecordInterface & {
   __typename?: 'HomepageRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -780,8 +872,8 @@ export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Image Tile (image_tile) */
-export type ImageTileRecord = {
+/** Block of type Image Tile (image_tile) */
+export type ImageTileRecord = RecordInterface & {
   __typename?: 'ImageTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -803,7 +895,7 @@ export type ImageTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Image Tile (image_tile) */
+/** Block of type Image Tile (image_tile) */
 export type ImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -1930,6 +2022,26 @@ export type ImgixParams = {
    */
   txtWidth?: InputMaybe<Scalars['IntType']>
   /**
+   * Text X Position
+   *
+   * Sets the horizontal (x) position of the text in pixels relative to the left edge of the base image.
+   *
+   * Depends on: `txt`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-x)
+   */
+  txtX?: InputMaybe<Scalars['IntType']>
+  /**
+   * Text Y Position
+   *
+   * Sets the vertical (y) position of the text in pixels relative to the top edge of the base image.
+   *
+   * Depends on: `txt`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-y)
+   */
+  txtY?: InputMaybe<Scalars['IntType']>
+  /**
    * Text String
    *
    * Sets the text string to render.
@@ -2158,8 +2270,8 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']>
 }
 
-/** Record of type Interactive Image Tile (interactive_image_tile) */
-export type InteractiveImageTileRecord = {
+/** Block of type Interactive Image Tile (interactive_image_tile) */
+export type InteractiveImageTileRecord = RecordInterface & {
   __typename?: 'InteractiveImageTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2186,7 +2298,7 @@ export type InteractiveImageTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Interactive Image Tile (interactive_image_tile) */
+/** Block of type Interactive Image Tile (interactive_image_tile) */
 export type InteractiveImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -2209,8 +2321,8 @@ export enum ItemStatus {
   Published = 'published',
 }
 
-/** Record of type Job Listing (job_listing) */
-export type JobListingRecord = {
+/** Block of type Job Listing (job_listing) */
+export type JobListingRecord = RecordInterface & {
   __typename?: 'JobListingRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2229,7 +2341,7 @@ export type JobListingRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Job Listing (job_listing) */
+/** Block of type Job Listing (job_listing) */
 export type JobListingRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -2300,11 +2412,11 @@ export enum JobModelOrderBy {
 }
 
 /** Record of type Job (job) */
-export type JobRecord = {
+export type JobRecord = RecordInterface & {
   __typename?: 'JobRecord'
-  _allExcerptLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
-  _allTagsLocales?: Maybe<Array<Maybe<SeoFieldMultiLocaleField>>>
-  _allTitleLocales?: Maybe<Array<Maybe<StringMultiLocaleField>>>
+  _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
+  _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
@@ -2398,8 +2510,8 @@ export type LinksFilter = {
 
 export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
 
-/** Record of type Logo Tile Grid (logo_tile_grid) */
-export type LogoTileGridRecord = {
+/** Block of type Logo Tile Grid (logo_tile_grid) */
+export type LogoTileGridRecord = RecordInterface & {
   __typename?: 'LogoTileGridRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2418,13 +2530,13 @@ export type LogoTileGridRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Logo Tile Grid (logo_tile_grid) */
+/** Block of type Logo Tile Grid (logo_tile_grid) */
 export type LogoTileGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Logo Tile (logo_tile) */
-export type LogoTileRecord = {
+/** Block of type Logo Tile (logo_tile) */
+export type LogoTileRecord = RecordInterface & {
   __typename?: 'LogoTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2443,7 +2555,7 @@ export type LogoTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Logo Tile (logo_tile) */
+/** Block of type Logo Tile (logo_tile) */
 export type LogoTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -2455,7 +2567,7 @@ export enum MuxThumbnailFormatType {
 }
 
 /** Record of type Navigation (navigation) */
-export type NavigationRecord = {
+export type NavigationRecord = RecordInterface & {
   __typename?: 'NavigationRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2559,7 +2671,7 @@ export enum PageModelOrderBy {
 }
 
 /** Record of type Page (page) */
-export type PageRecord = {
+export type PageRecord = RecordInterface & {
   __typename?: 'PageRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2635,7 +2747,7 @@ export enum PersonModelOrderBy {
 }
 
 /** Record of type Person (person) */
-export type PersonRecord = {
+export type PersonRecord = RecordInterface & {
   __typename?: 'PersonRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -2730,6 +2842,8 @@ export type Query = {
   cookieNotice?: Maybe<CookieNoticeRecord>
   /** Returns a specific record */
   department?: Maybe<DepartmentRecord>
+  /** Returns the single instance record */
+  errorPage?: Maybe<ErrorPageRecord>
   /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>
   /** Returns a specific record */
@@ -2943,6 +3057,12 @@ export type QueryDepartmentArgs = {
 }
 
 /** The query root for this schema */
+export type QueryErrorPageArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
 export type QueryHomepageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -2994,8 +3114,8 @@ export type QueryUploadArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>
 }
 
-/** Record of type Quote Tile (quote_tile) */
-export type QuoteTileRecord = {
+/** Block of type Quote Tile (quote_tile) */
+export type QuoteTileRecord = RecordInterface & {
   __typename?: 'QuoteTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3015,8 +3135,27 @@ export type QuoteTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Quote Tile (quote_tile) */
+/** Block of type Quote Tile (quote_tile) */
 export type QuoteTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type RecordInterface = {
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+}
+
+export type RecordInterface_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -3054,8 +3193,8 @@ export type ResponsiveImage = {
   width: Scalars['IntType']
 }
 
-/** Record of type Rich Text (rich_text) */
-export type RichTextRecord = {
+/** Block of type Rich Text (rich_text) */
+export type RichTextRecord = RecordInterface & {
   __typename?: 'RichTextRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3075,12 +3214,12 @@ export type RichTextRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Rich Text (rich_text) */
+/** Block of type Rich Text (rich_text) */
 export type RichTextRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Rich Text (rich_text) */
+/** Block of type Rich Text (rich_text) */
 export type RichTextRecordTextArgs = {
   markdown?: InputMaybe<Scalars['Boolean']>
 }
@@ -3105,8 +3244,8 @@ export type SeoFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
-/** Record of type Sidenote Tile (sidenote_tile) */
-export type SidenoteTileRecord = {
+/** Block of type Sidenote Tile (sidenote_tile) */
+export type SidenoteTileRecord = RecordInterface & {
   __typename?: 'SidenoteTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3125,7 +3264,7 @@ export type SidenoteTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Sidenote Tile (sidenote_tile) */
+/** Block of type Sidenote Tile (sidenote_tile) */
 export type SidenoteTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -3136,8 +3275,8 @@ export type SimpleLinkModelInternalLinkField =
   | JobRecord
   | PageRecord
 
-/** Record of type Simple link (simple_link) */
-export type SimpleLinkRecord = {
+/** Block of type Simple link (simple_link) */
+export type SimpleLinkRecord = RecordInterface & {
   __typename?: 'SimpleLinkRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3160,7 +3299,7 @@ export type SimpleLinkRecord = {
   url?: Maybe<Scalars['String']>
 }
 
-/** Record of type Simple link (simple_link) */
+/** Block of type Simple link (simple_link) */
 export type SimpleLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -3306,7 +3445,7 @@ export enum TeamMemberModelOrderBy {
 }
 
 /** Record of type Team Member (team_member) */
-export type TeamMemberRecord = {
+export type TeamMemberRecord = RecordInterface & {
   __typename?: 'TeamMemberRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3333,8 +3472,8 @@ export type TeamMemberRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Record of type Team Member Tile (team_member_tile) */
-export type TeamMemberTileRecord = {
+/** Block of type Team Member Tile (team_member_tile) */
+export type TeamMemberTileRecord = RecordInterface & {
   __typename?: 'TeamMemberTileRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3353,7 +3492,7 @@ export type TeamMemberTileRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Team Member Tile (team_member_tile) */
+/** Block of type Team Member Tile (team_member_tile) */
 export type TeamMemberTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -3368,8 +3507,8 @@ export type TileGridModelTilesField =
   | SidenoteTileRecord
   | TeamMemberTileRecord
 
-/** Record of type Tile Grid (tile_grid) */
-export type TileGridRecord = {
+/** Block of type Tile Grid (tile_grid) */
+export type TileGridRecord = RecordInterface & {
   __typename?: 'TileGridRecord'
   _createdAt: Scalars['DateTime']
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
@@ -3388,7 +3527,7 @@ export type TileGridRecord = {
   updatedAt: Scalars['DateTime']
 }
 
-/** Record of type Tile Grid (tile_grid) */
+/** Block of type Tile Grid (tile_grid) */
 export type TileGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
@@ -3716,8 +3855,8 @@ export type UploadUpdatedAtFilter = {
 
 export type UploadVideoField = {
   __typename?: 'UploadVideoField'
-  duration: Scalars['Int']
-  framerate: Scalars['Int']
+  duration?: Maybe<Scalars['Int']>
+  framerate?: Maybe<Scalars['Int']>
   mp4Url?: Maybe<Scalars['String']>
   muxAssetId: Scalars['String']
   muxPlaybackId: Scalars['String']
