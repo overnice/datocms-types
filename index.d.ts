@@ -590,55 +590,6 @@ export type EmptyTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-export type ErrorPageModelFilter = {
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  createdAt?: InputMaybe<CreatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  updatedAt?: InputMaybe<UpdatedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  buttonText?: InputMaybe<StringFilter>
-  title?: InputMaybe<StringFilter>
-  errorType?: InputMaybe<StringFilter>
-  OR?: InputMaybe<Array<InputMaybe<ErrorPageModelFilter>>>
-}
-
-export enum ErrorPageModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  ButtonTextAsc = 'buttonText_ASC',
-  ButtonTextDesc = 'buttonText_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  ErrorTypeAsc = 'errorType_ASC',
-  ErrorTypeDesc = 'errorType_DESC',
-}
-
 /** Record of type Error Page (error_page) */
 export type ErrorPageRecord = RecordInterface & {
   __typename?: 'ErrorPageRecord'
@@ -2856,8 +2807,6 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allDepartmentsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allErrorPagesMeta: CollectionMetadata
-  /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
@@ -2878,8 +2827,6 @@ export type Query = {
   /** Returns a collection of records */
   allDepartments: Array<DepartmentRecord>
   /** Returns a collection of records */
-  allErrorPages: Array<ErrorPageRecord>
-  /** Returns a collection of records */
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
@@ -2899,7 +2846,7 @@ export type Query = {
   cookieNotice?: Maybe<CookieNoticeRecord>
   /** Returns a specific record */
   department?: Maybe<DepartmentRecord>
-  /** Returns a specific record */
+  /** Returns the single instance record */
   errorPage?: Maybe<ErrorPageRecord>
   /** Returns the single instance record */
   homepage?: Maybe<HomepageRecord>
@@ -2943,13 +2890,6 @@ export type Query_AllDepartmentsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<DepartmentModelFilter>
-}
-
-/** The query root for this schema */
-export type Query_AllErrorPagesMetaArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<ErrorPageModelFilter>
 }
 
 /** The query root for this schema */
@@ -3030,16 +2970,6 @@ export type QueryAllDepartmentsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<DepartmentModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<DepartmentModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryAllErrorPagesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  skip?: InputMaybe<Scalars['IntType']>
-  first?: InputMaybe<Scalars['IntType']>
-  filter?: InputMaybe<ErrorPageModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<ErrorPageModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3134,8 +3064,6 @@ export type QueryDepartmentArgs = {
 export type QueryErrorPageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<ErrorPageModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<ErrorPageModelOrderBy>>>
 }
 
 /** The query root for this schema */
