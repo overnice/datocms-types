@@ -607,6 +607,7 @@ export type ErrorPageRecord = RecordInterface & {
   buttonText?: Maybe<Scalars['String']>
   content: Array<RichTextRecord>
   createdAt: Scalars['DateTime']
+  defaultErrorPage: Array<Scalars['String']>
   errorType?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   title?: Maybe<Scalars['String']>
