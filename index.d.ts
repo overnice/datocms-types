@@ -478,6 +478,34 @@ export type CreatedAtFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
+/** Block of type Custom Error Page (custom_error_page) */
+export type CustomErrorPageRecord = RecordInterface & {
+  __typename?: 'CustomErrorPageRecord'
+  _createdAt: Scalars['DateTime']
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  content: Array<RichTextRecord>
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  link: Array<SimpleLinkRecord>
+  slug?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Custom Error Page (custom_error_page) */
+export type CustomErrorPageRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter Date fields */
 export type DateFilter = {
   /** Filter records with a value that's strictly greater than the one specified */
@@ -607,7 +635,7 @@ export type ErrorPageRecord = RecordInterface & {
   buttonText?: Maybe<Scalars['String']>
   content: Array<RichTextRecord>
   createdAt: Scalars['DateTime']
-  defaultErrorPage: Array<Scalars['String']>
+  defaultErrorPage: Array<CustomErrorPageRecord>
   errorType?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   title?: Maybe<Scalars['String']>
