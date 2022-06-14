@@ -3279,7 +3279,7 @@ export type SimpleLinkModelInternalLinkField =
   | JobRecord
   | PageRecord
 
-/** Block of type Simple link (simple_link) */
+/** Block of type Simple Link (simple_link) */
 export type SimpleLinkRecord = RecordInterface & {
   __typename?: 'SimpleLinkRecord'
   _createdAt: Scalars['DateTime']
@@ -3303,7 +3303,7 @@ export type SimpleLinkRecord = RecordInterface & {
   url?: Maybe<Scalars['String']>
 }
 
-/** Block of type Simple link (simple_link) */
+/** Block of type Simple Link (simple_link) */
 export type SimpleLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
