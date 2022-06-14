@@ -637,7 +637,6 @@ export type ErrorPageRecord = RecordInterface & {
   createdAt: Scalars['DateTime']
   customErrorPages: Array<CustomErrorPageRecord>
   defaultErrorPage: Array<CustomErrorPageRecord>
-  errorType?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
