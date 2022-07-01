@@ -2366,7 +2366,6 @@ export type JobListingRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
-  headline?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   linkLabel?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
