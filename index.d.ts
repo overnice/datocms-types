@@ -122,18 +122,18 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  secondHighlightColor?: InputMaybe<ColorFilter>
-  title?: InputMaybe<StringFilter>
-  slug?: InputMaybe<SlugFilter>
-  tags?: InputMaybe<SeoFilter>
-  projectName?: InputMaybe<StringFilter>
-  date?: InputMaybe<DateFilter>
-  textColor?: InputMaybe<ColorFilter>
-  highlightColor?: InputMaybe<ColorFilter>
   backgroundColor?: InputMaybe<ColorFilter>
-  content?: InputMaybe<StructuredTextFilter>
-  sublineTags?: InputMaybe<LinksFilter>
   client?: InputMaybe<LinkFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  date?: InputMaybe<DateFilter>
+  highlightColor?: InputMaybe<ColorFilter>
+  projectName?: InputMaybe<StringFilter>
+  secondHighlightColor?: InputMaybe<ColorFilter>
+  slug?: InputMaybe<SlugFilter>
+  sublineTags?: InputMaybe<LinksFilter>
+  tags?: InputMaybe<SeoFilter>
+  textColor?: InputMaybe<ColorFilter>
+  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
 }
 
@@ -160,12 +160,12 @@ export enum CaseStudyModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  ProjectNameAsc = 'projectName_ASC',
-  ProjectNameDesc = 'projectName_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
+  ProjectNameAsc = 'projectName_ASC',
+  ProjectNameDesc = 'projectName_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Case Study (case_study) */
@@ -335,8 +335,8 @@ export type ClientModelFilter = {
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
   excerpt?: InputMaybe<StringFilter>
-  name?: InputMaybe<StringFilter>
   logo?: InputMaybe<FileFilter>
+  name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
 }
 
@@ -2401,12 +2401,12 @@ export type JobModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  content?: InputMaybe<StructuredTextFilter>
   excerpt?: InputMaybe<StringFilter>
-  title?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
   startDate?: InputMaybe<DateFilter>
   tags?: InputMaybe<SeoFilter>
-  content?: InputMaybe<StructuredTextFilter>
+  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
 }
 
@@ -2435,10 +2435,10 @@ export enum JobModelOrderBy {
   IsValidDesc = '_isValid_DESC',
   ExcerptAsc = 'excerpt_ASC',
   ExcerptDesc = 'excerpt_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
   StartDateAsc = 'startDate_ASC',
   StartDateDesc = 'startDate_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Job (job) */
@@ -2742,8 +2742,8 @@ export type PersonModelFilter = {
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
   name?: InputMaybe<StringFilter>
-  role?: InputMaybe<StringFilter>
   photo?: InputMaybe<FileFilter>
+  role?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
 }
 
