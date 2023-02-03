@@ -902,31 +902,6 @@ export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-/** Block of type Icon Link (icon_link) */
-export type IconLinkRecord = RecordInterface & {
-  __typename?: 'IconLinkRecord'
-  _createdAt: Scalars['DateTime']
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  createdAt: Scalars['DateTime']
-  id: Scalars['ItemId']
-  text?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Block of type Icon Link (icon_link) */
-export type IconLinkRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
 /** Block of type Image Tile (image_tile) */
 export type ImageTileRecord = RecordInterface & {
   __typename?: 'ImageTileRecord'
