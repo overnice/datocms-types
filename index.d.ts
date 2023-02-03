@@ -918,6 +918,7 @@ export type IconLinkRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
