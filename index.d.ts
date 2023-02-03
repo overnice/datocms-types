@@ -687,9 +687,9 @@ export type FileFieldAltArgs = {
 }
 
 export type FileFieldBlurUpThumbArgs = {
-  punch?: InputMaybe<Scalars['Float']>
-  size?: InputMaybe<Scalars['Int']>
-  quality?: InputMaybe<Scalars['Int']>
+  punch?: Scalars['Float']
+  size?: Scalars['Int']
+  quality?: Scalars['Int']
   imgixParams?: InputMaybe<ImgixParams>
 }
 
@@ -755,9 +755,9 @@ export type FileFieldInterfaceAltArgs = {
 }
 
 export type FileFieldInterfaceBlurUpThumbArgs = {
-  punch?: InputMaybe<Scalars['Float']>
-  size?: InputMaybe<Scalars['Int']>
-  quality?: InputMaybe<Scalars['Int']>
+  punch?: Scalars['Float']
+  size?: Scalars['Int']
+  quality?: Scalars['Int']
   imgixParams?: InputMaybe<ImgixParams>
 }
 
@@ -2616,6 +2616,7 @@ export type NavigationRecord = RecordInterface & {
   footnote?: Maybe<Scalars['String']>
   headerCtaLink: Array<SimpleLinkRecord>
   id: Scalars['ItemId']
+  instagramUrl?: Maybe<Scalars['String']>
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
   shopUrl?: Maybe<Scalars['String']>
