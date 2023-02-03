@@ -2616,6 +2616,7 @@ export type NavigationRecord = RecordInterface & {
   footnote?: Maybe<Scalars['String']>
   headerCtaLink: Array<SimpleLinkRecord>
   id: Scalars['ItemId']
+  instagramText?: Maybe<Scalars['String']>
   instagramUrl?: Maybe<Scalars['String']>
   legalPages: Array<PageRecord>
   mainPages: Array<PageRecord>
