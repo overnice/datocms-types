@@ -37,6 +37,8 @@ export type Scalars = {
 export type BlockLinkRecord = RecordInterface & {
   __typename?: 'BlockLinkRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -72,6 +74,8 @@ export type CallToActionModelLinkField = ClientRecord | TeamMemberRecord
 export type CallToActionRecord = RecordInterface & {
   __typename?: 'CallToActionRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -135,6 +139,7 @@ export type CaseStudyModelFilter = {
   textColor?: InputMaybe<ColorFilter>
   title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
 }
 
 export enum CaseStudyModelOrderBy {
@@ -172,6 +177,8 @@ export enum CaseStudyModelOrderBy {
 export type CaseStudyRecord = RecordInterface & {
   __typename?: 'CaseStudyRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -219,6 +226,7 @@ export type CaseStudyTagModelFilter = {
   _isValid?: InputMaybe<BooleanFilter>
   tag?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<CaseStudyTagModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<CaseStudyTagModelFilter>>>
 }
 
 export enum CaseStudyTagModelOrderBy {
@@ -252,6 +260,8 @@ export enum CaseStudyTagModelOrderBy {
 export type CaseStudyTagRecord = RecordInterface & {
   __typename?: 'CaseStudyTagRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -277,6 +287,8 @@ export type CaseStudyTagRecord_SeoMetaTagsArgs = {
 export type CaseStudyTileRecord = RecordInterface & {
   __typename?: 'CaseStudyTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -302,6 +314,8 @@ export type CaseStudyTileRecord_SeoMetaTagsArgs = {
 export type ClientGridRecord = RecordInterface & {
   __typename?: 'ClientGridRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -338,6 +352,7 @@ export type ClientModelFilter = {
   logo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
 }
 
 export enum ClientModelOrderBy {
@@ -373,6 +388,8 @@ export enum ClientModelOrderBy {
 export type ClientRecord = RecordInterface & {
   __typename?: 'ClientRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -421,6 +438,7 @@ export type ColorField = {
   __typename?: 'ColorField'
   alpha: Scalars['IntType']
   blue: Scalars['IntType']
+  cssRgb: Scalars['String']
   green: Scalars['IntType']
   hex: Scalars['String']
   red: Scalars['IntType']
@@ -436,6 +454,8 @@ export type ColorFilter = {
 export type CookieNoticeRecord = RecordInterface & {
   __typename?: 'CookieNoticeRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -482,6 +502,8 @@ export type CreatedAtFilter = {
 export type CustomErrorPageRecord = RecordInterface & {
   __typename?: 'CustomErrorPageRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -538,6 +560,7 @@ export type DepartmentModelFilter = {
   _isValid?: InputMaybe<BooleanFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<DepartmentModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<DepartmentModelFilter>>>
 }
 
 export enum DepartmentModelOrderBy {
@@ -571,6 +594,8 @@ export enum DepartmentModelOrderBy {
 export type DepartmentRecord = RecordInterface & {
   __typename?: 'DepartmentRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -596,6 +621,8 @@ export type DepartmentRecord_SeoMetaTagsArgs = {
 export type EmptyTileRecord = RecordInterface & {
   __typename?: 'EmptyTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -622,6 +649,8 @@ export type EmptyTileRecord_SeoMetaTagsArgs = {
 export type ErrorPageRecord = RecordInterface & {
   __typename?: 'ErrorPageRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -653,6 +682,8 @@ export enum FaviconType {
 export type FileField = FileFieldInterface & {
   __typename?: 'FileField'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _updatedAt: Scalars['DateTime']
   alt?: Maybe<Scalars['String']>
   author?: Maybe<Scalars['String']>
@@ -675,6 +706,7 @@ export type FileField = FileFieldInterface & {
   size: Scalars['IntType']
   smartTags: Array<Scalars['String']>
   tags: Array<Scalars['String']>
+  thumbhash?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
   url: Scalars['String']
   video?: Maybe<UploadVideoField>
@@ -721,6 +753,8 @@ export type FileFieldUrlArgs = {
 
 export type FileFieldInterface = {
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _updatedAt: Scalars['DateTime']
   alt?: Maybe<Scalars['String']>
   author?: Maybe<Scalars['String']>
@@ -743,6 +777,7 @@ export type FileFieldInterface = {
   size: Scalars['IntType']
   smartTags: Array<Scalars['String']>
   tags: Array<Scalars['String']>
+  thumbhash?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
   url: Scalars['String']
   video?: Maybe<UploadVideoField>
@@ -805,6 +840,8 @@ export type FileFilter = {
 export type FullWidthImageRecord = RecordInterface & {
   __typename?: 'FullWidthImageRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -840,6 +877,8 @@ export type GlobalSeoField = {
 export type HighlightTileRecord = RecordInterface & {
   __typename?: 'HighlightTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -879,6 +918,8 @@ export type HomepageModelContentField = {
 export type HomepageRecord = RecordInterface & {
   __typename?: 'HomepageRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -906,6 +947,8 @@ export type HomepageRecord_SeoMetaTagsArgs = {
 export type ImageTileRecord = RecordInterface & {
   __typename?: 'ImageTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -949,6 +992,14 @@ export type ImgixParams = {
    * [Open Imgix reference »](https://docs.imgix.com/apis/url/auto)
    */
   auto?: InputMaybe<Array<ImgixParamsAuto>>
+  /**
+   * Background Removal
+   *
+   * Removes background from image.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background-removal/bg-remove)
+   */
+  bgRemove?: InputMaybe<Scalars['BooleanType']>
   /**
    * Background Color
    *
@@ -1410,6 +1461,18 @@ export type ImgixParams = {
    */
   fpZ?: InputMaybe<Scalars['FloatType']>
   /**
+   * Frames Per Second
+   *
+   * Specifies the framerate of the generated image.
+   */
+  fps?: InputMaybe<Scalars['IntType']>
+  /**
+   * Frame Selection
+   *
+   * Specifies the frame of an animated image to use.
+   */
+  frame?: InputMaybe<Scalars['String']>
+  /**
    * Gamma
    *
    * Adjusts the gamma of the source image.
@@ -1417,6 +1480,12 @@ export type ImgixParams = {
    * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/gam)
    */
   gam?: InputMaybe<Scalars['IntType']>
+  /**
+   * Animated Gif Quality
+   *
+   * Depends on: `fm=gif`
+   */
+  gifQ?: InputMaybe<Scalars['IntType']>
   /**
    * Grid Colors
    *
@@ -1466,6 +1535,12 @@ export type ImgixParams = {
    */
   hue?: InputMaybe<Scalars['IntType']>
   /**
+   * Frame Interval
+   *
+   * Displays every Nth frame starting with the first frame.
+   */
+  interval?: InputMaybe<Scalars['IntType']>
+  /**
    * Invert
    *
    * Inverts the colors on the source image.
@@ -1479,6 +1554,12 @@ export type ImgixParams = {
    * Determine if IPTC data should be passed for JPEG images.
    */
   iptc?: InputMaybe<ImgixParamsIptc>
+  /**
+   * Animation Loop Count
+   *
+   * Specifies the number of times an animated image should repeat. A value of 0 means infinite looping.
+   */
+  loop?: InputMaybe<Scalars['IntType']>
   /**
    * Lossless Compression
    *
@@ -1806,6 +1887,12 @@ export type ImgixParams = {
    */
   rect?: InputMaybe<Scalars['String']>
   /**
+   * Reverse
+   *
+   * Reverses the frame order on the source animation.
+   */
+  reverse?: InputMaybe<Scalars['BooleanType']>
+  /**
    * Rotation
    *
    * Rotates an image by a specified number of degrees.
@@ -1845,6 +1932,12 @@ export type ImgixParams = {
    * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/sharp)
    */
   sharp?: InputMaybe<Scalars['FloatType']>
+  /**
+   * Frame Skip
+   *
+   * Skips every Nth frame starting with the first frame.
+   */
+  skip?: InputMaybe<Scalars['IntType']>
   /**
    * Transparency
    *
@@ -2304,6 +2397,8 @@ export type InUseFilter = {
 export type InteractiveImageTileRecord = RecordInterface & {
   __typename?: 'InteractiveImageTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2355,6 +2450,8 @@ export enum ItemStatus {
 export type JobListingRecord = RecordInterface & {
   __typename?: 'JobListingRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2408,6 +2505,7 @@ export type JobModelFilter = {
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
 }
 
 export enum JobModelOrderBy {
@@ -2448,6 +2546,8 @@ export type JobRecord = RecordInterface & {
   _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2544,6 +2644,8 @@ export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
 export type LogoTileGridRecord = RecordInterface & {
   __typename?: 'LogoTileGridRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2569,6 +2671,8 @@ export type LogoTileGridRecord_SeoMetaTagsArgs = {
 export type LogoTileRecord = RecordInterface & {
   __typename?: 'LogoTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2600,6 +2704,8 @@ export enum MuxThumbnailFormatType {
 export type NavigationRecord = RecordInterface & {
   __typename?: 'NavigationRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2671,6 +2777,7 @@ export type PageModelFilter = {
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
 }
 
 export enum PageModelOrderBy {
@@ -2706,6 +2813,8 @@ export enum PageModelOrderBy {
 export type PageRecord = RecordInterface & {
   __typename?: 'PageRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2747,6 +2856,7 @@ export type PersonModelFilter = {
   photo?: InputMaybe<FileFilter>
   role?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
 }
 
 export enum PersonModelOrderBy {
@@ -2782,6 +2892,8 @@ export enum PersonModelOrderBy {
 export type PersonRecord = RecordInterface & {
   __typename?: 'PersonRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -2843,7 +2955,7 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allTeamMembersMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
-  _allUploadsMeta?: Maybe<CollectionMetadata>
+  _allUploadsMeta: CollectionMetadata
   /** Returns the single instance record */
   _site: Site
   /** Returns a collection of records */
@@ -2895,57 +3007,57 @@ export type Query = {
 /** The query root for this schema */
 export type Query_AllCaseStudiesMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<CaseStudyModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllCaseStudyTagsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<CaseStudyTagModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllClientsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<ClientModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllDepartmentsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<DepartmentModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllJobsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<JobModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllPagesMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PageModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllPeopleMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<PersonModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
 export type Query_AllTeamMembersMetaArgs = {
   locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<TeamMemberModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
@@ -3150,6 +3262,8 @@ export type QueryUploadArgs = {
 export type QuoteTileRecord = RecordInterface & {
   __typename?: 'QuoteTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3174,6 +3288,8 @@ export type QuoteTileRecord_SeoMetaTagsArgs = {
 
 export type RecordInterface = {
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3229,6 +3345,8 @@ export type ResponsiveImage = {
 export type RichTextRecord = RecordInterface & {
   __typename?: 'RichTextRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3280,6 +3398,8 @@ export type SeoFilter = {
 export type SidenoteTileRecord = RecordInterface & {
   __typename?: 'SidenoteTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3311,6 +3431,8 @@ export type SimpleLinkModelInternalLinkField =
 export type SimpleLinkRecord = RecordInterface & {
   __typename?: 'SimpleLinkRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3389,6 +3511,8 @@ export type StringFilter = {
   notMatches?: InputMaybe<StringMatchesFilter>
   /** Filter records with the specified field set as blank (null or empty string) */
   isBlank?: InputMaybe<Scalars['BooleanType']>
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']>
   /** Search for records with an exact match */
   eq?: InputMaybe<Scalars['String']>
   /** Exclude records with an exact match */
@@ -3397,7 +3521,7 @@ export type StringFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
   /** Filter records that do not equal one of the specified values */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
@@ -3421,7 +3545,9 @@ export type StructuredTextFilter = {
   notMatches?: InputMaybe<StringMatchesFilter>
   /** Filter records with the specified field set as blank (null or single empty paragraph) */
   isBlank?: InputMaybe<Scalars['BooleanType']>
-  /** Filter records with the specified field defined (i.e. with any value) or not */
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']>
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
@@ -3447,6 +3573,7 @@ export type TeamMemberModelFilter = {
   department?: InputMaybe<LinkFilter>
   name?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<TeamMemberModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<TeamMemberModelFilter>>>
 }
 
 export enum TeamMemberModelOrderBy {
@@ -3480,6 +3607,8 @@ export enum TeamMemberModelOrderBy {
 export type TeamMemberRecord = RecordInterface & {
   __typename?: 'TeamMemberRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3508,6 +3637,8 @@ export type TeamMemberRecord_SeoMetaTagsArgs = {
 export type TeamMemberTileRecord = RecordInterface & {
   __typename?: 'TeamMemberTileRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3543,6 +3674,8 @@ export type TileGridModelTilesField =
 export type TileGridRecord = RecordInterface & {
   __typename?: 'TileGridRecord'
   _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
   _firstPublishedAt?: Maybe<Scalars['DateTime']>
   _isValid: Scalars['BooleanType']
   _modelApiKey: Scalars['String']
@@ -3703,6 +3836,7 @@ export type UploadFilter = {
   _createdAt?: InputMaybe<UploadCreatedAtFilter>
   _updatedAt?: InputMaybe<UploadUpdatedAtFilter>
   OR?: InputMaybe<Array<InputMaybe<UploadFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<UploadFilter>>>
 }
 
 /** Specifies how to filter by format */
