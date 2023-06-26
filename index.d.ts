@@ -100,6 +100,39 @@ export type CallToActionRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Case abstract (case_abstract) */
+export type CaseAbstractRecord = RecordInterface & {
+  __typename?: 'CaseAbstractRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  tags: Array<CaseStudyTagRecord>
+  text?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Case abstract (case_abstract) */
+export type CaseAbstractRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Case abstract (case_abstract) */
+export type CaseAbstractRecordTextArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']>
+}
+
 export type CaseStudyModelContentBlocksField =
   | BlockLinkRecord
   | CallToActionRecord
