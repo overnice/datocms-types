@@ -164,6 +164,7 @@ export type CaseStudyModelFilter = {
   client?: InputMaybe<LinkFilter>
   content?: InputMaybe<StructuredTextFilter>
   date?: InputMaybe<DateFilter>
+  heroImage?: InputMaybe<FileFilter>
   highlightColor?: InputMaybe<ColorFilter>
   projectName?: InputMaybe<StringFilter>
   secondHighlightColor?: InputMaybe<ColorFilter>
@@ -229,6 +230,7 @@ export type CaseStudyRecord = RecordInterface & {
   content?: Maybe<CaseStudyModelContentField>
   createdAt: Scalars['DateTime']
   date?: Maybe<Scalars['Date']>
+  heroImage?: Maybe<FileField>
   highlightColor?: Maybe<ColorField>
   id: Scalars['ItemId']
   projectName?: Maybe<Scalars['String']>
