@@ -159,6 +159,7 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  abstract?: InputMaybe<TextFilter>
   backgroundColor?: InputMaybe<ColorFilter>
   client?: InputMaybe<LinkFilter>
   content?: InputMaybe<StructuredTextFilter>
@@ -222,6 +223,7 @@ export type CaseStudyRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  abstract?: Maybe<Scalars['String']>
   backgroundColor?: Maybe<ColorField>
   client?: Maybe<ClientRecord>
   content?: Maybe<CaseStudyModelContentField>
@@ -243,6 +245,11 @@ export type CaseStudyRecord = RecordInterface & {
 /** Record of type Case Study (case_study) */
 export type CaseStudyRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Case Study (case_study) */
+export type CaseStudyRecordAbstractArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']>
 }
 
 export type CaseStudyTagModelFilter = {
@@ -3691,6 +3698,20 @@ export type TeamMemberTileRecord = RecordInterface & {
 /** Block of type Team Member Tile (team_member_tile) */
 export type TeamMemberTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
+}
+
+/** Specifies how to filter text fields */
+export type TextFilter = {
+  /** Filter records based on a regular expression */
+  matches?: InputMaybe<StringMatchesFilter>
+  /** Exclude records based on a regular expression */
+  notMatches?: InputMaybe<StringMatchesFilter>
+  /** Filter records with the specified field set as blank (null or empty string) */
+  isBlank?: InputMaybe<Scalars['BooleanType']>
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']>
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
+  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 export type TileGridModelTilesField =
