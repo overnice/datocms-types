@@ -2402,6 +2402,32 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']>
 }
 
+/** Block of type Inline Case Preview (inline_case_preview) */
+export type InlineCasePreviewRecord = RecordInterface & {
+  __typename?: 'InlineCasePreviewRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Inline Case Preview (inline_case_preview) */
+export type InlineCasePreviewRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Interactive Image Tile (interactive_image_tile) */
 export type InteractiveImageTileRecord = RecordInterface & {
   __typename?: 'InteractiveImageTileRecord'
