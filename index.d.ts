@@ -2418,8 +2418,10 @@ export type InlineCasePreviewRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  case?: Maybe<CaseStudyRecord>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
