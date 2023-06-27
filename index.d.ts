@@ -104,6 +104,7 @@ export type CaseStudyModelContentBlocksField =
   | BlockLinkRecord
   | CallToActionRecord
   | FullWidthImageRecord
+  | InlineCasePreviewRecord
   | RichTextRecord
   | TileGridRecord
 
