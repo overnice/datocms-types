@@ -50,7 +50,6 @@ export type BlockLinkRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
-  headline?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   image?: Maybe<FileField>
   link: Array<SimpleLinkRecord>
