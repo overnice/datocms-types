@@ -2646,7 +2646,10 @@ export type LinksFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
-export type LogoTileGridModelTilesField = EmptyTileRecord | LogoTileRecord
+export type LogoTileGridModelTilesField =
+  | EmptyTileRecord
+  | InteractiveImageTileRecord
+  | LogoTileRecord
 
 /** Block of type Logo Tile Grid (logo_tile_grid) */
 export type LogoTileGridRecord = RecordInterface & {
