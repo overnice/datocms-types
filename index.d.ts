@@ -44,7 +44,7 @@ export type BlockLinkRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -80,7 +80,7 @@ export type CallToActionRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -88,7 +88,7 @@ export type CallToActionRecord = RecordInterface & {
   alternativeLink: Array<SimpleLinkRecord>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
-  isAlternativeLink?: Maybe<Scalars['BooleanType']>
+  isAlternativeLink: Scalars['BooleanType']
   link?: Maybe<CallToActionModelLinkField>
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
@@ -185,7 +185,7 @@ export type CaseStudyRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -275,7 +275,7 @@ export type CaseStudyTagRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -302,7 +302,7 @@ export type CaseStudyTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -329,7 +329,7 @@ export type ClientGridRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -403,7 +403,7 @@ export type ClientRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -469,7 +469,7 @@ export type CookieNoticeRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -517,7 +517,7 @@ export type CustomErrorPageRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -609,7 +609,7 @@ export type DepartmentRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -636,7 +636,7 @@ export type EmptyTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -664,7 +664,7 @@ export type ErrorPageRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -690,7 +690,7 @@ export enum FaviconType {
 export type FileField = FileFieldInterface & {
   __typename?: 'FileField'
   _createdAt: Scalars['DateTime']
-  /** Editing URL */
+  /** The DatoCMS URL where you can edit this entity. To use this field, you need to set a X-Base-Editing-Url header in the request */
   _editingUrl?: Maybe<Scalars['String']>
   _updatedAt: Scalars['DateTime']
   alt?: Maybe<Scalars['String']>
@@ -761,7 +761,7 @@ export type FileFieldUrlArgs = {
 
 export type FileFieldInterface = {
   _createdAt: Scalars['DateTime']
-  /** Editing URL */
+  /** The DatoCMS URL where you can edit this entity. To use this field, you need to set a X-Base-Editing-Url header in the request */
   _editingUrl?: Maybe<Scalars['String']>
   _updatedAt: Scalars['DateTime']
   alt?: Maybe<Scalars['String']>
@@ -855,7 +855,7 @@ export type FullWidthImageRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -863,7 +863,7 @@ export type FullWidthImageRecord = RecordInterface & {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   image?: Maybe<FileField>
-  needsBorder?: Maybe<Scalars['BooleanType']>
+  needsBorder: Scalars['BooleanType']
   updatedAt: Scalars['DateTime']
 }
 
@@ -892,7 +892,7 @@ export type HighlightTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -933,7 +933,7 @@ export type HomepageRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -962,7 +962,7 @@ export type ImageTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -971,7 +971,7 @@ export type ImageTileRecord = RecordInterface & {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   image?: Maybe<FileField>
-  needsBorder?: Maybe<Scalars['BooleanType']>
+  needsBorder: Scalars['BooleanType']
   rowSpan?: Maybe<Scalars['IntType']>
   updatedAt: Scalars['DateTime']
 }
@@ -2412,7 +2412,7 @@ export type InteractiveImageTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2421,12 +2421,12 @@ export type InteractiveImageTileRecord = RecordInterface & {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   image?: Maybe<FileField>
-  isLink?: Maybe<Scalars['BooleanType']>
+  isLink: Scalars['BooleanType']
   label?: Maybe<Scalars['String']>
   labelBackgroundColor?: Maybe<ColorField>
   labelTextColor?: Maybe<ColorField>
   link: Array<SimpleLinkRecord>
-  needsBorder?: Maybe<Scalars['BooleanType']>
+  needsBorder: Scalars['BooleanType']
   rowSpan?: Maybe<Scalars['IntType']>
   updatedAt: Scalars['DateTime']
 }
@@ -2465,7 +2465,7 @@ export type JobListingRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2561,7 +2561,7 @@ export type JobRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2662,7 +2662,7 @@ export type LogoTileGridRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2689,7 +2689,7 @@ export type LogoTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2722,7 +2722,7 @@ export type NavigationRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2831,7 +2831,7 @@ export type PageRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -2910,7 +2910,7 @@ export type PersonRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3280,7 +3280,7 @@ export type QuoteTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3306,7 +3306,7 @@ export type RecordInterface = {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3363,14 +3363,14 @@ export type RichTextRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
-  orangeLists?: Maybe<Scalars['BooleanType']>
+  orangeLists: Scalars['BooleanType']
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
@@ -3389,6 +3389,7 @@ export type SeoField = {
   __typename?: 'SeoField'
   description?: Maybe<Scalars['String']>
   image?: Maybe<FileField>
+  noIndex?: Maybe<Scalars['BooleanType']>
   title?: Maybe<Scalars['String']>
   twitterCard?: Maybe<Scalars['String']>
 }
@@ -3416,7 +3417,7 @@ export type SidenoteTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3449,7 +3450,7 @@ export type SimpleLinkRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3458,7 +3459,7 @@ export type SimpleLinkRecord = RecordInterface & {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   internalLink?: Maybe<SimpleLinkModelInternalLinkField>
-  isExternalLink?: Maybe<Scalars['BooleanType']>
+  isExternalLink: Scalars['BooleanType']
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
   url?: Maybe<Scalars['String']>
@@ -3475,6 +3476,7 @@ export type Site = {
   faviconMetaTags: Array<Tag>
   globalSeo?: Maybe<GlobalSeoField>
   locales: Array<SiteLocale>
+  noIndex?: Maybe<Scalars['BooleanType']>
 }
 
 export type SiteFaviconMetaTagsArgs = {
@@ -3548,7 +3550,7 @@ export type StringMultiLocaleField = {
   value?: Maybe<Scalars['String']>
 }
 
-/** Specifies how to filter Structured Text fields */
+/** Specifies how to filter Structured Text fields values */
 export type StructuredTextFilter = {
   /** Filter records based on a regular expression */
   matches?: InputMaybe<StringMatchesFilter>
@@ -3625,7 +3627,7 @@ export type TeamMemberRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3655,7 +3657,7 @@ export type TeamMemberTileRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -3706,7 +3708,7 @@ export type TileGridRecord = RecordInterface & {
   _modelApiKey: Scalars['String']
   _publicationScheduledAt?: Maybe<Scalars['DateTime']>
   _publishedAt?: Maybe<Scalars['DateTime']>
-  /** SEO meta tags */
+  /** Generates SEO and Social card meta tags to be used in your frontend */
   _seoMetaTags: Array<Tag>
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
@@ -4046,13 +4048,32 @@ export type UploadUpdatedAtFilter = {
 
 export type UploadVideoField = {
   __typename?: 'UploadVideoField'
+  alt?: Maybe<Scalars['String']>
+  blurUpThumb?: Maybe<Scalars['String']>
+  blurhash?: Maybe<Scalars['String']>
   duration?: Maybe<Scalars['Int']>
   framerate?: Maybe<Scalars['Int']>
+  height: Scalars['IntType']
   mp4Url?: Maybe<Scalars['String']>
   muxAssetId: Scalars['String']
   muxPlaybackId: Scalars['String']
   streamingUrl: Scalars['String']
+  thumbhash?: Maybe<Scalars['String']>
   thumbnailUrl: Scalars['String']
+  title?: Maybe<Scalars['String']>
+  width: Scalars['IntType']
+}
+
+export type UploadVideoFieldAltArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+export type UploadVideoFieldBlurUpThumbArgs = {
+  punch?: Scalars['Float']
+  size?: Scalars['Int']
+  quality?: Scalars['Int']
+  imgixParams?: InputMaybe<ImgixParams>
 }
 
 export type UploadVideoFieldMp4UrlArgs = {
@@ -4062,6 +4083,11 @@ export type UploadVideoFieldMp4UrlArgs = {
 
 export type UploadVideoFieldThumbnailUrlArgs = {
   format?: InputMaybe<MuxThumbnailFormatType>
+}
+
+export type UploadVideoFieldTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Specifies how to filter by width */
