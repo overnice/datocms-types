@@ -2754,139 +2754,6 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>
 }
 
-export type PackageModelContentBlocksField =
-  | CallToActionRecord
-  | FullWidthImageRecord
-  | RichTextRecord
-  | TileGridRecord
-
-export type PackageModelContentField = {
-  __typename?: 'PackageModelContentField'
-  blocks: Array<PackageModelContentBlocksField>
-  links: Array<Scalars['String']>
-  value: Scalars['JsonField']
-}
-
-export type PackageModelFilter = {
-  _createdAt?: InputMaybe<CreatedAtFilter>
-  createdAt?: InputMaybe<CreatedAtFilter>
-  id?: InputMaybe<ItemIdFilter>
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
-  _publishedAt?: InputMaybe<PublishedAtFilter>
-  _status?: InputMaybe<StatusFilter>
-  _updatedAt?: InputMaybe<UpdatedAtFilter>
-  updatedAt?: InputMaybe<UpdatedAtFilter>
-  _isValid?: InputMaybe<BooleanFilter>
-  content?: InputMaybe<StructuredTextFilter>
-  excerpt?: InputMaybe<StringFilter>
-  slug?: InputMaybe<SlugFilter>
-  tags?: InputMaybe<SeoFilter>
-  title?: InputMaybe<StringFilter>
-  OR?: InputMaybe<Array<InputMaybe<PackageModelFilter>>>
-  AND?: InputMaybe<Array<InputMaybe<PackageModelFilter>>>
-}
-
-export enum PackageModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-}
-
-/** Record of type Package (package) */
-export type PackageRecord = RecordInterface & {
-  __typename?: 'PackageRecord'
-  _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
-  _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
-  _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
-  _createdAt: Scalars['DateTime']
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']>
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>
-  _isValid: Scalars['BooleanType']
-  _modelApiKey: Scalars['String']
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
-  _publishedAt?: Maybe<Scalars['DateTime']>
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>
-  _status: ItemStatus
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
-  _updatedAt: Scalars['DateTime']
-  content?: Maybe<PackageModelContentField>
-  createdAt: Scalars['DateTime']
-  excerpt?: Maybe<Scalars['String']>
-  id: Scalars['ItemId']
-  slug?: Maybe<Scalars['String']>
-  tags?: Maybe<SeoField>
-  title?: Maybe<Scalars['String']>
-  updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Package (package) */
-export type PackageRecord_AllExcerptLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Package (package) */
-export type PackageRecord_AllTagsLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Package (package) */
-export type PackageRecord_AllTitleLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Package (package) */
-export type PackageRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Package (package) */
-export type PackageRecordExcerptArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Package (package) */
-export type PackageRecordTagsArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** Record of type Package (package) */
-export type PackageRecordTitleArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
 export type PageModelContentBlocksField =
   | CallToActionRecord
   | ClientGridRecord
@@ -3093,8 +2960,6 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
-  _allPackagesMeta: CollectionMetadata
-  /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPeopleMeta: CollectionMetadata
@@ -3114,8 +2979,6 @@ export type Query = {
   allDepartments: Array<DepartmentRecord>
   /** Returns a collection of records */
   allJobs: Array<JobRecord>
-  /** Returns a collection of records */
-  allPackages: Array<PackageRecord>
   /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
@@ -3142,8 +3005,6 @@ export type Query = {
   job?: Maybe<JobRecord>
   /** Returns the single instance record */
   navigation?: Maybe<NavigationRecord>
-  /** Returns a specific record */
-  package?: Maybe<PackageRecord>
   /** Returns a specific record */
   page?: Maybe<PageRecord>
   /** Returns a specific record */
@@ -3186,13 +3047,6 @@ export type Query_AllDepartmentsMetaArgs = {
 export type Query_AllJobsMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   filter?: InputMaybe<JobModelFilter>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** The query root for this schema */
-export type Query_AllPackagesMetaArgs = {
-  locale?: InputMaybe<SiteLocale>
-  filter?: InputMaybe<PackageModelFilter>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -3277,16 +3131,6 @@ export type QueryAllJobsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<JobModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<JobModelOrderBy>>>
-}
-
-/** The query root for this schema */
-export type QueryAllPackagesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  skip?: InputMaybe<Scalars['IntType']>
-  first?: InputMaybe<Scalars['IntType']>
-  filter?: InputMaybe<PackageModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<PackageModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3391,14 +3235,6 @@ export type QueryJobArgs = {
 export type QueryNavigationArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
-}
-
-/** The query root for this schema */
-export type QueryPackageArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
-  filter?: InputMaybe<PackageModelFilter>
-  orderBy?: InputMaybe<Array<InputMaybe<PackageModelOrderBy>>>
 }
 
 /** The query root for this schema */
