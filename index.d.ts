@@ -2214,6 +2214,12 @@ export type ImgixParams = {
    * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/w)
    */
   w?: InputMaybe<Scalars['FloatType']>
+  /**
+   * Bypasses any [DatoCMS Automatic Image Optimization](https://www.datocms.com/docs/cdn-settings/advanced-asset-settings) that might be set up for the project.
+   *
+   * Exercise caution when using this parameter, as it could significantly increase your bandwidth costs.
+   */
+  skipDefaultOptimizations?: InputMaybe<Scalars['BooleanType']>
 }
 
 export enum ImgixParamsAuto {
