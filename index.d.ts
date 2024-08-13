@@ -33,6 +33,64 @@ export type Scalars = {
   UploadId: any
 }
 
+/** Block of type Badge List (badge_list) */
+export type BadgeListRecord = RecordInterface & {
+  __typename?: 'BadgeListRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  badges: Array<BadgeRecord>
+  createdAt: Scalars['DateTime']
+  customSpacing: Scalars['BooleanType']
+  id: Scalars['ItemId']
+  spacingBottom?: Maybe<Scalars['String']>
+  spacingTop?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Badge List (badge_list) */
+export type BadgeListRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Badge (badge) */
+export type BadgeRecord = RecordInterface & {
+  __typename?: 'BadgeRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  filled: Scalars['BooleanType']
+  id: Scalars['ItemId']
+  label?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Badge (badge) */
+export type BadgeRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Block of type Block Link (block_link) */
 export type BlockLinkRecord = RecordInterface & {
   __typename?: 'BlockLinkRecord'
@@ -49,10 +107,10 @@ export type BlockLinkRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  caseStudy?: Maybe<CaseStudyRecord>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
-  image?: Maybe<FileField>
-  link: Array<SimpleLinkRecord>
+  title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
@@ -87,9 +145,11 @@ export type CallToActionRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   alternativeLink: Array<SimpleLinkRecord>
   createdAt: Scalars['DateTime']
+  description?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   isAlternativeLink: Scalars['BooleanType']
   link?: Maybe<CallToActionModelLinkField>
+  minimalisticLayout: Scalars['BooleanType']
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
@@ -104,6 +164,7 @@ export type CaseStudyModelContentBlocksField =
   | CallToActionRecord
   | FullWidthImageRecord
   | RichTextRecord
+  | SectionRecord
   | TileGridRecord
 
 export type CaseStudyModelContentField = {
@@ -125,20 +186,20 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  abstract?: InputMaybe<TextFilter>
-  backgroundColor?: InputMaybe<ColorFilter>
-  client?: InputMaybe<LinkFilter>
   content?: InputMaybe<StructuredTextFilter>
-  date?: InputMaybe<DateFilter>
+  tags?: InputMaybe<SeoFilter>
+  sublineTags?: InputMaybe<LinksFilter>
+  client?: InputMaybe<LinkFilter>
   heroImage?: InputMaybe<FileFilter>
   highlightColor?: InputMaybe<ColorFilter>
-  projectName?: InputMaybe<StringFilter>
-  secondHighlightColor?: InputMaybe<ColorFilter>
-  slug?: InputMaybe<SlugFilter>
-  sublineTags?: InputMaybe<LinksFilter>
-  tags?: InputMaybe<SeoFilter>
   textColor?: InputMaybe<ColorFilter>
+  backgroundColor?: InputMaybe<ColorFilter>
+  date?: InputMaybe<DateFilter>
+  secondHighlightColor?: InputMaybe<ColorFilter>
   title?: InputMaybe<StringFilter>
+  abstract?: InputMaybe<TextFilter>
+  projectName?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
   OR?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
 }
@@ -168,10 +229,10 @@ export enum CaseStudyModelOrderBy {
   IsValidDesc = '_isValid_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
-  ProjectNameAsc = 'projectName_ASC',
-  ProjectNameDesc = 'projectName_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
+  ProjectNameAsc = 'projectName_ASC',
+  ProjectNameDesc = 'projectName_DESC',
 }
 
 /** Record of type Case Study (case_study) */
@@ -356,9 +417,9 @@ export type ClientModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  excerpt?: InputMaybe<StringFilter>
   logo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
+  excerpt?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
 }
@@ -386,10 +447,10 @@ export enum ClientModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
 }
 
 /** Record of type Client (client) */
@@ -913,6 +974,7 @@ export type HomepageModelContentBlocksField =
   | CallToActionRecord
   | FullWidthImageRecord
   | RichTextRecord
+  | SectionRecord
   | TileGridRecord
 
 export type HomepageModelContentField = {
@@ -948,6 +1010,33 @@ export type HomepageRecord = RecordInterface & {
 
 /** Record of type Homepage (homepage) */
 export type HomepageRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Image Grid (image_grid) */
+export type ImageGridRecord = RecordInterface & {
+  __typename?: 'ImageGridRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  images: Array<FileField>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Image Grid (image_grid) */
+export type ImageGridRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -1001,13 +1090,45 @@ export type ImgixParams = {
    */
   auto?: InputMaybe<Array<ImgixParamsAuto>>
   /**
+   * Background Removal Fallback
+   *
+   * Overrides default fallback behavior for bg-remove failures.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
+   */
+  bgRemoveFallback?: InputMaybe<Scalars['BooleanType']>
+  /**
    * Background Removal
    *
    * Removes background from image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background-removal/bg-remove)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
    */
   bgRemove?: InputMaybe<Scalars['BooleanType']>
+  /**
+   * Background Removal Fallback
+   *
+   * Overrides default fallback behavior for bg-replace failures.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+   */
+  bgReplaceFallback?: InputMaybe<Scalars['BooleanType']>
+  /**
+   * Background Replacement Negative Prompt
+   *
+   * Provides a negative text suggestion for background replacement.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt)
+   */
+  bgReplaceNegPrompt?: InputMaybe<Scalars['String']>
+  /**
+   * Background Replacement
+   *
+   * Replaces background from image using a string based prompt.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+   */
+  bgReplace?: InputMaybe<Scalars['String']>
   /**
    * Background Color
    *
@@ -1395,6 +1516,138 @@ export type ImgixParams = {
    */
   fillColor?: InputMaybe<Scalars['String']>
   /**
+   * Fill Generative Fallback
+   *
+   * Sets the fallback behavior for generative fill.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-fallback)
+   */
+  fillGenFallback?: InputMaybe<Scalars['BooleanType']>
+  /**
+   * Fill Generative Negative Prompt
+   *
+   * Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt)
+   */
+  fillGenNegPrompt?: InputMaybe<Scalars['String']>
+  /**
+   * Fill Generative Position
+   *
+   * Sets the position of the Origin Image in relation to the generative fill.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-pos)
+   */
+  fillGenPos?: InputMaybe<Array<ImgixParamsFillGenPos>>
+  /**
+   * Fill Generative Prompt
+   *
+   * Provides a text suggestion to the generative fill parameter.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-prompt)
+   */
+  fillGenPrompt?: InputMaybe<Scalars['String']>
+  /**
+   * Fill Generative Seed
+   *
+   * Sets the generative seed value. Used to generate similar outputs from different prompts.
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-seed)
+   */
+  fillGenSeed?: InputMaybe<Scalars['IntType']>
+  /**
+   * Fill Gradient Color Space
+   *
+   * Defines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-cs)
+   */
+  fillGradientCs?: InputMaybe<ImgixParamsFillGradientCs>
+  /**
+   * Fill Gradient Linear Direction
+   *
+   * The fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left
+   *
+   * Depends on: `fit=fill`, `fill=gen`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction)
+   */
+  fillGradientLinearDirection?: InputMaybe<
+    Array<ImgixParamsFillGradientLinearDirection>
+  >
+  /**
+   * Fill Gradient Linear
+   *
+   * Blends a gradient between two colors, {color1} and {color2}, along a straight path
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear)
+   */
+  fillGradientLinear?: InputMaybe<Scalars['String']>
+  /**
+   * Fill Gradient Radial Radius
+   *
+   * Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius)
+   */
+  fillGradientRadialRadius?: InputMaybe<Scalars['String']>
+  /**
+   * Fill Gradient Radial X
+   *
+   * Specifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x)
+   */
+  fillGradientRadialX?: InputMaybe<Scalars['FloatType']>
+  /**
+   * Fill Gradient Radial Y
+   *
+   * Parameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y)
+   */
+  fillGradientRadialY?: InputMaybe<Scalars['FloatType']>
+  /**
+   * Fill Gradient Radial
+   *
+   * The fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial)
+   */
+  fillGradientRadial?: InputMaybe<Scalars['String']>
+  /**
+   * Fill Gradient Type
+   *
+   * Specifies if a gradient is radial (circular) or linear (straight)
+   *
+   * Depends on: `fit=fill`, `fill=gradient`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-type)
+   */
+  fillGradientType?: InputMaybe<ImgixParamsFillGradientType>
+  /**
    * Fill Mode
    *
    * Determines how to fill in additional space created by the fit setting
@@ -1491,6 +1744,8 @@ export type ImgixParams = {
   /**
    * Animated Gif Quality
    *
+   * Specifies the quality of the animated gif. The higher the value, the better more compression is applied.
+   *
    * Depends on: `fm=gif`
    */
   gifQ?: InputMaybe<Scalars['IntType']>
@@ -1562,6 +1817,12 @@ export type ImgixParams = {
    * Determine if IPTC data should be passed for JPEG images.
    */
   iptc?: InputMaybe<ImgixParamsIptc>
+  /**
+   * Jpg Progressive
+   *
+   * Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)
+   */
+  jpgProgressive?: InputMaybe<Scalars['BooleanType']>
   /**
    * Animation Loop Count
    *
@@ -1947,6 +2208,12 @@ export type ImgixParams = {
    */
   skip?: InputMaybe<Scalars['IntType']>
   /**
+   * Sanitize Svg
+   *
+   * Specifies whether to sanitize an SVG.
+   */
+  svgSanitize?: InputMaybe<Scalars['BooleanType']>
+  /**
    * Transparency
    *
    * Adds checkerboard behind images which support transparency.
@@ -2073,16 +2340,6 @@ export type ImgixParams = {
    */
   txtLead?: InputMaybe<Scalars['IntType']>
   /**
-   * Text Ligatures
-   *
-   * Controls the level of ligature substitution
-   *
-   * Depends on: `txt`
-   *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-lig)
-   */
-  txtLig?: InputMaybe<Scalars['IntType']>
-  /**
    * Text Outline Color
    *
    * Specifies a text outline color.
@@ -2180,6 +2437,22 @@ export type ImgixParams = {
    * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt)
    */
   txt?: InputMaybe<Scalars['String']>
+  /**
+   * Super Resolution Fallback
+   *
+   * Overrides default fallback behavior for super resolution failures
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback)
+   */
+  upscaleFallback?: InputMaybe<Scalars['BooleanType']>
+  /**
+   * Super Resolution
+   *
+   * Uses generative AI fill to upscale low resolution images.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale)
+   */
+  upscale?: InputMaybe<Scalars['BooleanType']>
   /**
    * Unsharp Mask
    *
@@ -2304,6 +2577,38 @@ export enum ImgixParamsCs {
 export enum ImgixParamsFill {
   Solid = 'solid',
   Blur = 'blur',
+  Gen = 'gen',
+  Generative = 'generative',
+  Gradient = 'gradient',
+}
+
+export enum ImgixParamsFillGenPos {
+  Top = 'top',
+  Bottom = 'bottom',
+  Middle = 'middle',
+  Left = 'left',
+  Right = 'right',
+  Center = 'center',
+}
+
+export enum ImgixParamsFillGradientCs {
+  Linear = 'linear',
+  Srgb = 'srgb',
+  Oklab = 'oklab',
+  Hsl = 'hsl',
+  Lch = 'lch',
+}
+
+export enum ImgixParamsFillGradientLinearDirection {
+  Top = 'top',
+  Bottom = 'bottom',
+  Left = 'left',
+  Right = 'right',
+}
+
+export enum ImgixParamsFillGradientType {
+  Linear = 'linear',
+  Radial = 'radial',
 }
 
 export enum ImgixParamsFit {
@@ -2513,11 +2818,11 @@ export type JobModelFilter = {
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
   content?: InputMaybe<StructuredTextFilter>
-  excerpt?: InputMaybe<StringFilter>
-  slug?: InputMaybe<SlugFilter>
   startDate?: InputMaybe<DateFilter>
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
+  excerpt?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
   OR?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
 }
@@ -2545,12 +2850,12 @@ export enum JobModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
   StartDateAsc = 'startDate_ASC',
   StartDateDesc = 'startDate_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
 }
 
 /** Record of type Job (job) */
@@ -2703,11 +3008,40 @@ export type LogoTileRecord = RecordInterface & {
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   logo?: Maybe<FileField>
+  title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
 
 /** Block of type Logo Tile (logo_tile) */
 export type LogoTileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Logos with Caption Tile (logos_with_caption_tile) */
+export type LogosWithCaptionTileRecord = RecordInterface & {
+  __typename?: 'LogosWithCaptionTileRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  logo: Array<FileField>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Logos with Caption Tile (logos_with_caption_tile) */
+export type LogosWithCaptionTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
@@ -2760,6 +3094,285 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>
 }
 
+/** Block of type Package Card (package_card) */
+export type PackageCardRecord = RecordInterface & {
+  __typename?: 'PackageCardRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  accentColor?: Maybe<Scalars['String']>
+  cost?: Maybe<Scalars['String']>
+  createdAt: Scalars['DateTime']
+  description?: Maybe<Scalars['String']>
+  id: Scalars['ItemId']
+  paymentType?: Maybe<Scalars['String']>
+  timeframe?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Package Card (package_card) */
+export type PackageCardRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Package Card (package_card) */
+export type PackageCardRecordDescriptionArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']>
+}
+
+/** Block of type Package List (package_list) */
+export type PackageListRecord = RecordInterface & {
+  __typename?: 'PackageListRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Package List (package_list) */
+export type PackageListRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type PackageModelContentBlocksField =
+  | CallToActionRecord
+  | FullWidthImageRecord
+  | PackageTimelineRecord
+  | RichTextRecord
+  | SectionRecord
+  | TileGridRecord
+
+export type PackageModelContentField = {
+  __typename?: 'PackageModelContentField'
+  blocks: Array<PackageModelContentBlocksField>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
+export type PackageModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  tags?: InputMaybe<SeoFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  highlightColor?: InputMaybe<ColorFilter>
+  slug?: InputMaybe<SlugFilter>
+  packageType?: InputMaybe<StringFilter>
+  title?: InputMaybe<StringFilter>
+  excerpt?: InputMaybe<StringFilter>
+  timeframe?: InputMaybe<StringFilter>
+  cost?: InputMaybe<StringFilter>
+  OR?: InputMaybe<Array<InputMaybe<PackageModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<PackageModelFilter>>>
+}
+
+export enum PackageModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PackageTypeAsc = 'packageType_ASC',
+  PackageTypeDesc = 'packageType_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
+  TimeframeAsc = 'timeframe_ASC',
+  TimeframeDesc = 'timeframe_DESC',
+  CostAsc = 'cost_ASC',
+  CostDesc = 'cost_DESC',
+}
+
+/** Record of type Package (package) */
+export type PackageRecord = RecordInterface & {
+  __typename?: 'PackageRecord'
+  _allCostLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allPackageTypeLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
+  _allTimeframeLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  content?: Maybe<PackageModelContentField>
+  cost?: Maybe<Scalars['String']>
+  createdAt: Scalars['DateTime']
+  excerpt?: Maybe<Scalars['String']>
+  highlightColor?: Maybe<ColorField>
+  id: Scalars['ItemId']
+  packageType?: Maybe<Scalars['String']>
+  slug?: Maybe<Scalars['String']>
+  tags?: Maybe<SeoField>
+  timeframe?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_AllCostLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_AllExcerptLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_AllPackageTypeLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_AllTagsLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_AllTimeframeLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_AllTitleLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Package (package) */
+export type PackageRecordCostArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecordExcerptArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecordPackageTypeArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecordTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecordTimeframeArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Package (package) */
+export type PackageRecordTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Block of type Package Timeline (package_timeline) */
+export type PackageTimelineRecord = RecordInterface & {
+  __typename?: 'PackageTimelineRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  columns: Array<TimelineColumnRecord>
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  items: Array<TimelineItemRecord>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Package Timeline (package_timeline) */
+export type PackageTimelineRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type PageModelContentBlocksField =
   | CallToActionRecord
   | ClientGridRecord
@@ -2767,6 +3380,8 @@ export type PageModelContentBlocksField =
   | JobListingRecord
   | LogoTileGridRecord
   | RichTextRecord
+  | SectionRecord
+  | TeamMembersGridRecord
   | TileGridRecord
 
 export type PageModelContentField = {
@@ -2788,11 +3403,11 @@ export type PageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  tags?: InputMaybe<SeoFilter>
   content?: InputMaybe<StructuredTextFilter>
+  title?: InputMaybe<StringFilter>
   pageName?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
-  tags?: InputMaybe<SeoFilter>
-  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
 }
@@ -2820,10 +3435,10 @@ export enum PageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  PageNameAsc = 'pageName_ASC',
-  PageNameDesc = 'pageName_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
+  PageNameAsc = 'pageName_ASC',
+  PageNameDesc = 'pageName_DESC',
 }
 
 /** Record of type Page (page) */
@@ -2869,8 +3484,8 @@ export type PersonModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  name?: InputMaybe<StringFilter>
   photo?: InputMaybe<FileFilter>
+  name?: InputMaybe<StringFilter>
   role?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
@@ -2966,11 +3581,15 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allJobsMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allPackagesMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allPeopleMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allTeamMembersMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
+  _allTestsMeta: CollectionMetadata
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata
   /** Returns the single instance record */
@@ -2986,11 +3605,15 @@ export type Query = {
   /** Returns a collection of records */
   allJobs: Array<JobRecord>
   /** Returns a collection of records */
+  allPackages: Array<PackageRecord>
+  /** Returns a collection of records */
   allPages: Array<PageRecord>
   /** Returns a collection of records */
   allPeople: Array<PersonRecord>
   /** Returns a collection of records */
   allTeamMembers: Array<TeamMemberRecord>
+  /** Returns a collection of records */
+  allTests: Array<TestRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
   /** Returns a specific record */
@@ -3012,11 +3635,15 @@ export type Query = {
   /** Returns the single instance record */
   navigation?: Maybe<NavigationRecord>
   /** Returns a specific record */
+  package?: Maybe<PackageRecord>
+  /** Returns a specific record */
   page?: Maybe<PageRecord>
   /** Returns a specific record */
   person?: Maybe<PersonRecord>
   /** Returns a specific record */
   teamMember?: Maybe<TeamMemberRecord>
+  /** Returns a specific record */
+  test?: Maybe<TestRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
 }
@@ -3057,6 +3684,13 @@ export type Query_AllJobsMetaArgs = {
 }
 
 /** The query root for this schema */
+export type Query_AllPackagesMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  filter?: InputMaybe<PackageModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
 export type Query_AllPagesMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   filter?: InputMaybe<PageModelFilter>
@@ -3074,6 +3708,13 @@ export type Query_AllPeopleMetaArgs = {
 export type Query_AllTeamMembersMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   filter?: InputMaybe<TeamMemberModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
+export type Query_AllTestsMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  filter?: InputMaybe<TestModelFilter>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -3140,6 +3781,16 @@ export type QueryAllJobsArgs = {
 }
 
 /** The query root for this schema */
+export type QueryAllPackagesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<PackageModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PackageModelOrderBy>>>
+}
+
+/** The query root for this schema */
 export type QueryAllPagesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -3167,6 +3818,16 @@ export type QueryAllTeamMembersArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<TeamMemberModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<TeamMemberModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllTestsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<TestModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<TestModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3244,6 +3905,14 @@ export type QueryNavigationArgs = {
 }
 
 /** The query root for this schema */
+export type QueryPackageArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<PackageModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<PackageModelOrderBy>>>
+}
+
+/** The query root for this schema */
 export type QueryPageArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
@@ -3265,6 +3934,14 @@ export type QueryTeamMemberArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<TeamMemberModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<TeamMemberModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryTestArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<TestModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<TestModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3292,9 +3969,11 @@ export type QuoteTileRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
   author?: Maybe<PersonRecord>
+  colSpan?: Maybe<Scalars['IntType']>
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
   quote?: Maybe<Scalars['String']>
+  rowSpan?: Maybe<Scalars['IntType']>
   updatedAt: Scalars['DateTime']
 }
 
@@ -3389,6 +4068,55 @@ export type RichTextRecord_SeoMetaTagsArgs = {
 /** Block of type Rich Text (rich_text) */
 export type RichTextRecordTextArgs = {
   markdown?: InputMaybe<Scalars['Boolean']>
+}
+
+export type SectionModelContentBlocksField =
+  | BadgeListRecord
+  | BadgeRecord
+  | ClientGridRecord
+  | FullWidthImageRecord
+  | ImageGridRecord
+  | JobListingRecord
+  | LogoTileGridRecord
+  | PackageListRecord
+  | PackageTimelineRecord
+  | RichTextRecord
+  | SimpleLinkRecord
+  | TeamMembersGridRecord
+  | TileGridRecord
+
+export type SectionModelContentField = {
+  __typename?: 'SectionModelContentField'
+  blocks: Array<SectionModelContentBlocksField>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
+/** Block of type Section (section) */
+export type SectionRecord = RecordInterface & {
+  __typename?: 'SectionRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  content?: Maybe<SectionModelContentField>
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Section (section) */
+export type SectionRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
 }
 
 export type SeoField = {
@@ -3679,6 +4407,100 @@ export type TeamMemberTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Team Members Grid (team_members_grid) */
+export type TeamMembersGridRecord = RecordInterface & {
+  __typename?: 'TeamMembersGridRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  teamMembers: Array<TeamMemberTileRecord>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Team Members Grid (team_members_grid) */
+export type TeamMembersGridRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+export type TestModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  OR?: InputMaybe<Array<InputMaybe<TestModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<TestModelFilter>>>
+}
+
+export enum TestModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+}
+
+/** Record of type Test (test) */
+export type TestRecord = RecordInterface & {
+  __typename?: 'TestRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Test (test) */
+export type TestRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter text fields */
 export type TextFilter = {
   /** Filter records based on a regular expression */
@@ -3699,6 +4521,7 @@ export type TileGridModelTilesField =
   | HighlightTileRecord
   | ImageTileRecord
   | InteractiveImageTileRecord
+  | LogosWithCaptionTileRecord
   | QuoteTileRecord
   | SidenoteTileRecord
   | TeamMemberTileRecord
@@ -3721,12 +4544,72 @@ export type TileGridRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
+  isWide: Scalars['BooleanType']
   tiles: Array<TileGridModelTilesField>
   updatedAt: Scalars['DateTime']
 }
 
 /** Block of type Tile Grid (tile_grid) */
 export type TileGridRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Timeline Column (timeline_column) */
+export type TimelineColumnRecord = RecordInterface & {
+  __typename?: 'TimelineColumnRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Timeline Column (timeline_column) */
+export type TimelineColumnRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Block of type Timeline Item (timeline_item) */
+export type TimelineItemRecord = RecordInterface & {
+  __typename?: 'TimelineItemRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  backgroundColor?: Maybe<ColorField>
+  createdAt: Scalars['DateTime']
+  endColumn?: Maybe<Scalars['IntType']>
+  id: Scalars['ItemId']
+  pillOrText: Scalars['BooleanType']
+  startColumn?: Maybe<Scalars['IntType']>
+  textColor?: Maybe<ColorField>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Timeline Item (timeline_item) */
+export type TimelineItemRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
