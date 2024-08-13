@@ -149,7 +149,6 @@ export type CallToActionRecord = RecordInterface & {
   id: Scalars['ItemId']
   isAlternativeLink: Scalars['BooleanType']
   link?: Maybe<CallToActionModelLinkField>
-  minimalisticLayout: Scalars['BooleanType']
   text?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
