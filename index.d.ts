@@ -4666,6 +4666,7 @@ export type TwoLineTextLinkRecord = RecordInterface & {
   id: Scalars['ItemId']
   link?: Maybe<TwoLineTextLinkModelLinkField>
   linkLine?: Maybe<Scalars['String']>
+  links?: Maybe<SimpleLinkRecord>
   topLine?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
