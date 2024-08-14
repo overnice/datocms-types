@@ -518,6 +518,35 @@ export type ColorFilter = {
   exists?: InputMaybe<Scalars['BooleanType']>
 }
 
+/** Block of type Contact Card (contact_card) */
+export type ContactCardRecord = RecordInterface & {
+  __typename?: 'ContactCardRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  description?: Maybe<Scalars['String']>
+  email?: Maybe<Scalars['String']>
+  id: Scalars['ItemId']
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Contact Card (contact_card) */
+export type ContactCardRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Record of type Cookie Notice (cookie_notice) */
 export type CookieNoticeRecord = RecordInterface & {
   __typename?: 'CookieNoticeRecord'
@@ -4073,6 +4102,7 @@ export type SectionModelContentBlocksField =
   | BadgeListRecord
   | BadgeRecord
   | ClientGridRecord
+  | ContactCardRecord
   | FullWidthImageRecord
   | ImageGridRecord
   | JobListingRecord
