@@ -4201,6 +4201,7 @@ export type SimpleLinkModelInternalLinkField =
   | CaseStudyRecord
   | HomepageRecord
   | JobRecord
+  | PackageRecord
   | PageRecord
 
 /** Block of type Simple Link (simple_link) */
