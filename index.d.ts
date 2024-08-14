@@ -4642,6 +4642,34 @@ export type TimelineItemRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Two Line Text + Link (two_line_text_link) */
+export type TwoLineTextLinkRecord = RecordInterface & {
+  __typename?: 'TwoLineTextLinkRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  linkLineText?: Maybe<Scalars['String']>
+  topLine?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Two Line Text + Link (two_line_text_link) */
+export type TwoLineTextLinkRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 /** Specifies how to filter by upload type */
 export type TypeFilter = {
   /** Search uploads with the specified type */
