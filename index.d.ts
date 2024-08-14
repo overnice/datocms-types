@@ -4113,6 +4113,7 @@ export type SectionModelContentBlocksField =
   | SimpleLinkRecord
   | TeamMembersGridRecord
   | TileGridRecord
+  | TwoLineTextLinkRecord
 
 export type SectionModelContentField = {
   __typename?: 'SectionModelContentField'
