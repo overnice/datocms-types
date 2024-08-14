@@ -4644,8 +4644,6 @@ export type TimelineItemRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
-export type TwoLineTextLinkModelLinkField = PackageRecord | PageRecord
-
 /** Block of type Two Line Text + Link (two_line_text_link) */
 export type TwoLineTextLinkRecord = RecordInterface & {
   __typename?: 'TwoLineTextLinkRecord'
@@ -4664,9 +4662,8 @@ export type TwoLineTextLinkRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   createdAt: Scalars['DateTime']
   id: Scalars['ItemId']
-  link?: Maybe<TwoLineTextLinkModelLinkField>
+  link?: Maybe<SimpleLinkRecord>
   linkLine?: Maybe<Scalars['String']>
-  links?: Maybe<SimpleLinkRecord>
   topLine?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
 }
