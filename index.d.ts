@@ -61,8 +61,8 @@ export type ArticleModelFilter = {
   excerpt?: InputMaybe<StringFilter>
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
-  slug?: InputMaybe<SlugFilter>
   content?: InputMaybe<StructuredTextFilter>
+  slug?: InputMaybe<SlugFilter>
   OR?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
 }
