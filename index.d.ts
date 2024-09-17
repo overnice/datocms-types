@@ -33,6 +33,139 @@ export type Scalars = {
   UploadId: any
 }
 
+export type ArticleModelContentBlocksField =
+  | CallToActionRecord
+  | FullWidthImageRecord
+  | RichTextRecord
+  | TileGridRecord
+
+export type ArticleModelContentField = {
+  __typename?: 'ArticleModelContentField'
+  blocks: Array<ArticleModelContentBlocksField>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
+export type ArticleModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  excerpt?: InputMaybe<StringFilter>
+  tags?: InputMaybe<SeoFilter>
+  title?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  OR?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
+}
+
+export enum ArticleModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+}
+
+/** Record of type Article (article) */
+export type ArticleRecord = RecordInterface & {
+  __typename?: 'ArticleRecord'
+  _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
+  _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  content?: Maybe<ArticleModelContentField>
+  createdAt: Scalars['DateTime']
+  excerpt?: Maybe<Scalars['String']>
+  id: Scalars['ItemId']
+  slug?: Maybe<Scalars['String']>
+  tags?: Maybe<SeoField>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Article (article) */
+export type ArticleRecord_AllExcerptLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Article (article) */
+export type ArticleRecord_AllTagsLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Article (article) */
+export type ArticleRecord_AllTitleLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Article (article) */
+export type ArticleRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Article (article) */
+export type ArticleRecordExcerptArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Article (article) */
+export type ArticleRecordTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Article (article) */
+export type ArticleRecordTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
 /** Block of type Badge List (badge_list) */
 export type BadgeListRecord = RecordInterface & {
   __typename?: 'BadgeListRecord'
@@ -3599,6 +3732,8 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query'
   /** Returns meta information regarding a record collection */
+  _allArticlesMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allCaseStudiesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allCaseStudyTagsMeta: CollectionMetadata
@@ -3623,6 +3758,8 @@ export type Query = {
   /** Returns the single instance record */
   _site: Site
   /** Returns a collection of records */
+  allArticles: Array<ArticleRecord>
+  /** Returns a collection of records */
   allCaseStudies: Array<CaseStudyRecord>
   /** Returns a collection of records */
   allCaseStudyTags: Array<CaseStudyTagRecord>
@@ -3644,6 +3781,8 @@ export type Query = {
   allTests: Array<TestRecord>
   /** Returns a collection of assets */
   allUploads: Array<FileField>
+  /** Returns a specific record */
+  article?: Maybe<ArticleRecord>
   /** Returns a specific record */
   caseStudy?: Maybe<CaseStudyRecord>
   /** Returns a specific record */
@@ -3674,6 +3813,13 @@ export type Query = {
   test?: Maybe<TestRecord>
   /** Returns a specific asset */
   upload?: Maybe<FileField>
+}
+
+/** The query root for this schema */
+export type Query_AllArticlesMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  filter?: InputMaybe<ArticleModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** The query root for this schema */
@@ -3756,6 +3902,16 @@ export type Query_AllUploadsMetaArgs = {
 export type Query_SiteArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
+export type QueryAllArticlesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<ArticleModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<ArticleModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -3866,6 +4022,14 @@ export type QueryAllUploadsArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<UploadFilter>
   orderBy?: InputMaybe<Array<InputMaybe<UploadOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryArticleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<ArticleModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<ArticleModelOrderBy>>>
 }
 
 /** The query root for this schema */
