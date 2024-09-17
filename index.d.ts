@@ -116,7 +116,7 @@ export type ArticleRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
-  author?: Maybe<PersonRecord>
+  author?: Maybe<TeamMemberRecord>
   content?: Maybe<ArticleModelContentField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
