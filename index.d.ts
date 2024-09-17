@@ -58,11 +58,12 @@ export type ArticleModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  excerpt?: InputMaybe<StringFilter>
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
   content?: InputMaybe<StructuredTextFilter>
   slug?: InputMaybe<SlugFilter>
+  excerpt?: InputMaybe<StringFilter>
+  author?: InputMaybe<LinkFilter>
   OR?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
 }
@@ -90,10 +91,10 @@ export enum ArticleModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
 }
 
 /** Record of type Article (article) */
@@ -115,6 +116,7 @@ export type ArticleRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
+  author?: Maybe<PersonRecord>
   content?: Maybe<ArticleModelContentField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
