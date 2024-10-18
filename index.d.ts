@@ -4524,7 +4524,6 @@ export type RichTextRecordTextArgs = {
 export type SectionModelContentBlocksField =
   | BadgeListRecord
   | BadgeRecord
-  | BlogListingRecord
   | ClientGridRecord
   | ContactCardRecord
   | FullWidthImageRecord
