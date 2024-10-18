@@ -254,6 +254,33 @@ export type BlockLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Block of type Blog Listing (blog_listing) */
+export type BlogListingRecord = RecordInterface & {
+  __typename?: 'BlogListingRecord'
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  createdAt: Scalars['DateTime']
+  id: Scalars['ItemId']
+  linkLabel?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Block of type Blog Listing (blog_listing) */
+export type BlogListingRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
 export type BlogModelAuthorsField = PersonRecord | TeamMemberRecord
 
 export type BlogModelContentBlocksField =
