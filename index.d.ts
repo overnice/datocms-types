@@ -267,6 +267,11 @@ export type BlogModelContentField = {
   value: Scalars['JsonField']
 }
 
+/** Linking fields */
+export enum BlogModelFieldsReferencingBlogModel {
+  BlogRelatedBlogs = 'blog_relatedBlogs',
+}
+
 export type BlogModelFilter = {
   _createdAt?: InputMaybe<CreatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
@@ -286,6 +291,7 @@ export type BlogModelFilter = {
   content?: InputMaybe<StructuredTextFilter>
   tags?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
+  relatedBlogs?: InputMaybe<LinksFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
 }
@@ -325,6 +331,9 @@ export enum BlogModelOrderBy {
 export type BlogRecord = RecordInterface & {
   __typename?: 'BlogRecord'
   _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allReferencingBlogs: Array<BlogRecord>
+  /** Returns meta information regarding a record collection */
+  _allReferencingBlogsMeta: CollectionMetadata
   _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
   _createdAt: Scalars['DateTime']
@@ -346,6 +355,7 @@ export type BlogRecord = RecordInterface & {
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   publishedDate?: Maybe<Scalars['Date']>
+  relatedBlogs: Array<BlogRecord>
   slug?: Maybe<Scalars['String']>
   tags?: Maybe<SeoField>
   title?: Maybe<Scalars['String']>
@@ -356,6 +366,24 @@ export type BlogRecord = RecordInterface & {
 export type BlogRecord_AllExcerptLocalesArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord_AllReferencingBlogsArgs = {
+  through?: InputMaybe<InverseRelationshipFilterBetweenBlogAndBlog>
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<BlogModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<BlogModelOrderBy>>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord_AllReferencingBlogsMetaArgs = {
+  through?: InputMaybe<InverseRelationshipFilterBetweenBlogAndBlog>
+  locale?: InputMaybe<SiteLocale>
+  filter?: InputMaybe<BlogModelFilter>
 }
 
 /** Record of type Blog (blog) */
@@ -3049,6 +3077,22 @@ export type InteractiveImageTileRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+/** Specifies how to filter by linking fields */
+export type InverseRelationshipFieldFilterBetweenBlogAndBlog = {
+  /** Filter linking records that reference current record in at least one of the specified fields */
+  anyIn?: InputMaybe<Array<BlogModelFieldsReferencingBlogModel>>
+  /** Filter linking records that do not reference current record in any of the specified fields */
+  notIn?: InputMaybe<Array<BlogModelFieldsReferencingBlogModel>>
+}
+
+/** Specifies how to filter linking records */
+export type InverseRelationshipFilterBetweenBlogAndBlog = {
+  /** Specifies how to filter by linking fields */
+  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenBlogAndBlog>
+  /** Specifies how to filter by linking locales */
+  locales?: InputMaybe<LinkingLocalesFilter>
+}
+
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
@@ -3243,6 +3287,20 @@ export type LinkFilter = {
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>
   /** Filter records with the specified field defined (i.e. with any value) or not */
   exists?: InputMaybe<Scalars['BooleanType']>
+}
+
+/** Linking locales */
+export enum LinkingLocale {
+  En = 'en',
+  NonLocalized = '_nonLocalized',
+}
+
+/** Specifies how to filter by linking locales */
+export type LinkingLocalesFilter = {
+  /** Filter linking records that link to current record in at least one of the specified locales */
+  anyIn?: InputMaybe<Array<LinkingLocale>>
+  /** Filter linking records that do not link to current record in any of the specified locales */
+  notIn?: InputMaybe<Array<LinkingLocale>>
 }
 
 /** Specifies how to filter Multiple-links fields */
