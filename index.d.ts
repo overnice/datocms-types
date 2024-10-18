@@ -279,13 +279,13 @@ export type BlogModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  title?: InputMaybe<StringFilter>
+  excerpt?: InputMaybe<StringFilter>
+  publishedDate?: InputMaybe<DateFilter>
   authors?: InputMaybe<LinksFilter>
   content?: InputMaybe<StructuredTextFilter>
-  excerpt?: InputMaybe<StringFilter>
   tags?: InputMaybe<SeoFilter>
-  title?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
-  publishedDate?: InputMaybe<DateFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
 }
@@ -313,10 +313,10 @@ export enum BlogModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
   PublishedDateAsc = 'publishedDate_ASC',
   PublishedDateDesc = 'publishedDate_DESC',
 }
