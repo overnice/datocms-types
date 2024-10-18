@@ -254,6 +254,8 @@ export type BlockLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type BlogModelAuthorsField = PersonRecord | TeamMemberRecord
+
 export type BlogModelContentBlocksField =
   | CallToActionRecord
   | FullWidthImageRecord
@@ -349,7 +351,7 @@ export type BlogRecord = RecordInterface & {
   _status: ItemStatus
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
   _updatedAt: Scalars['DateTime']
-  authors: Array<PersonRecord>
+  authors: Array<BlogModelAuthorsField>
   content?: Maybe<BlogModelContentField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
