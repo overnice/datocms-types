@@ -254,6 +254,145 @@ export type BlockLinkRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
 }
 
+export type BlogModelContentBlocksField =
+  | CallToActionRecord
+  | FullWidthImageRecord
+  | RichTextRecord
+  | TileGridRecord
+
+export type BlogModelContentField = {
+  __typename?: 'BlogModelContentField'
+  blocks: Array<BlogModelContentBlocksField>
+  links: Array<Scalars['String']>
+  value: Scalars['JsonField']
+}
+
+export type BlogModelFilter = {
+  _createdAt?: InputMaybe<CreatedAtFilter>
+  createdAt?: InputMaybe<CreatedAtFilter>
+  id?: InputMaybe<ItemIdFilter>
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>
+  _publishedAt?: InputMaybe<PublishedAtFilter>
+  _status?: InputMaybe<StatusFilter>
+  _updatedAt?: InputMaybe<UpdatedAtFilter>
+  updatedAt?: InputMaybe<UpdatedAtFilter>
+  _isValid?: InputMaybe<BooleanFilter>
+  authors?: InputMaybe<LinksFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  excerpt?: InputMaybe<StringFilter>
+  tags?: InputMaybe<SeoFilter>
+  title?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
+  publishedDate?: InputMaybe<DateFilter>
+  OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
+  AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
+}
+
+export enum BlogModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  PublishedDateAsc = 'publishedDate_ASC',
+  PublishedDateDesc = 'publishedDate_DESC',
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord = RecordInterface & {
+  __typename?: 'BlogRecord'
+  _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
+  _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
+  _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
+  _createdAt: Scalars['DateTime']
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>
+  _isValid: Scalars['BooleanType']
+  _modelApiKey: Scalars['String']
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>
+  _publishedAt?: Maybe<Scalars['DateTime']>
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>
+  _status: ItemStatus
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>
+  _updatedAt: Scalars['DateTime']
+  authors: Array<PersonRecord>
+  content?: Maybe<BlogModelContentField>
+  createdAt: Scalars['DateTime']
+  excerpt?: Maybe<Scalars['String']>
+  id: Scalars['ItemId']
+  publishedDate?: Maybe<Scalars['Date']>
+  slug?: Maybe<Scalars['String']>
+  tags?: Maybe<SeoField>
+  title?: Maybe<Scalars['String']>
+  updatedAt: Scalars['DateTime']
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord_AllExcerptLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord_AllTagsLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord_AllTitleLocalesArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecordExcerptArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecordTagsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Record of type Blog (blog) */
+export type BlogRecordTitleArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
 /** Specifies how to filter Boolean fields */
 export type BooleanFilter = {
   /** Search for records with an exact match */
@@ -3736,6 +3875,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allArticlesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
+  _allBlogsMeta: CollectionMetadata
+  /** Returns meta information regarding a record collection */
   _allCaseStudiesMeta: CollectionMetadata
   /** Returns meta information regarding a record collection */
   _allCaseStudyTagsMeta: CollectionMetadata
@@ -3762,6 +3903,8 @@ export type Query = {
   /** Returns a collection of records */
   allArticles: Array<ArticleRecord>
   /** Returns a collection of records */
+  allBlogs: Array<BlogRecord>
+  /** Returns a collection of records */
   allCaseStudies: Array<CaseStudyRecord>
   /** Returns a collection of records */
   allCaseStudyTags: Array<CaseStudyTagRecord>
@@ -3785,6 +3928,8 @@ export type Query = {
   allUploads: Array<FileField>
   /** Returns a specific record */
   article?: Maybe<ArticleRecord>
+  /** Returns a specific record */
+  blog?: Maybe<BlogRecord>
   /** Returns a specific record */
   caseStudy?: Maybe<CaseStudyRecord>
   /** Returns a specific record */
@@ -3821,6 +3966,13 @@ export type Query = {
 export type Query_AllArticlesMetaArgs = {
   locale?: InputMaybe<SiteLocale>
   filter?: InputMaybe<ArticleModelFilter>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** The query root for this schema */
+export type Query_AllBlogsMetaArgs = {
+  locale?: InputMaybe<SiteLocale>
+  filter?: InputMaybe<BlogModelFilter>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
@@ -3914,6 +4066,16 @@ export type QueryAllArticlesArgs = {
   first?: InputMaybe<Scalars['IntType']>
   filter?: InputMaybe<ArticleModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<ArticleModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryAllBlogsArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  skip?: InputMaybe<Scalars['IntType']>
+  first?: InputMaybe<Scalars['IntType']>
+  filter?: InputMaybe<BlogModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<BlogModelOrderBy>>>
 }
 
 /** The query root for this schema */
@@ -4032,6 +4194,14 @@ export type QueryArticleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
   filter?: InputMaybe<ArticleModelFilter>
   orderBy?: InputMaybe<Array<InputMaybe<ArticleModelOrderBy>>>
+}
+
+/** The query root for this schema */
+export type QueryBlogArgs = {
+  locale?: InputMaybe<SiteLocale>
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>
+  filter?: InputMaybe<BlogModelFilter>
+  orderBy?: InputMaybe<Array<InputMaybe<BlogModelOrderBy>>>
 }
 
 /** The query root for this schema */
