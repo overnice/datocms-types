@@ -3763,6 +3763,7 @@ export type PackageTimelineRecord_SeoMetaTagsArgs = {
 }
 
 export type PageModelContentBlocksField =
+  | BlogListingRecord
   | CallToActionRecord
   | ClientGridRecord
   | FullWidthImageRecord
