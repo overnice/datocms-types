@@ -4566,6 +4566,7 @@ export type SidenoteTileRecord_SeoMetaTagsArgs = {
 }
 
 export type SimpleLinkModelInternalLinkField =
+  | BlogRecord
   | CaseStudyRecord
   | HomepageRecord
   | JobRecord
