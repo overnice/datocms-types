@@ -310,13 +310,13 @@ export type BlogModelFilter = {
   _isValid?: InputMaybe<BooleanFilter>
   title?: InputMaybe<StringFilter>
   excerpt?: InputMaybe<StringFilter>
-  content?: InputMaybe<StructuredTextFilter>
   tags?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
   publishedDate?: InputMaybe<DateFilter>
   authors?: InputMaybe<LinksFilter>
   relatedBlogs?: InputMaybe<LinksFilter>
   coverImage?: InputMaybe<FileFilter>
+  content?: InputMaybe<StructuredTextFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
 }
