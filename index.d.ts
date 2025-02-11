@@ -316,6 +316,7 @@ export type BlogModelFilter = {
   authors?: InputMaybe<LinksFilter>
   relatedBlogs?: InputMaybe<LinksFilter>
   coverImage?: InputMaybe<FileFilter>
+  readingTime?: InputMaybe<IntegerFilter>
   content?: InputMaybe<StructuredTextFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
@@ -350,6 +351,8 @@ export enum BlogModelOrderBy {
   ExcerptDesc = 'excerpt_DESC',
   PublishedDateAsc = 'publishedDate_ASC',
   PublishedDateDesc = 'publishedDate_DESC',
+  ReadingTimeAsc = 'readingTime_ASC',
+  ReadingTimeDesc = 'readingTime_DESC',
 }
 
 /** Record of type Blog (blog) */
@@ -378,6 +381,7 @@ export type BlogRecord = RecordInterface & {
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   publishedDate?: Maybe<Scalars['Date']>
+  readingTime?: Maybe<Scalars['IntType']>
   relatedBlogs: Array<BlogRecord>
   slug?: Maybe<Scalars['String']>
   tags?: Maybe<SeoField>
@@ -3045,6 +3049,24 @@ export enum ImgixParamsTxtFit {
 export type InUseFilter = {
   /** Search uploads that are currently used by some record or not */
   eq?: InputMaybe<Scalars['BooleanType']>
+}
+
+/** Specifies how to filter Integer fields */
+export type IntegerFilter = {
+  /** Filter records with a value that's strictly greater than the one specified */
+  gt?: InputMaybe<Scalars['IntType']>
+  /** Filter records with a value that's less than the one specified */
+  lt?: InputMaybe<Scalars['IntType']>
+  /** Filter records with a value that's greater than or equal to the one specified */
+  gte?: InputMaybe<Scalars['IntType']>
+  /** Filter records with a value that's less or equal than the one specified */
+  lte?: InputMaybe<Scalars['IntType']>
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
+  /** Search for records with an exact match */
+  eq?: InputMaybe<Scalars['IntType']>
+  /** Exclude records with an exact match */
+  neq?: InputMaybe<Scalars['IntType']>
 }
 
 /** Block of type Interactive Image Tile (interactive_image_tile) */
