@@ -316,8 +316,8 @@ export type BlogModelFilter = {
   authors?: InputMaybe<LinksFilter>
   relatedBlogs?: InputMaybe<LinksFilter>
   coverImage?: InputMaybe<FileFilter>
-  content?: InputMaybe<StructuredTextFilter>
   contentWordCount?: InputMaybe<JsonFilter>
+  content?: InputMaybe<StructuredTextFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
 }
