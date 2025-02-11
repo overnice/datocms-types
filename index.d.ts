@@ -310,12 +310,13 @@ export type BlogModelFilter = {
   _isValid?: InputMaybe<BooleanFilter>
   title?: InputMaybe<StringFilter>
   excerpt?: InputMaybe<StringFilter>
-  publishedDate?: InputMaybe<DateFilter>
-  authors?: InputMaybe<LinksFilter>
   content?: InputMaybe<StructuredTextFilter>
   tags?: InputMaybe<SeoFilter>
   slug?: InputMaybe<SlugFilter>
+  publishedDate?: InputMaybe<DateFilter>
+  authors?: InputMaybe<LinksFilter>
   relatedBlogs?: InputMaybe<LinksFilter>
+  coverImage?: InputMaybe<FileFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
 }
@@ -372,6 +373,7 @@ export type BlogRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   authors: Array<BlogModelAuthorsField>
   content?: Maybe<BlogModelContentField>
+  coverImage?: Maybe<FileField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
