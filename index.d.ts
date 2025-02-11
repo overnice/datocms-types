@@ -316,6 +316,7 @@ export type BlogModelFilter = {
   authors?: InputMaybe<LinksFilter>
   relatedBlogs?: InputMaybe<LinksFilter>
   coverImage?: InputMaybe<FileFilter>
+  contentWordCount?: InputMaybe<JsonFilter>
   content?: InputMaybe<StructuredTextFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
@@ -373,6 +374,7 @@ export type BlogRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime']
   authors: Array<BlogModelAuthorsField>
   content?: Maybe<BlogModelContentField>
+  contentWordCount?: Maybe<Scalars['JsonField']>
   coverImage?: Maybe<FileField>
   createdAt: Scalars['DateTime']
   excerpt?: Maybe<Scalars['String']>
@@ -3262,6 +3264,12 @@ export type JobRecordTagsArgs = {
 export type JobRecordTitleArgs = {
   locale?: InputMaybe<SiteLocale>
   fallbackLocales?: InputMaybe<Array<SiteLocale>>
+}
+
+/** Specifies how to filter JSON fields */
+export type JsonFilter = {
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>
 }
 
 /** Specifies how to filter Single-link fields */
