@@ -58,12 +58,12 @@ export type ArticleModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  author?: InputMaybe<LinkFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  excerpt?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
-  content?: InputMaybe<StructuredTextFilter>
-  slug?: InputMaybe<SlugFilter>
-  excerpt?: InputMaybe<StringFilter>
-  author?: InputMaybe<LinkFilter>
   OR?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<ArticleModelFilter>>>
 }
@@ -91,10 +91,10 @@ export enum ArticleModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
   ExcerptAsc = 'excerpt_ASC',
   ExcerptDesc = 'excerpt_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Article (article) */
@@ -286,7 +286,9 @@ export type BlogModelAuthorsField = PersonRecord | TeamMemberRecord
 export type BlogModelContentBlocksField =
   | CallToActionRecord
   | FullWidthImageRecord
+  | QuoteTileRecord
   | RichTextRecord
+  | SimpleLinkRecord
   | TileGridRecord
 
 export type BlogModelContentField = {
@@ -308,16 +310,15 @@ export type BlogModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  title?: InputMaybe<StringFilter>
-  excerpt?: InputMaybe<StringFilter>
-  tags?: InputMaybe<SeoFilter>
-  slug?: InputMaybe<SlugFilter>
-  publishedDate?: InputMaybe<DateFilter>
   authors?: InputMaybe<LinksFilter>
-  relatedBlogs?: InputMaybe<LinksFilter>
-  coverImage?: InputMaybe<FileFilter>
-  readingTime?: InputMaybe<IntegerFilter>
   content?: InputMaybe<StructuredTextFilter>
+  coverImage?: InputMaybe<FileFilter>
+  publishedDate?: InputMaybe<DateFilter>
+  readingTime?: InputMaybe<IntegerFilter>
+  relatedBlogs?: InputMaybe<LinksFilter>
+  slug?: InputMaybe<SlugFilter>
+  tags?: InputMaybe<SeoFilter>
+  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<BlogModelFilter>>>
 }
@@ -345,20 +346,17 @@ export enum BlogModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
   PublishedDateAsc = 'publishedDate_ASC',
   PublishedDateDesc = 'publishedDate_DESC',
   ReadingTimeAsc = 'readingTime_ASC',
   ReadingTimeDesc = 'readingTime_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Blog (blog) */
 export type BlogRecord = RecordInterface & {
   __typename?: 'BlogRecord'
-  _allExcerptLocales?: Maybe<Array<StringMultiLocaleField>>
   _allTagsLocales?: Maybe<Array<SeoFieldMultiLocaleField>>
   _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>
   _createdAt: Scalars['DateTime']
@@ -378,7 +376,6 @@ export type BlogRecord = RecordInterface & {
   content?: Maybe<BlogModelContentField>
   coverImage?: Maybe<FileField>
   createdAt: Scalars['DateTime']
-  excerpt?: Maybe<Scalars['String']>
   id: Scalars['ItemId']
   publishedDate?: Maybe<Scalars['Date']>
   readingTime?: Maybe<Scalars['IntType']>
@@ -387,12 +384,6 @@ export type BlogRecord = RecordInterface & {
   tags?: Maybe<SeoField>
   title?: Maybe<Scalars['String']>
   updatedAt: Scalars['DateTime']
-}
-
-/** Record of type Blog (blog) */
-export type BlogRecord_AllExcerptLocalesArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Blog (blog) */
@@ -410,12 +401,6 @@ export type BlogRecord_AllTitleLocalesArgs = {
 /** Record of type Blog (blog) */
 export type BlogRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>
-}
-
-/** Record of type Blog (blog) */
-export type BlogRecordExcerptArgs = {
-  locale?: InputMaybe<SiteLocale>
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>
 }
 
 /** Record of type Blog (blog) */
@@ -496,20 +481,20 @@ export type CaseStudyModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  content?: InputMaybe<StructuredTextFilter>
-  tags?: InputMaybe<SeoFilter>
-  sublineTags?: InputMaybe<LinksFilter>
+  abstract?: InputMaybe<TextFilter>
+  backgroundColor?: InputMaybe<ColorFilter>
   client?: InputMaybe<LinkFilter>
+  content?: InputMaybe<StructuredTextFilter>
+  date?: InputMaybe<DateFilter>
   heroImage?: InputMaybe<FileFilter>
   highlightColor?: InputMaybe<ColorFilter>
-  textColor?: InputMaybe<ColorFilter>
-  backgroundColor?: InputMaybe<ColorFilter>
-  date?: InputMaybe<DateFilter>
-  secondHighlightColor?: InputMaybe<ColorFilter>
-  title?: InputMaybe<StringFilter>
-  abstract?: InputMaybe<TextFilter>
   projectName?: InputMaybe<StringFilter>
+  secondHighlightColor?: InputMaybe<ColorFilter>
   slug?: InputMaybe<SlugFilter>
+  sublineTags?: InputMaybe<LinksFilter>
+  tags?: InputMaybe<SeoFilter>
+  textColor?: InputMaybe<ColorFilter>
+  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<CaseStudyModelFilter>>>
 }
@@ -539,10 +524,10 @@ export enum CaseStudyModelOrderBy {
   IsValidDesc = '_isValid_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
   ProjectNameAsc = 'projectName_ASC',
   ProjectNameDesc = 'projectName_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Case Study (case_study) */
@@ -727,9 +712,9 @@ export type ClientModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
+  excerpt?: InputMaybe<StringFilter>
   logo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
-  excerpt?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<ClientModelFilter>>>
 }
@@ -757,10 +742,10 @@ export enum ClientModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
   ExcerptAsc = 'excerpt_ASC',
   ExcerptDesc = 'excerpt_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
 }
 
 /** Record of type Client (client) */
@@ -3175,11 +3160,11 @@ export type JobModelFilter = {
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
   content?: InputMaybe<StructuredTextFilter>
+  excerpt?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
   startDate?: InputMaybe<DateFilter>
   tags?: InputMaybe<SeoFilter>
   title?: InputMaybe<StringFilter>
-  excerpt?: InputMaybe<StringFilter>
-  slug?: InputMaybe<SlugFilter>
   OR?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<JobModelFilter>>>
 }
@@ -3207,12 +3192,12 @@ export enum JobModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
   StartDateAsc = 'startDate_ASC',
   StartDateDesc = 'startDate_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
 }
 
 /** Record of type Job (job) */
@@ -3541,15 +3526,15 @@ export type PackageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  tags?: InputMaybe<SeoFilter>
   content?: InputMaybe<StructuredTextFilter>
-  highlightColor?: InputMaybe<ColorFilter>
-  slug?: InputMaybe<SlugFilter>
-  packageType?: InputMaybe<StringFilter>
-  title?: InputMaybe<StringFilter>
-  excerpt?: InputMaybe<StringFilter>
-  timeframe?: InputMaybe<StringFilter>
   cost?: InputMaybe<StringFilter>
+  excerpt?: InputMaybe<StringFilter>
+  highlightColor?: InputMaybe<ColorFilter>
+  packageType?: InputMaybe<StringFilter>
+  slug?: InputMaybe<SlugFilter>
+  tags?: InputMaybe<SeoFilter>
+  timeframe?: InputMaybe<StringFilter>
+  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PackageModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<PackageModelFilter>>>
 }
@@ -3577,16 +3562,16 @@ export enum PackageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  PackageTypeAsc = 'packageType_ASC',
-  PackageTypeDesc = 'packageType_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
-  TimeframeAsc = 'timeframe_ASC',
-  TimeframeDesc = 'timeframe_DESC',
   CostAsc = 'cost_ASC',
   CostDesc = 'cost_DESC',
+  ExcerptAsc = 'excerpt_ASC',
+  ExcerptDesc = 'excerpt_DESC',
+  PackageTypeAsc = 'packageType_ASC',
+  PackageTypeDesc = 'packageType_DESC',
+  TimeframeAsc = 'timeframe_ASC',
+  TimeframeDesc = 'timeframe_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Package (package) */
@@ -3761,11 +3746,11 @@ export type PageModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  tags?: InputMaybe<SeoFilter>
   content?: InputMaybe<StructuredTextFilter>
-  title?: InputMaybe<StringFilter>
   pageName?: InputMaybe<StringFilter>
   slug?: InputMaybe<SlugFilter>
+  tags?: InputMaybe<SeoFilter>
+  title?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>
 }
@@ -3793,10 +3778,10 @@ export enum PageModelOrderBy {
   UpdatedAtDesc = 'updatedAt_DESC',
   IsValidAsc = '_isValid_ASC',
   IsValidDesc = '_isValid_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
   PageNameAsc = 'pageName_ASC',
   PageNameDesc = 'pageName_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
 }
 
 /** Record of type Page (page) */
@@ -3842,8 +3827,8 @@ export type PersonModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   _isValid?: InputMaybe<BooleanFilter>
-  photo?: InputMaybe<FileFilter>
   name?: InputMaybe<StringFilter>
+  photo?: InputMaybe<FileFilter>
   role?: InputMaybe<StringFilter>
   OR?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
   AND?: InputMaybe<Array<InputMaybe<PersonModelFilter>>>
