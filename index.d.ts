@@ -288,6 +288,7 @@ export type BlogModelContentBlocksField =
   | FullWidthImageRecord
   | QuoteTileRecord
   | RichTextRecord
+  | SectionRecord
   | SimpleLinkRecord
   | TileGridRecord
 
